@@ -14,5 +14,5 @@ class RoleMask(self):
 		self.punctuations = [';','?',',','.',':']
 
 
-	def getMask(self,role='positional'):
+	def get_positional_mask(self):
 		
