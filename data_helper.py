@@ -61,12 +61,16 @@ class Data_helper(obj):
 				embedding_matrix[i] = embedding_vector
 		return embedding_matrix
 
-	# strategy = fulltext, stopword, random, POS, dependency , IDF, 
+	def load_sem_data(self,dataset,split):
+		texts,labels = pickle.load(open(pkl_file_path,'rb'))
+		return texts,labels
+
+	# load the train, valid or test
 	def load_data(self,dataset):
 		texts_list_train_test = []
 		labels_train_test = []
-		for file_name in ["train.csv","test.csv"]:
-			texts,labels = self.get_selected_token(dataset,file_name,strategy,selected_ratio=selected_ratio,cut=cut)
+		for file_name in ["train","test"]:
+			texts,labels = self.load_sem_data(dataset,file_name,strategy,selected_ratio=selected_ratio,cut=cut)
 			texts_list_train_test.append(texts)
 			labels_train_test.append(labels)
 		self.opt.nb_classes = len(set(labels))
@@ -78,7 +82,7 @@ class Data_helper(obj):
 			all_texts= [set(sentence) for dataset in texts_list_train_test for sentence in dataset]
 		# tokenize 
 		word_index = self.tokenizer(all_texts,MAX_NB_WORDS=self.opt.max_nb_words)
-
+		# save word_index
 		self.opt.word_index = word_index
 		print('word_index:',len(word_index))
 		# build word embedding
@@ -88,7 +92,7 @@ class Data_helper(obj):
 		# labels = le.fit_transform(labels)
 		# padding
 		train_test = []
-		for tokens_list,labels in zip(tokens_list_train_test,labels_train_test):
+		for tokens_list,labels in zip(texts_list_train_test,labels_train_test):
 			if dataset in self.opt.pair_set.split(","):
 				x1 = data_reader.tokens_list_to_sequences(tokens_list[0],word_index,self.opt.max_sequence_length)
 				x2 = data_reader.tokens_list_to_sequences(tokens_list[1],word_index,self.opt.max_sequence_length)
@@ -135,16 +139,17 @@ class Data_helper(obj):
 	def tokens_list_to_sequences(self, tokens_lists, word_index, MAX_SEQUENCE_LENGTH):
 		sequences = []
 		for tokens in tokens_lists:
-			sequence = []
-			for token in tokens:
-				token = token.lower()
+			sequence = [1]
+			for semtok in tokens:
+				token = semtok.text.lower()
 				if token in word_index.keys():
 					token_index = word_index[token]
 					sequence.append(token_index)
+			sequence.append(2)
 			if len(sequence)>MAX_SEQUENCE_LENGTH:
 				sequence = sequence[:MAX_SEQUENCE_LENGTH]
 			else:
-				sequence = np.zeros(MAX_SEQUENCE_LENGTH-len(sequence),dtype=int).tolist()+sequence
+				sequence = sequence+np.zeros(MAX_SEQUENCE_LENGTH-len(sequence),dtype=int).tolist()
 			# print('seq:',sequence)
 			sequences.append(sequence)
 		return np.asarray(sequences,dtype=int)

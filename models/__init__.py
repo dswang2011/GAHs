@@ -10,10 +10,7 @@ from models.Transformer import Transformer
 
 
 def setup(opt):
-    
-    if opt.contatenate==1:
-            opt.max_sequence_length = opt.max_sequence_length_long  
-    elif opt.model == "cnn":
+    if opt.model == "cnn":
         model = CNN(opt)
     elif opt.model == "bilstm":
         model = BiLSTM(opt)
