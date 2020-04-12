@@ -11,9 +11,10 @@ from keras.layers import *
 from keras.callbacks import *
 from keras.initializers import *
 import tensorflow as tf
+from keras import backend as K
+
+
 add_layer = Lambda(lambda x:x[0]+x[1], output_shape=lambda x:x[0])
-
-
 
 class LayerNormalization(Layer):
 	def __init__(self, eps=1e-6, **kwargs):
@@ -138,8 +139,7 @@ class EncoderLayer():
 
 class PosEncodingLayer:
 	def __init__(self, max_len, d_emb):
-		self.pos_emb_matrix = Embedding(max_len, d_emb, trainable=False, \
-						   weights=[GetPosEncodingMatrix(max_len, d_emb)])
+		self.pos_emb_matrix = Embedding(max_len, d_emb, trainable=False, weights=[GetPosEncodingMatrix(max_len, d_emb)])
 	def get_pos_seq(self, x):
 		mask = K.cast(K.not_equal(x, 0), 'int32')
 		pos = K.cumsum(K.ones_like(x, 'int32'), 1)
@@ -148,7 +148,8 @@ class PosEncodingLayer:
 		x = seq
 		if not pos_input: x = Lambda(self.get_pos_seq)(x)
 		return self.pos_emb_matrix(x)
-    
+
+# util functions
 def GetPosEncodingMatrix(max_len, d_emb):
 	pos_enc = np.array([
 		[pos / np.power(10000, 2 * (j // 2) / d_emb) for j in range(d_emb)] 
@@ -188,57 +189,82 @@ class SelfAttention():
 			x, att = enc_layer(x, mask)
 			if return_att: atts.append(att)
 		return (x, atts) if return_att else x
-    
+	
 class Transformer(BasicModel):
+	# def __init__(self,opt, active_layers=999) :   
+	# 	self.src_seq = Input(shape=(None,), dtype='int32')
+	# 	self.pos_emb = PosEncodingLayer(opt.max_sequence_length, opt.embedding_dim)# if self.src_loc_info else None
+	# 	self.emb_dropout = Dropout(opt.dropout_rate)
+	# 	self.i_word_emb = Embedding(len(opt.word_index) + 1,opt.embedding_dim,weights=[opt.embedding_matrix],input_length=opt.max_sequence_length,trainable=True)
+	# 	self.encoder = SelfAttention(opt.embedding_dim, opt.d_inner_hid, opt.n_head, opt.layers, opt.dropout_rate)
+	# 	self.meaner=Lambda(lambda x: K.mean(x, axis=-2) )
+	# 	self.predict = Dense(opt.nb_classes, activation='softmax')
 
-    def get_model(self,opt, active_layers=999) :   
-        pos_emb = PosEncodingLayer(opt.max_sequence_length, opt.embedding_dim)# if self.src_loc_info else None
-        emb_dropout = Dropout(opt.dropout_rate)
-#        i_word_emb = Embedding(opt.max_sequence_length, d_emb)
-        i_word_emb = Embedding(len(opt.word_index) + 1,opt.embedding_dim,weights=[opt.embedding_matrix],input_length=opt.max_sequence_length,trainable=True)
-        encoder = SelfAttention(opt.embedding_dim, opt.d_inner_hid, opt.n_head, opt.layers, opt.dropout_rate)
-        src_seq = Input(shape=(None,), dtype='int32')
-        src_emb = i_word_emb(src_seq)
-    
-        if True: 
-            src_emb = add_layer([src_emb, pos_emb(src_seq)])
-    
-        src_emb = emb_dropout(src_emb)
-    
-        enc_output = encoder(src_emb, src_seq, active_layers=active_layers)
-        meaner=Lambda(lambda x: K.mean(x, axis=-2) )
-        mean_output= meaner(enc_output)
-        preds = Dense(opt.nb_classes, activation='softmax')(mean_output)   # 3 catetory
-    
-        return Model(src_seq, preds)
+	# def get_model(self,opt, active_layers=999) :   
+	# 	# word embedding + pos embedding 
+	# 	output = self.i_word_emb(self.src_seq)
+	# 	if True: 
+	# 		# src_emb = add_layer([src_emb, pos_emb(src_seq)])
+	# 		output = add([output, pos_emb(src_seq)])
+	# 	output = self.emb_dropout(output)
+	# 	# attention encoder
+	# 	output = self.encoder(output, self.src_seq, active_layers=active_layers)
+	# 	output= self.meaner(output)
+	# 	output = self.predict(mean_output)   # 3 catetory
+	
+	# 	return Model(self.src_seq, output)	
+
+	 def get_model(self,opt, active_layers=999) :   
+		 pos_emb = PosEncodingLayer(opt.max_sequence_length, opt.embedding_dim)# if self.src_loc_info else None
+		 emb_dropout = Dropout(opt.dropout_rate)
+#		i_word_emb = Embedding(opt.max_sequence_length, d_emb)
+		 i_word_emb = Embedding(len(opt.word_index) + 1,opt.embedding_dim,weights=[opt.embedding_matrix],input_length=opt.max_sequence_length,trainable=True)
+		 encoder = SelfAttention(opt.embedding_dim, opt.d_inner_hid, opt.n_head, opt.layers, opt.dropout_rate)
+		 src_seq = Input(shape=(None,), dtype='int32')
+		 src_emb = i_word_emb(src_seq)
+	
+		 if True: 
+			 # src_emb = add_layer([src_emb, pos_emb(src_seq)])
+			 src_emb = add([src_emb, pos_emb(src_seq)])
+	
+		 src_emb = emb_dropout(src_emb)
+	
+		 enc_output = encoder(src_emb, src_seq, active_layers=active_layers)
+		 meaner=Lambda(lambda x: K.mean(x, axis=-2) )
+		 mean_output= meaner(enc_output)
+		 preds = Dense(opt.nb_classes, activation='softmax')(mean_output)   # 3 catetory
+	
+		 return Model(src_seq, preds)
+
+
 
 if __name__=="__main__":
-    
-    # -*- coding: utf-8 -*-
-    from  Params import Params
-    import argparse
-    from preprocessing import Process
-    import models
-    from keras.models import load_model
-    import os
-    import numpy as np
-    import itertools
-    from token_selection import TokenSelection
-    
-    params = Params()
-    parser = argparse.ArgumentParser(description='Running Transformer.')
-    parser.add_argument('-config', action = 'store', dest = 'config', help = 'please enter the config path.',default='config/config.ini')
-    parser.add_argument('-gpu_num', action = 'store', dest = 'gpu_num', help = 'please enter the gpu num.',default=1)
-    parser.add_argument('-gpu', action = 'store', dest = 'gpu', help = 'please enter the specific gpu no.',default=0)
-    args = parser.parse_args()
-    params.parse_config(args.config)
-    from sklearn.metrics import f1_score,confusion_matrix,accuracy_score,log_loss
-    # customized paras
-    params.model= "transformer"  
-    token_select = TokenSelection(params)
-    train,test = token_select.get_train(dataset="IMDB",stragety="stopword",POS_category="Noun")
-    model = models.setup(params)
+	
+	# -*- coding: utf-8 -*-
+	from  Params import Params
+	import argparse
+	from preprocessing import Process
+	import models
+	from keras.models import load_model
+	import os
+	import numpy as np
+	import itertools
+	from token_selection import TokenSelection
+	
+	params = Params()
+	parser = argparse.ArgumentParser(description='Running Transformer.')
+	parser.add_argument('-config', action = 'store', dest = 'config', help = 'please enter the config path.',default='config/config.ini')
+	parser.add_argument('-gpu_num', action = 'store', dest = 'gpu_num', help = 'please enter the gpu num.',default=1)
+	parser.add_argument('-gpu', action = 'store', dest = 'gpu', help = 'please enter the specific gpu no.',default=0)
+	args = parser.parse_args()
+	params.parse_config(args.config)
+	from sklearn.metrics import f1_score,confusion_matrix,accuracy_score,log_loss
+	# customized paras
+	params.model= "transformer"  
+	token_select = TokenSelection(params)
+	train,test = token_select.get_train(dataset="IMDB",stragety="stopword",POS_category="Noun")
+	model = models.setup(params)
 
 
 
-    model.train(train,dev=test)
+	model.train(train,dev=test)

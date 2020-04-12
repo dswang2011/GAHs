@@ -7,21 +7,24 @@ import raw_data_loader
 import spacy
 import pickle  
 import os
+import argparse
+
 
 nlp = spacy.load("en")
 
 
-class SemToken(self):
+class SemToken(object):
 	def __init__(self,opt):
 		self.opt = opt
 		self.ispair = self.opt.pair_set.split(",")
-		self.root = 'datasets/'	
+		self.root = '../datasets/'	
 
 
 	# text to lit of semtoks
 	def get_semtok_list(self,text):
 		doc = nlp(text.strip())
-		return [token for token in doc]
+		return doc
+		# return [token for token in doc]
 
 	# texts to semtoks
 	def semtok_on_texts(self,texts):
@@ -34,7 +37,7 @@ class SemToken(self):
 		for split in splits.split(','):
 			texts,labels = rawLoader.load_data(dataset,split)
 			# process and save
-			if dataset in self.ispair:
+			if dataset in self.opt.pair_set.split(','):
 				texts1,texts2 = self.semtok_on_texts(texts[0]),self.semtok_on_texts(texts[1])
 				pickle.dump([[texts1,texts2],train_labels],open(os.path.join(self.root,dataset,split+'.pkl'), 'wb'))
 			else:
@@ -42,18 +45,19 @@ class SemToken(self):
 				pickle.dump([texts,labels],open(os.path.join(self.root,dataset,split+'.pkl'), 'wb'))
 
 
-	if __name__ == '__main__':
-		parser = argparse.ArgumentParser(description='run the training.')
-		parser.add_argument('-config', action = 'store', dest = 'config', help = 'please enter the config path.',default='config/config.ini')
-		parser.add_argument('-gpu_num', action = 'store', dest = 'gpu_num', help = 'please enter the gpu num.',default=1)
-		parser.add_argument('-gpu', action = 'store', dest = 'gpu', help = 'please enter the specific gpu no.',default=0)
-		parser.add_argument('--patience', type=int, default=6)
-		args = parser.parse_args()
-		
-		semTok = SemToken(args)
+if __name__ == '__main__':
+	parser = argparse.ArgumentParser(description='run the training.')
+	parser.add_argument('-config', action = 'store', dest = 'config', help = 'please enter the config path.',default='config/config.ini')
+	parser.add_argument('-gpu_num', action = 'store', dest = 'gpu_num', help = 'please enter the gpu num.',default=1)
+	parser.add_argument('-gpu', action = 'store', dest = 'gpu', help = 'please enter the specific gpu no.',default=0)
+	parser.add_argument('--patience', type=int, default=6)
+	parser.add_argument('--pair_set',default='GAP')
+	args = parser.parse_args()
+	
+	semTok = SemToken(args)
 
-		# custom
-		dataset = 'WNLI'
-		splits = 'train,test'
+	# custom
+	dataset = 'MR'
+	splits = 'train'
 
-		semTok.process_file(dataset, splits)
+	semTok.process_file(dataset, splits)

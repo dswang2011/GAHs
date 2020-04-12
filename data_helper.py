@@ -11,16 +11,15 @@ import codecs
 import pickle  
 from  Params import Params
 import argparse
-import raw_data_loader
 from keras.utils import to_categorical
 import numpy as np
 from sklearn import preprocessing
-
+import util
 
 punctuation_list = [',',':',';','.','!','?','...','…','。']
 
 
-class Data_helper(obj):
+class Data_helper(object):
 	def __init__(self,opt):
 		self.opt=opt  
 
@@ -62,15 +61,16 @@ class Data_helper(obj):
 		return embedding_matrix
 
 	def load_sem_data(self,dataset,split):
-		texts,labels = pickle.load(open(pkl_file_path,'rb'))
+		root = 'datasets/'+dataset+'/'
+		texts,labels = pickle.load(open(os.path.join(root,split+'.pkl'),'rb'))
 		return texts,labels
 
 	# load the train, valid or test
-	def load_data(self,dataset):
+	def load_data(self,dataset,splits):
 		texts_list_train_test = []
 		labels_train_test = []
-		for file_name in ["train","test"]:
-			texts,labels = self.load_sem_data(dataset,file_name,strategy,selected_ratio=selected_ratio,cut=cut)
+		for split in splits:
+			texts,labels = self.load_sem_data(dataset,split)
 			texts_list_train_test.append(texts)
 			labels_train_test.append(labels)
 		self.opt.nb_classes = len(set(labels))
@@ -94,11 +94,11 @@ class Data_helper(obj):
 		train_test = []
 		for tokens_list,labels in zip(texts_list_train_test,labels_train_test):
 			if dataset in self.opt.pair_set.split(","):
-				x1 = data_reader.tokens_list_to_sequences(tokens_list[0],word_index,self.opt.max_sequence_length)
-				x2 = data_reader.tokens_list_to_sequences(tokens_list[1],word_index,self.opt.max_sequence_length)
+				x1 = self.tokens_list_to_sequences(tokens_list[0],word_index,self.opt.max_sequence_length)
+				x2 = self.tokens_list_to_sequences(tokens_list[1],word_index,self.opt.max_sequence_length)
 				x = [x1,x2]
 			else:
-				x = data_reader.tokens_list_to_sequences(tokens_list,word_index,self.opt.max_sequence_length)
+				x = self.tokens_list_to_sequences(tokens_list,word_index,self.opt.max_sequence_length)
 			y = le.fit_transform(labels)
 			# print(y)
 			y = to_categorical(np.asarray(y)) # one-hot encoding y_train = labels # one-hot label encoding
@@ -115,10 +115,10 @@ class Data_helper(obj):
 		word_index = {'<PAD>': 0, '<START>': 1, '<END>': 2, '<MASK>':3, '<NUM>':4}
 		index = 5
 		for text in texts:
-			for token in text:
+			for token in text:	# here the text is the doc
 				# add to word_index
 				if len(word_index)<MAX_NB_WORDS:
-					token=token.lower()
+					token=token.text.lower()
 					if token not in word_index.keys():
 						word_index[token] = index
 						index+=1
@@ -153,4 +153,18 @@ class Data_helper(obj):
 			# print('seq:',sequence)
 			sequences.append(sequence)
 		return np.asarray(sequences,dtype=int)
+
+if __name__ == '__main__':
+		# initialize paras
+	parser = argparse.ArgumentParser(description='run the training.')
+	parser.add_argument('-config', action = 'store', dest = 'config', help = 'please enter the config path.',default='config/config.ini')
+	parser.add_argument('-gpu_num', action = 'store', dest = 'gpu_num', help = 'please enter the gpu num.',default=1)
+	parser.add_argument('-gpu', action = 'store', dest = 'gpu', help = 'please enter the specific gpu no.',default=0)
+	parser.add_argument('--patience', type=int, default=6)
+	args = parser.parse_args()
+	# set parameters from config files
+	util.parse_and_set(args.config,args)
+
+	data_help = Data_helper(args)
+	train,test = data_help.load_data('TREC')
 

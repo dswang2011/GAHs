@@ -9,7 +9,7 @@ class CNN(BasicModel):
         embedded_sequences = embedding_layer(sequence_input)
         representions=[]
         for i in [1,2,3,4]:
-            x = Conv1D(filters=opt.filter_size, kernel_size=i, activation='relu')(embedded_sequences)
+            x = Conv1D(filters=opt.hidden_unit_num, kernel_size=i, activation='relu')(embedded_sequences)
             x = GlobalMaxPooling1D()(x)
             x = Dropout(self.opt.dropout_rate)(x)
             representions.append(x)

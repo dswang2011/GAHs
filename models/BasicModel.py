@@ -12,7 +12,6 @@ from keras.layers import Layer,Dense, Concatenate,Subtract,Multiply
 from models.matching import Attention,getOptimizer,precision_batch,identity_loss,MarginLoss,Cosine,Stack
 
 
-
 class TimeHistory(keras.callbacks.Callback):
     def on_train_begin(self, logs={}):
         self.times = []
@@ -27,6 +26,7 @@ class BasicModel(object):
     def __init__(self,opt): 
         self.opt=opt
         self.model = self.get_model(opt)
+        # self.model.compile(optimizer=optimizers.Adam(lr=opt.lr), loss='categorical_crossentropy', metrics=['acc'])
         self.model.compile(optimizer=optimizers.Adam(lr=opt.lr), loss='categorical_crossentropy', metrics=['acc'])
 
     def get_model(self,opt):
@@ -40,11 +40,10 @@ class BasicModel(object):
 
         # save path
         filename = os.path.join(dirname, '_'+dataset+"_best_model_"+self.__class__.__name__+".h5")
-        callbacks = [EarlyStopping(monitor='val_loss', patience=7),
-
+        callbacks = [EarlyStopping( monitor='val_loss',patience=7),
              ModelCheckpoint(filepath=filename, monitor='val_loss', save_best_only=True,save_weights_only=True), time_callback]
         if dev is None:
-            history = self.model.fit(x_train,y_train,batch_size=self.opt.batch_size,epochs=self.opt.epoch_num,callbacks=callbacks,validation_split=self.opt.validation_split,shuffle=True)
+            history = self.model.fit(x_train,y_train,batch_size=self.opt.batch_size,epochs=self.opt.epoch_num,callbacks=callbacks,validation_split=self.opt.val_split,shuffle=True)
         else:
             x_val, y_val = dev 
             history = self.model.fit(x_train,y_train,batch_size=self.opt.batch_size,epochs=self.opt.epoch_num,callbacks=callbacks,validation_data=(x_val, y_val),shuffle=True) 
@@ -53,7 +52,7 @@ class BasicModel(object):
         # print('history:',str(max(history.history["val_acc"])))
         times = time_callback.times
         # print("times:", round(times[1],3), "s")
-        os.rename(filename,os.path.join( dirname,   str(max(history.history["val_acc"]))+"_"+self.__class__.__name__+"_"+self.opt.to_string()+".h5" ))
+        os.rename(filename,os.path.join( dirname,   str(max(history.history["val_acc"]))[:7]+"_"+self.__class__.__name__+"_"+self.opt.para_str+".h5" ))
 
         return str(max(history.history["val_acc"])), round(times[1],3), self.__class__.__name__
 
@@ -92,6 +91,22 @@ class BasicModel(object):
         output = Dense(self.opt.nb_classes, activation="softmax")(reps)
         
         model = Model([self.question,self.answer], output)
+        model.summary()
+        model.compile(loss = "categorical_hinge",  optimizer = getOptimizer(name=self.opt.optimizer,lr=self.opt.lr), metrics=["acc"])
+            
+        return model
+
+    def get_multi_GAHs(self,opt):
+        reps = []
+        self.query =  Input(shape=(self.opt.max_sequence_length,), dtype='int32')
+
+        for GAH in self.opt.GAHs:
+            gah = GAH(inputs=self.model.input, output=self.model.layers[-2].output)
+            reps.append(gah(self.query))
+        reps = Concatenate()(reps)
+        output = Dense(self.opt.nb_classes, activation="softmax")(reps)
+        
+        model = Model(self.query, output)
         model.summary()
         model.compile(loss = "categorical_hinge",  optimizer = getOptimizer(name=self.opt.optimizer,lr=self.opt.lr), metrics=["acc"])
             
