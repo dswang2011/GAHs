@@ -1,7 +1,8 @@
-datasets/*
+.spyproject/*
+.idea/*
 __pycache__/*
 utils/__pycache__/*
 models/__pycache__/*
-.spyproject/*
-.idea/*
 
+datasets/*
+saved_model/*
