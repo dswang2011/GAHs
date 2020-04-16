@@ -183,7 +183,7 @@ class SelfAttention():
 		self.layers = [EncoderLayer(d_model, d_inner_hid, n_head, dropout) for _ in range(layers)]
 	def __call__(self, src_emb, src_seq, return_att=False, active_layers=999):
 		if return_att: atts = []
-		mask = Lambda(lambda x:K.cast(K.greater(x, 0), 'float32'))(src_seq)
+		mask = Lambda(lambda x:K.cast(K.greater(x, 0), 'float32'))(src_seq)	# True = 1, False = 0
 		x = src_emb		
 		for enc_layer in self.layers[:active_layers]:
 			x, att = enc_layer(x, mask)

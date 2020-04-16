@@ -4,7 +4,7 @@
 from models.CNN import CNN
 from models.BiLSTM import BiLSTM
 from models.Transformer import Transformer
-
+from models.GAH import GAH
 
 
 def setup(opt):
@@ -14,6 +14,8 @@ def setup(opt):
         model = BiLSTM(opt)
     elif opt.model == "transformer":
         model = Transformer(opt)
+    elif opt.model == "gah":
+        model = GAH(opt)
     else:
         raise Exception("model not supported: {}".format(opt.model))
     return model

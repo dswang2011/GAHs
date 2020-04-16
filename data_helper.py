@@ -15,6 +15,8 @@ from keras.utils import to_categorical
 import numpy as np
 from sklearn import preprocessing
 import util
+from mask import RoleMask
+import re
 
 punctuation_list = [',',':',';','.','!','?','...','…','。']
 
@@ -22,6 +24,8 @@ punctuation_list = [',',':',';','.','!','?','...','…','。']
 class Data_helper(object):
 	def __init__(self,opt):
 		self.opt=opt  
+		self.role_mask = RoleMask(self.opt)
+		self.is_numberic = re.compile(r'^[-+]?[0-9.]+$')
 
 	def get_embedding_dict(self, GLOVE_DIR):
 		embeddings_index = {}
@@ -74,7 +78,7 @@ class Data_helper(object):
 			texts_list_train_test.append(texts)
 			labels_train_test.append(labels)
 		self.opt.nb_classes = len(set(labels))
-		print('==> ',self.opt.nb_classes, ' labels:',set(labels))
+		print('[LABEL]',self.opt.nb_classes, ' labels:',set(labels))
 		# max_num_words = self.opt.max_num_words
 		if dataset in self.opt.pair_set.split(","):
 			all_texts= [set(sentence) for texts1,texts2 in texts_list_train_test for sentence in texts1]
@@ -99,6 +103,10 @@ class Data_helper(object):
 				x = [x1,x2]
 			else:
 				x = self.tokens_list_to_sequences(tokens_list,word_index,self.opt.max_sequence_length)
+				# if load_role, then load masks as well
+				if self.opt.load_role:
+					masks = self.role_mask.get_masks(tokens_list,word_index,self.opt.max_sequence_length, self.opt.all_roles)
+					x = [x]+masks
 			y = le.fit_transform(labels)
 			# print(y)
 			y = to_categorical(np.asarray(y)) # one-hot encoding y_train = labels # one-hot label encoding
@@ -106,9 +114,9 @@ class Data_helper(object):
 			if dataset in self.opt.pair_set.split(","):
 				print('[train pair] Shape of data tensor:', x[0].shape,' and ', x[1].shape)
 			else:
-				print('[train] Shape of data tensor:', x.shape)
+				print('[train] Shape of data tensor:', x[0].shape)
 			print('[train] Shape of label tensor:', y.shape)
-		
+
 		return train_test
 
 	def tokenizer(self, texts, MAX_NB_WORDS):
@@ -145,6 +153,8 @@ class Data_helper(object):
 				if token in word_index.keys():
 					token_index = word_index[token]
 					sequence.append(token_index)
+				# elif self.is_numberic.match(value):
+				# 	sequence.append(4)
 			sequence.append(2)
 			if len(sequence)>MAX_SEQUENCE_LENGTH:
 				sequence = sequence[:MAX_SEQUENCE_LENGTH]
@@ -153,6 +163,8 @@ class Data_helper(object):
 			# print('seq:',sequence)
 			sequences.append(sequence)
 		return np.asarray(sequences,dtype=int)
+
+
 
 if __name__ == '__main__':
 		# initialize paras

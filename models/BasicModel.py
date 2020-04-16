@@ -30,10 +30,8 @@ class BasicModel(object):
         self.model.compile(optimizer=optimizers.Adam(lr=opt.lr), loss='categorical_crossentropy', metrics=['acc'])
 
     def get_model(self,opt):
-
         return None
 
-    
     def train(self,train,dev=None,dirname="saved_model",dataset='dataset'):
         x_train,y_train = train
         time_callback = TimeHistory()
@@ -52,7 +50,7 @@ class BasicModel(object):
         # print('history:',str(max(history.history["val_acc"])))
         times = time_callback.times
         # print("times:", round(times[1],3), "s")
-        os.rename(filename,os.path.join( dirname,   str(max(history.history["val_acc"]))[:7]+"_"+self.__class__.__name__+"_"+self.opt.para_str+".h5" ))
+        os.rename(filename,os.path.join( dirname,  dataset+ str(max(history.history["val_acc"]))[:7]+"_"+self.__class__.__name__+"_"+self.opt.para_str+".h5" ))
 
         return str(max(history.history["val_acc"])), round(times[1],3), self.__class__.__name__
 
