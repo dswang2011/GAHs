@@ -26,7 +26,6 @@ class BasicModel(object):
     def __init__(self,opt): 
         self.opt=opt
         self.model = self.get_model(opt)
-        # self.model.compile(optimizer=optimizers.Adam(lr=opt.lr), loss='categorical_crossentropy', metrics=['acc'])
         self.model.compile(optimizer=optimizers.Adam(lr=opt.lr), loss='categorical_crossentropy', metrics=['acc'])
 
     def get_model(self,opt):

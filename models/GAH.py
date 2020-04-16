@@ -127,7 +127,8 @@ class PositionwiseFeedForward():
 		output = Add()([output, x])
 		return self.layer_norm(output)
 
-class EncoderLayer():
+# one block = multi-head self-attention + normalization +  feedforward
+class BlockEncoder():
 	def __init__(self, d_model, d_inner_hid, n_head, dropout=0.1):
 		self.self_att_layer = MultiHeadAttention(n_head, d_model, dropout=dropout)
 		self.pos_ffn_layer  = PositionwiseFeedForward(d_model, d_inner_hid, dropout=dropout)
@@ -182,7 +183,7 @@ def GetSubMask(s):
 # Encoder
 class MultiLayerEncoder():
 	def __init__(self, d_model, d_inner_hid, n_head, layers=6, dropout=0.1):
-		self.layers = [EncoderLayer(d_model, d_inner_hid, n_head, dropout) for _ in range(layers)]
+		self.layers = [BlockEncoder(d_model, d_inner_hid, n_head, dropout) for _ in range(layers)]
 	def __call__(self, src_emb, src_seq, return_att=False, active_layers=999, role_mask = None):
 		if return_att: atts = []
 		if role_mask==None:
@@ -201,7 +202,8 @@ class MultiLayerEncoder():
 		return (x, atts) if return_att else x
 	
 class GAH(BasicModel):
-	def __init__(self,opt, active_layers=999) :   
+	def get_model(self,opt, active_layers=999) :   
+		# prepared to be used
 		self.src_seq = Input(shape=(opt.max_sequence_length,), dtype='int32')
 		self.masks = []
 		for role in opt.roles: 
@@ -215,17 +217,16 @@ class GAH(BasicModel):
 		self.meaner=Lambda(lambda x: K.mean(x, axis=-2) )
 		self.predict = Dense(opt.nb_classes, activation='softmax')
 
-	def get_model(self,opt, active_layers=999) :   
+		# ensembling part
 		src_emb = self.word_emb(self.src_seq)
-		# masks
 		if True: 
-			# src_emb = add_layer([src_emb, pos_emb(src_seq)])
 			src_emb = add([src_emb, self.pos_emb(self.src_seq)])
-			
+		
 		src_emb = self.emb_dropout(src_emb)
-		# attention here
-		NGA = encoder(src_emb, self.src_seq, active_layers=active_layers, role_mask = None)
+		# NGA (global)
+		NGA = self.encoder(src_emb, self.src_seq, active_layers=active_layers, role_mask = None)
 		encoders = [NGA]
+		# GAHs (local)
 		for src_mask in self.masks:
 			GAH = self.encoder(src_emb, self.src_seq, active_layers=active_layers, role_mask = src_mask)
 			encoders.append(GAH)
