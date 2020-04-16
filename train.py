@@ -3,7 +3,6 @@ This is to train the model
 by Dongsheng, April 6, 2020
 """
 
-from  Params import Params
 import argparse
 import models
 import numpy as np
@@ -30,7 +29,6 @@ grid_pool ={
 	"d_inner_hid" : [128,256,512],
 	"roles": [['POS','both_direct']]#['major_rels','positional','separator','both_direct']]
 }
-
 dataset = 'TREC'
 
 def train_single(opt):

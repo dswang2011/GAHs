@@ -40,9 +40,9 @@ class RawLoader(object):
 	def load_TREC_data(self, split='train'):
 		texts,labels = [],[]
 		if split=='train':
-			file_path = '../datasets/TREC/TREC.train.all'
+			file_path = 'datasets/TREC/TREC.train.all'
 		elif split=='test':
-			file_path = '../datasets/TREC/TREC.test.all'
+			file_path = 'datasets/TREC/TREC.test.all'
 		with open(file_path,'r',encoding='utf8') as fr:
 			for line in fr:
 				line = self.processed_text(line)
@@ -54,7 +54,7 @@ class RawLoader(object):
 
 	def load_MR_data(self,split='train'):
 		texts,labels = [],[]
-		file_path = '../datasets/MR/rt-polarity.all'
+		file_path = 'datasets/MR/rt-polarity.all'
 		with open(file_path,'r',encoding='utf8') as fr:
 			for line in fr:
 				line = self.processed_text(line)

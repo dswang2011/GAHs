@@ -8,8 +8,7 @@ import os
 import numpy as np
 import codecs
 
-import pickle  
-from  Params import Params
+import pickle
 import argparse
 from keras.utils import to_categorical
 import numpy as np

@@ -3,12 +3,11 @@ This is to preprocess the raw files into semantic annotated token list.
 by Dongsheng, April 6, 2020
 """
 
-import raw_data_loader
 import spacy
 import pickle  
 import os
 import argparse
-
+from preprocessor.raw_data_loader import RawLoader
 
 nlp = spacy.load("en")
 
@@ -17,7 +16,7 @@ class SemToken(object):
 	def __init__(self,opt):
 		self.opt = opt
 		self.ispair = self.opt.pair_set.split(",")
-		self.root = '../datasets/'	
+		self.root = 'datasets/'	
 
 
 	# text to lit of semtoks
@@ -31,18 +30,20 @@ class SemToken(object):
 		return [self.get_semtok_list(text) for text in texts]
 
 	# process the data
-	def process_file(self, dataset,splits='train,test'):
+	def process_file(self, dataset,splits=['train','test']):
 		# open data
-		rawLoader = raw_data_loader.RawLoader(self.opt)
-		for split in splits.split(','):
+		rawLoader = RawLoader(self.opt)
+		for split in splits:
 			texts,labels = rawLoader.load_data(dataset,split)
 			# process and save
 			if dataset in self.opt.pair_set.split(','):
 				texts1,texts2 = self.semtok_on_texts(texts[0]),self.semtok_on_texts(texts[1])
 				pickle.dump([[texts1,texts2],train_labels],open(os.path.join(self.root,dataset,split+'.pkl'), 'wb'))
+				print('Generated: ', os.path.join(self.root,dataset,split+'.pkl'))
 			else:
 				texts = self.semtok_on_texts(texts)
 				pickle.dump([texts,labels],open(os.path.join(self.root,dataset,split+'.pkl'), 'wb'))
+				print('Generated: ', os.path.join(self.root,dataset,split+'.pkl'))
 
 
 if __name__ == '__main__':
@@ -58,6 +59,6 @@ if __name__ == '__main__':
 
 	# custom
 	dataset = 'MR'
-	splits = 'train'
+	splits = ['train']
 
 	semTok.process_file(dataset, splits)
