@@ -24,8 +24,8 @@ grid_pool ={
 	"lr":[0.001],#, 0.001, 0.0008],
 	"batch_size":[32,64,96],
 	"val_split":[0.15],
-	"layers" : [2,4,6],
-	"n_head" : [1,2],
+	"layers" : [2,4,6,8],
+	"n_head" : [1,2,4],
 	"d_inner_hid" : [128,256,512],
 	"roles": [['POS','both_direct']]#['major_rels','positional','separator','both_direct']]
 }

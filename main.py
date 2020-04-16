@@ -6,6 +6,8 @@ import data_helper
 import util
 import random
 from preprocessor.semantic_token import SemToken
+import train
+
 
 
 if __name__ == '__main__':
@@ -33,6 +35,6 @@ if __name__ == '__main__':
 		semTok.process_file(dataset, splits)
 
 	if args.run_mode == "train":
-		train_grid(args)
+		train.train_grid(args)
 
 
