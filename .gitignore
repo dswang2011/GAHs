@@ -3,10 +3,5 @@
 __pycache__/*
 utils/__pycache__/*
 models/__pycache__/*
-
-datasets/sentiment_dataset/*
-datasets/MRPC/*
-datasets/MR/*
-datasets/HW1/*
-
+datasets/*
 saved_model/*
