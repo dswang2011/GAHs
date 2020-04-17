@@ -8,8 +8,6 @@ import random
 from preprocessor.semantic_token import SemToken
 import train
 
-
-
 if __name__ == '__main__':
 	# initialize paras
 	parser = argparse.ArgumentParser(description='run the training.')
@@ -36,5 +34,4 @@ if __name__ == '__main__':
 
 	if args.run_mode == "train":
 		train.train_grid(args)
-
 
