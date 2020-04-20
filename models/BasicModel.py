@@ -33,6 +33,9 @@ class BasicModel(object):
 
     def train(self,train,dev=None,dirname="saved_model",dataset='dataset'):
         x_train,y_train = train
+        if self.opt.load_role and self.opt.model != 'gah':
+            x_train = x_train[0]
+
         time_callback = TimeHistory()
 
         # save path

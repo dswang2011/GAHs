@@ -13,23 +13,28 @@ import random
 
 dataset_pool = {
 	"TREC": ['train','test'],
-	"MR": ['train']
+	"MR": ['train'],
+	"SST": ['train','test'],
+	"IMDB":['train','test'],
+	"YELP": ['train','test']
 }
 grid_pool ={
 	# model
-	"model": ['gah'],
-	"hidden_unit_num":[50,100,150,200],	# for rnn or cnn
-	"dropout_rate" : [0.2,0.3,0.4,0.5],
+	"model": ['gahs','transformer','bilstm','cnn'],#,'transformer','bilstm','cnn'],
+	"hidden_unit_num":[100,200],	# for rnn or cnn
+	"dropout_rate" : [0.2,0.3,0.4],
 	# hyper parameters
-	"lr":[0.001],#, 0.001, 0.0008],
+	"lr":[0.01, 0.001, 0.0006],
 	"batch_size":[32,64,96],
 	"val_split":[0.15],
 	"layers" : [2,4,6,8],
 	"n_head" : [1,2,4],
-	"d_inner_hid" : [128,256,512],
-	"roles": [['POS','both_direct']]#['major_rels','positional','separator','both_direct']]
+	"d_inner_hid" : [128,256],
+	"roles": [['positional','both_direct','POS']]#['POS','major_rels','positional','separator','both_direct','stop_word']]
 }
-dataset = 'TREC'
+dataset = 'MR'
+
+print('Currently work on:', dataset)
 
 def train_single(opt):
 	# choose a random combinations
@@ -43,7 +48,7 @@ def train_single(opt):
 	print('[paras]:',para_str)
 	setattr(opt,'para_str',para_str)
 	# load input
-	if 'gah' == opt.model: opt.load_role = True
+	if 'gah' in opt.model: opt.load_role = True
 	data = data_helper.Data_helper(opt)
 	train_test = data.load_data(dataset, dataset_pool[dataset])
 	# set model and train
@@ -56,7 +61,7 @@ def train_single(opt):
 
 
 def train_grid(opt):
-	if 'gah' in grid_pool['model']: 
+	if 'gah' in grid_pool['model'] or 'gahs' in grid_pool['model']: 
 		opt.load_role = True
 		all_roles  = []
 		for roles in grid_pool['roles']:
@@ -101,7 +106,7 @@ if __name__ == '__main__':
 	parser.add_argument('-gpu', action = 'store', dest = 'gpu', help = 'please enter the specific gpu no.',default=0)
 	parser.add_argument('--patience', type=int, default=6)
 	parser.add_argument('--epoch_num', type=int, default=10)
-	parser.add_argument('--search_times', type=int, default=20)
+	parser.add_argument('--search_times', type=int, default=30)
 	parser.add_argument('--load_role',type=bool, default=False)
 	args = parser.parse_args()
 	# set parameters from config files

@@ -2,7 +2,10 @@
 This is role oriented mask generation
 
 """
+from nltk.corpus import stopwords
+
 import numpy as np
+np.set_printoptions(threshold=np.inf)
 
 class RoleMask(object):
 	def __init__(self, opt):
@@ -17,65 +20,83 @@ class RoleMask(object):
 		self.major_rels = ['nsubj', 'dobj', 'amod', 'advmod']
 
 
-	def enable_neibor(self,mask,i,neib_num,MAX_SEQUENCE_LENGTH):
-		for j in range(neib_num):
-			if i+j<MAX_SEQUENCE_LENGTH: mask[i][i+j]=1.
-			if i-j>=0: mask[i][i-j]=1.
+	def enable_neibor(self,mask,i,neib_num,MAX_SEQUENCE_LENGTH,last=False):
+		if last == True:
+			for j in range(neib_num):
+				if i-j>=0: mask[i][i-j]=1.
+		else:
+			for j in range(neib_num):
+				if i+j<MAX_SEQUENCE_LENGTH: mask[i][i+j]=1.
+				if i-j>=0: mask[i][i-j]=1.
 
+	# tested
 	def positional_masks_of_texts(self, tokens_lists, word_index, MAX_SEQUENCE_LENGTH,neib_num=2):
 		masks = [np.zeros((MAX_SEQUENCE_LENGTH,MAX_SEQUENCE_LENGTH)) for i in range(len(tokens_lists))]
+		# test_count=0
 		for text_id, text in enumerate(tokens_lists):
 			mask = masks[text_id]
 			# START
-			for i in range(min(len(text)+2,MAX_SEQUENCE_LENGTH)):
-				self.enable_neibor(mask,i,neib_num,MAX_SEQUENCE_LENGTH)
+			lenth = min(len(text)+2,MAX_SEQUENCE_LENGTH)
+			for i in range(lenth):
+				if i == lenth-1: self.enable_neibor(mask,i,neib_num,MAX_SEQUENCE_LENGTH,last=True)
+				else: self.enable_neibor(mask,i,neib_num,MAX_SEQUENCE_LENGTH)
 		return np.asarray(masks,dtype='float32')
 
-
+	# tested
 	def POS_masks_of_texts(self, tokens_lists, word_index, MAX_SEQUENCE_LENGTH):
 		masks = [np.zeros((MAX_SEQUENCE_LENGTH,MAX_SEQUENCE_LENGTH)) for i in range(len(tokens_lists))]
-		include_tags = self.noun_list #+ self.verb_list + self.adjective_list
+		include_tags = self.adjective_list #+ self.verb_list, self.noun_list +  
 		for tid, text in enumerate(tokens_lists):
 			mask = masks[tid]
 			# Start
 			val_index = [0]
 			# Body
-			i=1
+			row=1
 			for semtok in text:
 				if semtok.tag_ in include_tags:
-					val_index.append(i)
-				i+=1
+					val_index.append(row)
+				row+=1
+				if row>=MAX_SEQUENCE_LENGTH: break
 			# END
-			if i<MAX_SEQUENCE_LENGTH:
-				val_index.append(i)
+			if row<MAX_SEQUENCE_LENGTH:
+				val_index.append(row)
 			# assign val part
 			for m in val_index:
 				for n in val_index:
 					mask[m][n]=1.
 		return np.asarray(masks,dtype='float32')
 
+	# tested
 	def major_rel_of_texts(self,tokens_lists, word_index, MAX_SEQUENCE_LENGTH):
 		masks = [np.zeros((MAX_SEQUENCE_LENGTH,MAX_SEQUENCE_LENGTH)) for i in range(len(tokens_lists))]
 		include_tags = self.major_rels
+		test_count=0
 		for tid, text in enumerate(tokens_lists):
 			mask = masks[tid]
 			val_index = [0]	
-			i = 1
+			row = 1
 			for semtok in text:
-				if semtok.dep_ in include_tags: val_index.append(i)
-				i+=1
+				if semtok.dep_ in include_tags: 
+					val_index.append(i)
+					# related tokens
+					val_index.append(semtok.head.i+1)
+					for child in semtok.children: val_index.append(child.i+1)
+				row+=1
+				if row>=MAX_SEQUENCE_LENGTH: break
 			# END
-			if i<MAX_SEQUENCE_LENGTH:
-				val_index.append(i)
+			if row<MAX_SEQUENCE_LENGTH:
+				val_index.append(row)
 			# assign
+			val_index = list(set(val_index))
 			for m in val_index:
 				for n in val_index:
 					mask[m][n]=1.
 		return np.asarray(masks,dtype='float32')
 
-
+	# tested; 
 	def both_direct_masks_of_texts(self,tokens_lists, word_index, MAX_SEQUENCE_LENGTH):
 		masks = [np.zeros((MAX_SEQUENCE_LENGTH,MAX_SEQUENCE_LENGTH)) for i in range(len(tokens_lists))]
+		# test_count = 0 
 		for text_id, text in enumerate(tokens_lists):
 			# for each text or sentence
 			mask = masks[text_id]
@@ -85,13 +106,33 @@ class RoleMask(object):
 				looks = [i]
 				looks.append(semtok.head.i+1)	# parent
 				looks+=[child.i+1 for child in semtok.children]	# children
-				looks+=[sib.i+1 for sib in semtok.head.children]	# siblings
+				# looks+=[sib.i+1 for sib in semtok.head.children]	# siblings
 				looks = list(set(looks))
 				for look in looks:
-					mask[i][look]=1.
+					if look<MAX_SEQUENCE_LENGTH: mask[i][look]=1.
 				i+=1
+				if i>=MAX_SEQUENCE_LENGTH: break
 			if i<MAX_SEQUENCE_LENGTH: mask[i][i]=1.
 		return np.asarray(masks,dtype='float32')
+
+	# tested; 
+	def stop_word_mask(self,tokens_lists,word_index,MAX_SEQUENCE_LENGTH):
+		masks = [np.zeros((MAX_SEQUENCE_LENGTH,MAX_SEQUENCE_LENGTH)) for i in range(len(tokens_lists))]
+		test_count = 0 
+		for text_id, text in enumerate(tokens_lists):
+			mask = masks[text_id]
+			keep_index = [0]
+			row = 1
+			for semtok in text:
+				if semtok.text.lower() not in stopwords.words(): keep_index.append(row)
+				row+=1
+				if row>= MAX_SEQUENCE_LENGTH: break
+			if row<MAX_SEQUENCE_LENGTH: keep_index.append(row)
+			# assign
+			for m in keep_index:
+				for n in keep_index:
+					mask[m][n]=1.
+		return np.asarray(masks, dtype='float32')
 
 	# separator and punctuations
 	def separator_mask(self,tokens_lists,word_index,MAX_SEQUENCE_LENGTH):
@@ -126,15 +167,6 @@ class RoleMask(object):
 				res.append(self.both_direct_masks_of_texts(tokens_lists,word_index, MAX_SEQUENCE_LENGTH))
 			elif mask == 'separator':
 				res.append(self.separator_mask(tokens_lists,word_index, MAX_SEQUENCE_LENGTH))
+			elif mask == 'stop_word':
+				res.append(self.stop_word_mask(tokens_lists,word_index,MAX_SEQUENCE_LENGTH))
 		return res
-
-	# broad attend
-	# def positional_masks_of_texts(self, tokens_lists, word_index, MAX_SEQUENCE_LENGTH):
-	# 	masks = [np.ones((MAX_SEQUENCE_LENGTH,MAX_SEQUENCE_LENGTH)) for i in range(len(tokens_lists))]
-	# 	for tid, tokens in enumerate(tokens_lists):
-	# 		mask = masks[tid]
-	# 		# START 
-	# 		max_seq = max(MAX_SEQUENCE_LENGTH,len(toknes))
-	# 		mask[:max_seq] = 0.0
-
-	# 	return np.asarray(masks,dtype='float32')

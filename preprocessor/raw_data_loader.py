@@ -112,20 +112,20 @@ class RawLoader(object):
 	def load_data(self,dataset,split="train"):
 		root = 'datasets/'
 		if dataset in ['IMDB']:
-			texts,labels = self.load_IMDB_data()
+			texts,labels = self.load_IMDB_data(split=split)
 		elif dataset in ['YELP']:
-			texts,labels = self.load_YELP_data()
+			texts,labels = self.load_YELP_data(split=split)
 		elif dataset in ['SST']:
-			texts,labels = self.load_SST_data()
+			texts,labels = self.load_SST_data(split=split)
 		elif dataset in ['ROTTENTOMATOES']:
-			texts,labels = self.load_ROTTENTOMATOES_data()
+			texts,labels = self.load_ROTTENTOMATOES_data(split=split)
 		elif dataset in ['DBPEDIA']:
-			texts,labels = self.load_DBPEDIA_data()
+			texts,labels = self.load_DBPEDIA_data(split=split)
 		elif dataset in ['WNLI']:
-			texts,labels = self.load_WNLI_data()
+			texts,labels = self.load_WNLI_data(split=split)
 		# other files
 		elif dataset == 'MR':
-			texts,labels = self.load_MR_data()
+			texts,labels = self.load_MR_data(split=split)
 		elif dataset == 'TREC':
 			texts,labels = self.load_TREC_data(split=split)
 		return texts,labels

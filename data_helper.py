@@ -146,15 +146,17 @@ class Data_helper(object):
 	def tokens_list_to_sequences(self, tokens_lists, word_index, MAX_SEQUENCE_LENGTH):
 		sequences = []
 		for tokens in tokens_lists:
-			sequence = [1]
+			sequence = [1]	# start
 			for semtok in tokens:
 				token = semtok.text.lower()
 				if token in word_index.keys():
 					token_index = word_index[token]
 					sequence.append(token_index)
+				else:
+					print('==Unknown token:', token)
 				# elif self.is_numberic.match(value):
 				# 	sequence.append(4)
-			sequence.append(2)
+			sequence.append(2)	# end
 			if len(sequence)>MAX_SEQUENCE_LENGTH:
 				sequence = sequence[:MAX_SEQUENCE_LENGTH]
 			else:
@@ -172,10 +174,14 @@ if __name__ == '__main__':
 	parser.add_argument('-gpu_num', action = 'store', dest = 'gpu_num', help = 'please enter the gpu num.',default=1)
 	parser.add_argument('-gpu', action = 'store', dest = 'gpu', help = 'please enter the specific gpu no.',default=0)
 	parser.add_argument('--patience', type=int, default=6)
+	parser.add_argument('--load_role',type=bool, default=True)
+	parser.add_argument('--all_roles', default=['positional','both_direct','major_rels','stop_word'])
+	
 	args = parser.parse_args()
 	# set parameters from config files
 	util.parse_and_set(args.config,args)
 
 	data_help = Data_helper(args)
-	train,test = data_help.load_data('TREC')
+	splits = ['train','test']
+	train,test = data_help.load_data('TREC', splits)
 

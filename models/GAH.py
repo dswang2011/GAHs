@@ -133,7 +133,7 @@ class BlockEncoder():
 		self.self_att_layer = MultiHeadAttention(n_head, d_model, dropout=dropout)
 		self.pos_ffn_layer  = PositionwiseFeedForward(d_model, d_inner_hid, dropout=dropout)
 		self.norm_layer = LayerNormalization()
-	def __call__(self, enc_input, mask=None):
+	def __call__(self, enc_input, mask=None):	# enc_input = src_embed
 		output, slf_attn = self.self_att_layer(enc_input, enc_input, enc_input, mask=mask)
 		output = self.norm_layer(Add()([enc_input, output]))
 		output = self.pos_ffn_layer(output)
@@ -193,14 +193,15 @@ class MultiLayerEncoder():
 		# mask = Lambda(lambda x:K.cast(K.greater(x, 0), 'float32'))(src_seq)	# True = 1, False = 0
 		x = src_emb		
 		for i,enc_layer in enumerate(self.layers[:active_layers]):
-			if i>1:
-				x, att = enc_layer(x, None)
-			else:	
-				x, att = enc_layer(x, mask)
+			# if i>1:
+			# 	x, att = enc_layer(x, None)
+			# else:	
+			x, att = enc_layer(x, mask)
 
 			if return_att: atts.append(att)
 		return (x, atts) if return_att else x
-	
+
+
 class GAH(BasicModel):
 	def get_model(self,opt, active_layers=999) :   
 		# prepared to be used
@@ -213,7 +214,7 @@ class GAH(BasicModel):
 		self.pos_emb = PosEncodingLayer(opt.max_sequence_length, opt.embedding_dim)# if self.src_loc_info else None
 		self.emb_dropout = Dropout(opt.dropout_rate)
 		self.word_emb = Embedding(len(opt.word_index) + 1,opt.embedding_dim,weights=[opt.embedding_matrix],input_length=opt.max_sequence_length,trainable=True)
-		self.encoder = MultiLayerEncoder(opt.embedding_dim, opt.d_inner_hid, opt.n_head, opt.layers, opt.dropout_rate)
+		self.multi_layer_encoder = MultiLayerEncoder(opt.embedding_dim, opt.d_inner_hid, opt.n_head, opt.layers, opt.dropout_rate)
 		self.meaner=Lambda(lambda x: K.mean(x, axis=-2) )
 		self.predict = Dense(opt.nb_classes, activation='softmax')
 
@@ -224,13 +225,15 @@ class GAH(BasicModel):
 		
 		src_emb = self.emb_dropout(src_emb)
 		# NGA (global)
-		NGA = self.encoder(src_emb, self.src_seq, active_layers=active_layers, role_mask = None)
+		NGA = self.multi_layer_encoder(src_emb, self.src_seq, active_layers=active_layers, role_mask = None)
 		encoders = [NGA]
 		# GAHs (local)
 		for src_mask in self.masks:
-			GAH = self.encoder(src_emb, self.src_seq, active_layers=active_layers, role_mask = src_mask)
+			GAH = self.multi_layer_encoder(src_emb, self.src_seq, active_layers=active_layers, role_mask = src_mask)
 			encoders.append(GAH)
 		enc_output = Concatenate()(encoders)	# concatente NAG and GAHs
+		# enc_output = Dense(200,activation='relu')(enc_output)
+		# enc_output = Dense(100,activation='relu')(enc_output)
 		# dence and predict
 		mean_output= self.meaner(enc_output)
 		preds = self.predict(mean_output)   # 3 catetory
