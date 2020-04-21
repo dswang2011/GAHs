@@ -21,7 +21,7 @@ dataset_pool = {
 }
 grid_pool ={
 	# model
-	"model": ['gahs','gahs','gah','transformer','cnn','bilstm'],#,'transformer','bilstm','cnn'],
+	"model": ['gahs','gahs','gahs','transformer','cnn','bilstm'],#,'transformer','bilstm','cnn'],
 	"hidden_unit_num":[100,200],	# for rnn or cnn
 	"dropout_rate" : [0.2,0.3,0.4],
 	# hyper parameters

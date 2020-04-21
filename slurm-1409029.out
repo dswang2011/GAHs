@@ -1,0 +1,107 @@
+/var/spool/slurmd/job1409029/slurm_script: line 7: vbd667: command not found
+2
+Tue Apr 21 17:22:34 2020       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 440.33.01    Driver Version: 440.33.01    CUDA Version: 10.2     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|===============================+======================+======================|
+|   0  TITAN V             Off  | 00000000:02:00.0 Off |                  N/A |
+| 37%   53C    P2    45W / 250W |  10943MiB / 12066MiB |     47%      Default |
++-------------------------------+----------------------+----------------------+
+|   1  TITAN Xp            Off  | 00000000:03:00.0 Off |                  N/A |
+| 42%   68C    P2    91W / 250W |   5131MiB / 12196MiB |     56%      Default |
++-------------------------------+----------------------+----------------------+
+|   2  Tesla K20c          Off  | 00000000:83:00.0 Off |                    0 |
+| 30%   35C    P0    48W / 225W |      0MiB /  4743MiB |      0%      Default |
++-------------------------------+----------------------+----------------------+
+|   3  Tesla K40c          Off  | 00000000:84:00.0 Off |                    0 |
+| 23%   43C    P0    72W / 235W |      0MiB / 11441MiB |     99%      Default |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                       GPU Memory |
+|  GPU       PID   Type   Process name                             Usage      |
+|=============================================================================|
+|    0     48725      C   python                                     10931MiB |
+|    1     48725      C   python                                      5121MiB |
++-----------------------------------------------------------------------------+
+/var/spool/slurmd/job1409029/slurm_script: line 10: activate: No such file or directory
+2020-04-21 17:22:37.214109: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libnvinfer.so.6'; dlerror: libnvinfer.so.6: cannot open shared object file: No such file or directory
+2020-04-21 17:22:37.214218: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libnvinfer_plugin.so.6'; dlerror: libnvinfer_plugin.so.6: cannot open shared object file: No such file or directory
+2020-04-21 17:22:37.214231: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:30] Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+2020-04-21 17:35:14.043187: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2020-04-21 17:35:17.463897: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 0 with properties: 
+pciBusID: 0000:83:00.0 name: Tesla K20c computeCapability: 3.5
+coreClock: 0.7055GHz coreCount: 13 deviceMemorySize: 4.63GiB deviceMemoryBandwidth: 193.71GiB/s
+2020-04-21 17:35:17.464261: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-04-21 17:35:17.467661: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2020-04-21 17:35:17.470131: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2020-04-21 17:35:17.470505: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2020-04-21 17:35:17.473262: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2020-04-21 17:35:17.474633: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2020-04-21 17:35:17.480101: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-04-21 17:35:17.481440: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1697] Adding visible gpu devices: 0
+2020-04-21 17:35:17.482337: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2020-04-21 17:35:17.493767: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2199850000 Hz
+2020-04-21 17:35:17.494057: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55c6e68b1db0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2020-04-21 17:35:17.494083: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2020-04-21 17:35:17.559185: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55c6efd677a0 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2020-04-21 17:35:17.559223: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Tesla K20c, Compute Capability 3.5
+2020-04-21 17:35:17.559918: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 0 with properties: 
+pciBusID: 0000:83:00.0 name: Tesla K20c computeCapability: 3.5
+coreClock: 0.7055GHz coreCount: 13 deviceMemorySize: 4.63GiB deviceMemoryBandwidth: 193.71GiB/s
+2020-04-21 17:35:17.559978: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-04-21 17:35:17.559998: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2020-04-21 17:35:17.560015: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2020-04-21 17:35:17.560031: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2020-04-21 17:35:17.560047: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2020-04-21 17:35:17.560063: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2020-04-21 17:35:17.560080: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-04-21 17:35:17.561154: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1697] Adding visible gpu devices: 0
+2020-04-21 17:35:17.561193: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-04-21 17:35:17.562630: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1096] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-04-21 17:35:17.562645: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1102]      0 
+2020-04-21 17:35:17.562655: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] 0:   N 
+2020-04-21 17:35:17.563855: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1241] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 4376 MB memory) -> physical GPU (device: 0, name: Tesla K20c, pci bus id: 0000:83:00.0, compute capability: 3.5)
+Using TensorFlow backend.
+Currently train set is: TREC
+[LABEL] 6  labels: {'2', '5', '0', '3', '1', '4'}
+word_index: 8857
+Total 400003 word vectors.
+[train] Shape of data tensor: (5452, 90)
+[train] Shape of label tensor: (5452, 6)
+[train] Shape of data tensor: (500, 90)
+[train] Shape of label tensor: (500, 6)
+[search time]: 0 / 30
+[paras]: modelgahs_hidden_unit_num100_dropout_rate0.3_lr0.001_batch_size64_val_split0.15_layers4_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'stop_word', 'POS']_
+Traceback (most recent call last):
+  File "train.py", line 116, in <module>
+    train_grid(args)
+  File "train.py", line 93, in train_grid
+    model = models.setup(opt)
+  File "/home/vbd667/code/GAHs/models/__init__.py", line 21, in setup
+    model = GAHs(opt)
+  File "/home/vbd667/code/GAHs/models/BasicModel.py", line 28, in __init__
+    self.model = self.get_model(opt)
+  File "/home/vbd667/code/GAHs/models/GAHs.py", line 212, in get_model
+    return Model([self.src_seq]+self.masks, preds)
+  File "/home/vbd667/anaconda3/envs/python36/lib/python3.6/site-packages/keras/legacy/interfaces.py", line 91, in wrapper
+    return func(*args, **kwargs)
+  File "/home/vbd667/anaconda3/envs/python36/lib/python3.6/site-packages/keras/engine/network.py", line 94, in __init__
+    self._init_graph_network(*args, **kwargs)
+  File "/home/vbd667/anaconda3/envs/python36/lib/python3.6/site-packages/keras/engine/network.py", line 241, in _init_graph_network
+    self.inputs, self.outputs)
+  File "/home/vbd667/anaconda3/envs/python36/lib/python3.6/site-packages/keras/engine/network.py", line 1434, in _map_graph_network
+    tensor_index=tensor_index)
+  File "/home/vbd667/anaconda3/envs/python36/lib/python3.6/site-packages/keras/engine/network.py", line 1421, in build_map
+    node_index, tensor_index)
+  File "/home/vbd667/anaconda3/envs/python36/lib/python3.6/site-packages/keras/engine/network.py", line 1421, in build_map
+    node_index, tensor_index)
+  File "/home/vbd667/anaconda3/envs/python36/lib/python3.6/site-packages/keras/engine/network.py", line 1421, in build_map
+    node_index, tensor_index)
+  [Previous line repeated 36 more times]
+  File "/home/vbd667/anaconda3/envs/python36/lib/python3.6/site-packages/keras/engine/network.py", line 1393, in build_map
+    node = layer._inbound_nodes[node_index]
+AttributeError: 'NoneType' object has no attribute '_inbound_nodes'

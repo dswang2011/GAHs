@@ -51,7 +51,7 @@ class ScaledDotProductAttention():
 # checked
 class MultiHeadAttention():
 	# mode 0 - big martixes, faster; mode 1 - more clear implementation
-	def __init__(self, n_head, d_model, dropout, use_norm=True):
+	def __init__(self, n_head, d_model, dropout, use_norm=False):
 		self.n_head = n_head
 		self.d_k = self.d_v = d_k = d_v = d_model // n_head
 		self.dropout = dropout
@@ -89,9 +89,8 @@ class MultiHeadAttention():
 
 		outputs = self.w_o(head)
 		outputs = Dropout(self.dropout)(outputs)
-		if not self.layer_norm: return outputs, attn
-		outputs = Add()([outputs, q])
-		return self.layer_norm(outputs), attn
+		return outputs, attn
+
 
 # checked
 class PositionwiseFeedForward():
@@ -112,10 +111,12 @@ class BlockEncoder():
 	def __init__(self, d_model, d_inner_hid, n_head, dropout=0.1):
 		self.self_att_layer = MultiHeadAttention(n_head, d_model, dropout=dropout)
 		self.pos_ffn_layer  = PositionwiseFeedForward(d_model, d_inner_hid, dropout=dropout)
-		# self.norm_layer = LayerNormalization()
+		self.norm_layer = LayerNormalization()
 	def __call__(self, enc_input, masks=None):	# enc_input = src_embed
+		# multi self-attention+norm
 		output, slf_attn = self.self_att_layer(enc_input, enc_input, enc_input, masks=masks)
-		# output = self.norm_layer(Add()([enc_input, output]))
+		output = self.norm_layer(Add()([enc_input, output]))
+		# feedforward
 		output = self.pos_ffn_layer(output)
 		return output, slf_attn
 
@@ -183,10 +184,7 @@ class GAHs(BasicModel):
 	def get_model(self,opt, active_layers=999) :   
 		# prepared to be used
 		self.src_seq = Input(shape=(opt.max_sequence_length,), dtype='int32')
-		self.masks = []
-		for role in opt.roles: 
-			src_mask = Input(shape=(opt.max_sequence_length,),dtype='float32')
-			self.masks.append(src_mask)
+		self.masks = [Input(shape=(opt.max_sequence_length,opt.max_sequence_length),dtype='float32') for i in range(len(opt.roles))]
 
 		self.pos_emb = PosEncodingLayer(opt.max_sequence_length, opt.embedding_dim)# if self.src_loc_info else None
 		self.emb_dropout = Dropout(opt.dropout_rate)
@@ -207,9 +205,8 @@ class GAHs(BasicModel):
 		# ...
 		self.mask_comb = random.sample(self.masks, k=2)
 		enc_output = self.multi_layer_encoder(src_emb, self.src_seq, active_layers=active_layers, masks = self.mask_comb)
-		# enc_output = Dense(200,activation='relu')(enc_output)
+		enc_output = Dense(200,activation='relu')(enc_output)
 		# dence and predict
 		mean_output= self.meaner(enc_output)
 		preds = self.predict(mean_output)   # 3 catetory
-		input_list = [self.src_seq]+self.masks
-		return Model(inputs = input_list, outputs= preds)
+		return Model([self.src_seq]+self.masks, preds)

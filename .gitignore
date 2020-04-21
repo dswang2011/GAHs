@@ -5,3 +5,4 @@ utils/__pycache__/*
 models/__pycache__/*
 datasets/*
 saved_model/*
+config/*
