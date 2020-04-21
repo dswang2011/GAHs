@@ -30,7 +30,7 @@ class RoleMask(object):
 				if i-j>=0: mask[i][i-j]=1.
 
 	# tested
-	def positional_masks_of_texts(self, tokens_lists, word_index, MAX_SEQUENCE_LENGTH,neib_num=2):
+	def positional_masks_of_texts(self, tokens_lists, word_index, MAX_SEQUENCE_LENGTH,neib_num=3):
 		masks = [np.zeros((MAX_SEQUENCE_LENGTH,MAX_SEQUENCE_LENGTH)) for i in range(len(tokens_lists))]
 		# test_count=0
 		for text_id, text in enumerate(tokens_lists):

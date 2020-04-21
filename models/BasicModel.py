@@ -33,11 +33,14 @@ class BasicModel(object):
 
     def train(self,train,dev=None,dirname="saved_model",dataset='dataset'):
         x_train,y_train = train
-        if self.opt.load_role and self.opt.model != 'gah':
+        if self.opt.load_role and 'gah' not in self.opt.model:
+            print('==not gah model ==',self.opt.load_role,self.opt.model)
             x_train = x_train[0]
+            print(' lenth of the first x_Train: ',len(x_train))
+        else:
+            print('== gah model ==',self.opt.load_role, self.opt.model)
 
         time_callback = TimeHistory()
-
         # save path
         filename = os.path.join(dirname, '_'+dataset+"_best_model_"+self.__class__.__name__+".h5")
         callbacks = [EarlyStopping( monitor='val_loss',patience=7),
@@ -46,6 +49,7 @@ class BasicModel(object):
             history = self.model.fit(x_train,y_train,batch_size=self.opt.batch_size,epochs=self.opt.epoch_num,callbacks=callbacks,validation_split=self.opt.val_split,shuffle=True)
         else:
             x_val, y_val = dev 
+            if self.opt.load_role and 'gah' not in self.opt.model: x_val = x_val[0]
             history = self.model.fit(x_train,y_train,batch_size=self.opt.batch_size,epochs=self.opt.epoch_num,callbacks=callbacks,validation_data=(x_val, y_val),shuffle=True) 
 
         print('Current Model:',self.__class__.__name__)

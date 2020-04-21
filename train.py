@@ -12,15 +12,16 @@ import random
 
 
 dataset_pool = {
-	"TREC": ['train','test'],
-	"MR": ['train'],
+	"TREC": ['train','test'],	# checked
+	"MR": ['train'],	
 	"SST": ['train','test'],
 	"IMDB":['train','test'],
-	"YELP": ['train','test']
+	"YELP": ['train','test'],
+	"ROTTENTOMATOES": ['train','test']	# checked
 }
 grid_pool ={
 	# model
-	"model": ['gahs','transformer','bilstm','cnn'],#,'transformer','bilstm','cnn'],
+	"model": ['gahs','gahs','gah','transformer','cnn','bilstm'],#,'transformer','bilstm','cnn'],
 	"hidden_unit_num":[100,200],	# for rnn or cnn
 	"dropout_rate" : [0.2,0.3,0.4],
 	# hyper parameters
@@ -28,13 +29,13 @@ grid_pool ={
 	"batch_size":[32,64,96],
 	"val_split":[0.15],
 	"layers" : [2,4,6,8],
-	"n_head" : [1,2,4],
+	"n_head" : [4,6,8],
 	"d_inner_hid" : [128,256],
-	"roles": [['positional','both_direct','POS']]#['POS','major_rels','positional','separator','both_direct','stop_word']]
+	"roles": [['positional','both_direct','stop_word','POS']]#['POS','major_rels','positional','separator','both_direct','stop_word']]
 }
-dataset = 'MR'
+dataset = 'TREC'
 
-print('Currently work on:', dataset)
+print('Currently train set is:', dataset)
 
 def train_single(opt):
 	# choose a random combinations
