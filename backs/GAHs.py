@@ -169,16 +169,12 @@ class MultiLayerEncoder():
 	def __call__(self, src_emb, src_seq, return_att=False, active_layers=999, masks = None):
 		if return_att: atts = []
 		pad_mask = Lambda(lambda x:GetPadMask(x, x))(src_seq)
-		all_masks = []
-		for mask in masks: all_masks.append(mask)
-		for i in range(self.n_head-len(masks)): all_masks.append(pad_mask)
-
 		x = src_emb		
 		for i,enc_layer in enumerate(self.layers[:active_layers]):
 			# if i>1:
 			# 	x, att = enc_layer(x, None)
-			# else:	
-			x, att = enc_layer(x, all_masks)
+			# else:	+[pad_mask*(self.n_head-len(masks))]
+			x, att = enc_layer(x, masks)
 
 			if return_att: atts.append(att)
 		return (x, atts) if return_att else x
@@ -212,5 +208,9 @@ class GAHs(BasicModel):
 		# enc_output = Dense(200,activation='relu')(enc_output)
 		# dence and predict
 		mean_output= self.meaner(enc_output)
+
 		preds = self.predict(mean_output)   # 3 catetory
-		return Model([self.src_seq]+self.masks, preds)
+		self.inputs = [self.src_seq]
+		for mask in self.masks:
+			self.inputs.append(mask)
+		return Model(input=self.inputs, output=preds)
