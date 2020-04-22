@@ -12,7 +12,7 @@ from keras.callbacks import *
 from keras.initializers import *
 import tensorflow as tf
 from keras import backend as K
-
+import random
 
 add_layer = Lambda(lambda x:x[0]+x[1], output_shape=lambda x:x[0])
 
@@ -228,12 +228,12 @@ class GAH(BasicModel):
 		NGA = self.multi_layer_encoder(src_emb, self.src_seq, active_layers=active_layers, role_mask = None)
 		encoders = [NGA]
 		# GAHs (local)
-		for src_mask in self.masks:
+		self.sample_i = random.sample(range(lenth(self.masks)),k=3)
+		for i in self.sample_i:
+			src_mask = self.masks[i]
 			GAH = self.multi_layer_encoder(src_emb, self.src_seq, active_layers=active_layers, role_mask = src_mask)
 			encoders.append(GAH)
 		enc_output = Concatenate()(encoders)	# concatente NAG and GAHs
-		# enc_output = Dense(200,activation='relu')(enc_output)
-		# enc_output = Dense(100,activation='relu')(enc_output)
 		# dence and predict
 		mean_output= self.meaner(enc_output)
 		preds = self.predict(mean_output)   # 3 catetory

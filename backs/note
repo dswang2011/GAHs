@@ -1,0 +1,23 @@
+
+--- slurm---
+
+submit a job
+	sbatch sbatchscript.sh
+
+
+check my process
+	squeue -u vbd667
+
+
+kill my job
+	scancel job_id
+	e.g. scancel 
+
+
+--- GPU types ---
+
+GPU types
+
+GPU brands
+
+comparison

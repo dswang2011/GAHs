@@ -40,7 +40,7 @@ class ScaledDotProductAttention():
 	def __call__(self, q, k, v, mask):   # mask_k or mask_qk
 		attn = Lambda(lambda x:K.batch_dot(x[0],x[1],axes=[2,2])/self.temper)([q, k]) # shape=(batch, q, k)
 		if mask is not None:
-			mmask = Lambda(lambda x:(-1e+10)*(1-x))(mask)
+			mmask = Lambda(lambda x:(-1e+10)*(1.-K.cast(x, 'float32')))(mask)
 			# mmask = Lambda(lambda x:(-1e+10)*(1-x)) (mask)
 			attn = add_layer([attn, mmask])
 		attn = Activation('softmax')(attn)
@@ -202,12 +202,17 @@ class GAHs(BasicModel):
 		if True: 
 			src_emb = add([src_emb, self.pos_emb(self.src_seq)])
 		
-		# src_emb = self.emb_dropout(src_emb)
+		src_emb = self.emb_dropout(src_emb)
 
 		# NGA (global)
 		# randomly choose some mask combinations
 		# ...
-		self.mask_comb = random.sample(self.masks, k=2)
+		# sample a combination
+		self.mask_comb = []
+		self.sample_i = random.sample(range(lenth(self.masks)),k=3)
+		for i in self.sample_i:
+			self.mask_comb.append(self.masks[i])
+		# encoder
 		enc_output = self.multi_layer_encoder(src_emb, self.src_seq, active_layers=active_layers, masks = self.mask_comb)
 		# enc_output = Dense(200,activation='relu')(enc_output)
 		# dence and predict

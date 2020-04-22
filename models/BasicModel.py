@@ -61,13 +61,23 @@ class BasicModel(object):
         return str(max(history.history["val_acc"])), round(times[1],3), self.__class__.__name__
 
 
-        
+    def write_record(self,file_path,content):
+        with open(file_path,'a',encoding='utf8') as fw:
+            fw.write(content+'\n')
+
        
     def predict(self,x_test):
         return self.model.predict(x_test)
     
     def save(self,filename="model",dirname="saved_model"):
         filename = os.path.join( dirname,filename + "_" + self.__class__.__name__ +".h5")
+        # record
+        if self.sample_i is not None:
+            record = str(filename) + str(self.sample_i)
+        else:
+            record = filename
+        self.write_record('temp_record.txt',filename)
+        # save model
         self.model.save(filename)
         return filename
 
