@@ -9,19 +9,21 @@ import numpy as np
 import data_helper
 import util
 import random
-
+import tensorflow as tf
 
 dataset_pool = {
 	"TREC": ['train','test'],	# checked
-	"MR": ['train'],	
-	"SST": ['train','test'],
-	"IMDB":['train','test'],
-	"YELP": ['train','test'],
-	"ROTTENTOMATOES": ['train','test']	# checked
+	"MR": ['train'],		
+	"SST": ['train','test'],	# 19
+	"IMDB":['train','test'],	# 230
+	"YELP": ['train','test'],	# 136
+	"ROTTENTOMATOES": ['train','test']	# checked, avg. 21
+	# dbpedia 47, 
+	# AG news 8, 
 }
 grid_pool ={
 	# model
-	"model": ['gahs','gahs','gah','transformer','cnn','bilstm'],#,'transformer','bilstm','cnn'],
+	"model": ['gahs','gahs','gahs','transformer','bilstm','cnn','gah'],
 	"hidden_unit_num":[100,200],	# for rnn or cnn
 	"dropout_rate" : [0.2,0.3,0.4],
 	# hyper parameters
@@ -29,10 +31,25 @@ grid_pool ={
 	"batch_size":[32,64,96],
 	"val_split":[0.1],
 	"layers" : [2,4,6,8],
-	"n_head" : [2,4,6,8],
+	"n_head" : [4,6,8],
 	"d_inner_hid" : [128,256,512],
-	"roles": [['positional','both_direct','stop_word','POS','major_rels']]#['POS','major_rels','positional','separator','both_direct','stop_word']]
+	"roles": [['positional','both_direct','major_rels','separator','rare_word']]#['POS','major_rels','positional','separator','both_direct','stop_word']]
 }
+
+# 
+gpus = tf.config.experimental.list_physical_devices('GPU')
+if gpus:
+	try:
+		# Restrict TensorFlow to only use the fourth GPU
+		tf.config.experimental.set_visible_devices(gpus[0], 'GPU')
+		# Currently, memory growth needs to be the same across GPUs
+		for gpu in gpus:
+			tf.config.experimental.set_memory_growth(gpu, True)
+		logical_gpus = tf.config.experimental.list_logical_devices('GPU')
+		print(len(gpus), "Physical GPUs,", len(logical_gpus), "Logical GPUs")
+	except RuntimeError as e:
+	# Memory growth must be set before GPUs have been initialized
+		print(e)
 
 
 def train_single(opt):
@@ -103,16 +120,18 @@ if __name__ == '__main__':
 	parser.add_argument('-config', action = 'store', dest = 'config', help = 'please enter the config path.',default='config/config.ini')
 	parser.add_argument('-gpu_num', action = 'store', dest = 'gpu_num', help = 'please enter the gpu num.',default=1)
 	parser.add_argument('-gpu', action = 'store', dest = 'gpu', help = 'please enter the specific gpu no.',default=0)
-	parser.add_argument('--patience', type=int, default=6)
-	parser.add_argument('--epoch_num', type=int, default=10)
-	parser.add_argument('--search_times', type=int, default=50)
+	parser.add_argument('--patience', type=int, default=8)
+	parser.add_argument('--epoch_num', type=int, default=40)
+	parser.add_argument('--search_times', type=int, default=60)
 	parser.add_argument('--load_role',type=bool, default=False)
 	parser.add_argument('--dataset', default="MR")
-	parser.add_argument('--MAX_SEQUENCE_LENGTH', type=int,default=90)
+	parser.add_argument('--max_sequence_length', type=int,default=90)
+	parser.add_argument('--k_roles', type=int,default=5)
+
 	args = parser.parse_args()
 	# set parameters from config files
 	util.parse_and_set(args.config,args)
 	# train
-	print('Currently train set is:', args.dataset)
+	print('== Currently train set is:==', args.dataset)
 	
 	train_grid(args)

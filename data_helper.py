@@ -16,6 +16,7 @@ from sklearn import preprocessing
 import util
 from mask import RoleMask
 import re
+import gc
 
 punctuation_list = [',',':',';','.','!','?','...','…','。']
 
@@ -80,9 +81,16 @@ class Data_helper(object):
 		print('[LABEL]',self.opt.nb_classes, ' labels:',set(labels))
 		# max_num_words = self.opt.max_num_words
 		if dataset in self.opt.pair_set.split(","):
-			all_texts= [set(sentence) for texts1,texts2 in texts_list_train_test for sentence in texts1]
+			all_texts= [sentence for texts1,texts2 in texts_list_train_test for sentence in texts1]
 		else:
-			all_texts= [set(sentence) for dataset in texts_list_train_test for sentence in dataset]
+			all_texts= [sentence for dataset in texts_list_train_test for sentence in dataset]
+		
+		# compute idf
+		temp_txts = [doc.text for doc in all_texts]
+		self.opt.idf_dict = util.get_idf_dict(temp_txts)
+		del temp_txts
+		gc.collect()
+		
 		# tokenize 
 		word_index = self.tokenizer(all_texts,MAX_NB_WORDS=self.opt.max_nb_words)
 		# save word_index
@@ -149,13 +157,14 @@ class Data_helper(object):
 			sequence = [1]	# start
 			for semtok in tokens:
 				token = semtok.text.lower()
-				if token in word_index.keys():
+				if self.is_numberic.match(token):
+					sequence.append(4)
+				elif token in word_index.keys():
 					token_index = word_index[token]
 					sequence.append(token_index)
 				else:
-					print('==Unknown token:', token)
-				# elif self.is_numberic.match(value):
-				# 	sequence.append(4)
+					sequence.append(0)
+				
 			sequence.append(2)	# end
 			if len(sequence)>MAX_SEQUENCE_LENGTH:
 				sequence = sequence[:MAX_SEQUENCE_LENGTH]
@@ -164,6 +173,7 @@ class Data_helper(object):
 			# print('seq:',sequence)
 			sequences.append(sequence)
 		return np.asarray(sequences,dtype=int)
+		# return sequences
 
 
 

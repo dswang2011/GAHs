@@ -228,7 +228,7 @@ class GAH(BasicModel):
 		NGA = self.multi_layer_encoder(src_emb, self.src_seq, active_layers=active_layers, role_mask = None)
 		encoders = [NGA]
 		# GAHs (local)
-		self.sample_i = random.sample(range(len(self.masks)),k=3)
+		self.sample_i = random.sample(range(len(self.masks)),k=opt.k_roles)
 		for i in self.sample_i:
 			src_mask = self.masks[i]
 			GAH = self.multi_layer_encoder(src_emb, self.src_seq, active_layers=active_layers, role_mask = src_mask)

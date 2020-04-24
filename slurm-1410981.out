@@ -1,0 +1,66 @@
+2
+Fri Apr 24 16:43:05 2020       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 440.33.01    Driver Version: 440.33.01    CUDA Version: 10.2     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|===============================+======================+======================|
+|   0  TITAN V             Off  | 00000000:02:00.0 Off |                  N/A |
+| 35%   51C    P2    44W / 250W |  10689MiB / 12066MiB |     46%      Default |
++-------------------------------+----------------------+----------------------+
+|   1  TITAN Xp            Off  | 00000000:03:00.0 Off |                  N/A |
+| 40%   66C    P2    91W / 250W |   4227MiB / 12196MiB |     46%      Default |
++-------------------------------+----------------------+----------------------+
+|   2  Tesla K20c          Off  | 00000000:83:00.0 Off |                    0 |
+| 30%   33C    P0    48W / 225W |      0MiB /  4743MiB |      0%      Default |
++-------------------------------+----------------------+----------------------+
+|   3  Tesla K40c          Off  | 00000000:84:00.0 Off |                    0 |
+| 23%   41C    P0    70W / 235W |      0MiB / 11441MiB |     81%      Default |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                       GPU Memory |
+|  GPU       PID   Type   Process name                             Usage      |
+|=============================================================================|
+|    0     12227      C   python                                     10677MiB |
+|    1     12227      C   python                                      4217MiB |
++-----------------------------------------------------------------------------+
+/var/spool/slurmd/job1410981/slurm_script: line 9: activate: No such file or directory
+2020-04-24 16:43:08.490250: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libnvinfer.so.6'; dlerror: libnvinfer.so.6: cannot open shared object file: No such file or directory
+2020-04-24 16:43:08.490354: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libnvinfer_plugin.so.6'; dlerror: libnvinfer_plugin.so.6: cannot open shared object file: No such file or directory
+2020-04-24 16:43:08.490366: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:30] Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+2020-04-24 16:43:12.411030: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2020-04-24 16:43:15.767495: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 0 with properties: 
+pciBusID: 0000:83:00.0 name: Tesla K20c computeCapability: 3.5
+coreClock: 0.7055GHz coreCount: 13 deviceMemorySize: 4.63GiB deviceMemoryBandwidth: 193.71GiB/s
+2020-04-24 16:43:15.767845: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-04-24 16:43:15.770473: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2020-04-24 16:43:15.772813: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2020-04-24 16:43:15.773153: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2020-04-24 16:43:15.775662: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2020-04-24 16:43:15.776943: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2020-04-24 16:43:15.781772: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-04-24 16:43:15.783016: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1697] Adding visible gpu devices: 0
+2020-04-24 16:43:15.783473: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2020-04-24 16:43:15.792454: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2199850000 Hz
+2020-04-24 16:43:15.793780: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x5604d816b930 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2020-04-24 16:43:15.793801: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2020-04-24 16:43:15.846361: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x5604d818f030 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2020-04-24 16:43:15.846401: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Tesla K20c, Compute Capability 3.5
+2020-04-24 16:43:15.847183: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 0 with properties: 
+pciBusID: 0000:83:00.0 name: Tesla K20c computeCapability: 3.5
+coreClock: 0.7055GHz coreCount: 13 deviceMemorySize: 4.63GiB deviceMemoryBandwidth: 193.71GiB/s
+2020-04-24 16:43:15.847230: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-04-24 16:43:15.847247: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2020-04-24 16:43:15.847261: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2020-04-24 16:43:15.847274: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2020-04-24 16:43:15.847287: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2020-04-24 16:43:15.847300: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2020-04-24 16:43:15.847313: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-04-24 16:43:15.848425: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1697] Adding visible gpu devices: 0
+2020-04-24 16:43:15.848460: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-04-24 16:43:15.849808: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1096] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-04-24 16:43:15.849826: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1102]      0 
+2020-04-24 16:43:15.849836: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] 0:   N 
+2020-04-24 16:43:15.851097: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1241] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 4376 MB memory) -> physical GPU (device: 0, name: Tesla K20c, pci bus id: 0000:83:00.0, compute capability: 3.5)

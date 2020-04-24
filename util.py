@@ -48,3 +48,15 @@ def parse_and_set(file_path, opt):
             new_array.append(value)
         setattr(opt,key, value)
 
+# get idf dict
+from sklearn.feature_extraction.text import TfidfVectorizer
+def get_idf_dict(text_list):
+    vectorizer = TfidfVectorizer()
+    X = vectorizer.fit_transform(text_list)
+    idf = vectorizer.idf_
+    return dict(zip(vectorizer.get_feature_names(), idf))
+
+# texts=['is the map','cook the dinner']
+
+# idf_dict = get_idf_dict(texts)
+# print(idf_dict)

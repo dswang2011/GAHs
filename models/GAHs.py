@@ -209,7 +209,7 @@ class GAHs(BasicModel):
 		# ...
 		# sample a combination
 		self.mask_comb = []
-		self.sample_i = random.sample(range(len(self.masks)),k=3)
+		self.sample_i = random.sample(range(len(self.masks)),k=opt.k_roles)
 		for i in self.sample_i:
 			self.mask_comb.append(self.masks[i])
 		# encoder

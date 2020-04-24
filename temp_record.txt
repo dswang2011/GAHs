@@ -1,0 +1,330 @@
+saved_model/_TREC_best_model_CNN.h50.651
+saved_model/_TREC_best_model_Transformer.h52.006
+saved_model/_TREC_best_model_BiLSTM.h521.992
+saved_model/_TREC_best_model_Transformer.h51.543
+saved_model/_TREC_best_model_BiLSTM.h514.376
+saved_model/_TREC_best_model_BiLSTM.h542.907
+saved_model/_TREC_best_model_GAHs.h513.334
+saved_model/_TREC_best_model_CNN.h50.785
+saved_model/_TREC_best_model_BiLSTM.h544.498
+saved_model/_TREC_best_model_Transformer.h54.099
+saved_model/_TREC_best_model_GAHs.h523.35
+saved_model/_TREC_best_model_BiLSTM.h514.692
+saved_model/_TREC_best_model_Transformer.h57.02
+saved_model/_TREC_best_model_GAHs.h53.738
+saved_model/_TREC_best_model_GAHs.h59.186
+saved_model/_TREC_best_model_CNN.h51.605
+saved_model/_TREC_best_model_GAHs.h54.217
+saved_model/_TREC_best_model_Transformer.h54.016
+saved_model/_TREC_best_model_GAH.h524.377
+saved_model/_TREC_best_model_GAHs.h53.395
+saved_model/_TREC_best_model_CNN.h50.65
+saved_model/_TREC_best_model_CNN.h50.662
+saved_model/_TREC_best_model_GAHs.h513.166
+saved_model/_TREC_best_model_BiLSTM.h543.453
+saved_model/_TREC_best_model_GAHs.h54.622
+saved_model/_TREC_best_model_GAHs.h57.879
+saved_model/_TREC_best_model_GAH.h519.148
+saved_model/_TREC_best_model_GAHs.h511.859
+saved_model/_TREC_best_model_GAHs.h516.246
+saved_model/_TREC_best_model_GAHs.h516.252
+saved_model/_TREC_best_model_Transformer.h52.284
+saved_model/_TREC_best_model_GAHs.h510.094
+saved_model/_TREC_best_model_CNN.h50.848
+saved_model/_TREC_best_model_CNN.h51.596
+saved_model/_TREC_best_model_GAH.h534.468
+saved_model/_TREC_best_model_CNN.h51.294
+saved_model/_TREC_best_model_GAHs.h512.984
+saved_model/_TREC_best_model_GAHs.h535.767
+saved_model/_TREC_best_model_CNN.h50.875
+saved_model/_TREC_best_model_BiLSTM.h522.488
+saved_model/_TREC_best_model_GAHs.h510.669
+saved_model/_TREC_best_model_Transformer.h53.891
+saved_model/_TREC_best_model_GAHs.h516.36
+saved_model/_TREC_best_model_CNN.h51.661
+saved_model/_TREC_best_model_BiLSTM.h522.601
+saved_model/_TREC_best_model_GAHs.h513.232
+saved_model/_TREC_best_model_CNN.h50.664
+saved_model/_TREC_best_model_Transformer.h53.069
+saved_model/_TREC_best_model_CNN.h52.01
+saved_model/_TREC_best_model_CNN.h50.931
+modeltransformer_hidden_unit_num200_dropout_rate0.4_lr0.01_batch_size32_val_split0.1_layers8_n_head6_d_inner_hid512_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.27599_T_13.517
+modeltransformer_hidden_unit_num200_dropout_rate0.4_lr0.01_batch_size64_val_split0.1_layers4_n_head2_d_inner_hid512_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.27599_T_3.684
+modeltransformer_hidden_unit_num100_dropout_rate0.2_lr0.001_batch_size32_val_split0.1_layers2_n_head8_d_inner_hid512_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.90799_T_4.058
+modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.001_batch_size64_val_split0.1_layers4_n_head2_d_inner_hid512_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.40799_T_5.987
+modelbilstm_hidden_unit_num200_dropout_rate0.4_lr0.0006_batch_size96_val_split0.1_layers2_n_head2_d_inner_hid256_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.90600_T_14.44
+modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.001_batch_size32_val_split0.1_layers8_n_head6_d_inner_hid512_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.27599_T_29.586
+modelgahs_hidden_unit_num200_dropout_rate0.4_lr0.001_batch_size96_val_split0.1_layers8_n_head2_d_inner_hid512_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.27599_T_7.183
+modelbilstm_hidden_unit_num100_dropout_rate0.2_lr0.0006_batch_size96_val_split0.1_layers8_n_head4_d_inner_hid512_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.90600_T_14.431
+modelcnn_hidden_unit_num200_dropout_rate0.2_lr0.0006_batch_size32_val_split0.1_layers6_n_head8_d_inner_hid128_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.93199_T_1.681
+modelcnn_hidden_unit_num100_dropout_rate0.2_lr0.01_batch_size64_val_split0.1_layers2_n_head6_d_inner_hid512_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.91600_T_0.844
+modelgah_hidden_unit_num100_dropout_rate0.3_lr0.001_batch_size64_val_split0.1_layers6_n_head4_d_inner_hid128_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.87599_T_16.916
+modelgah_hidden_unit_num200_dropout_rate0.2_lr0.01_batch_size64_val_split0.1_layers6_n_head2_d_inner_hid256_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.27599_T_15.033
+modelcnn_hidden_unit_num100_dropout_rate0.2_lr0.001_batch_size32_val_split0.1_layers4_n_head2_d_inner_hid512_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.92799_T_1.607
+modelcnn_hidden_unit_num200_dropout_rate0.2_lr0.0006_batch_size64_val_split0.1_layers8_n_head4_d_inner_hid128_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.93400_T_1.025
+modelgah_hidden_unit_num100_dropout_rate0.2_lr0.0006_batch_size32_val_split0.1_layers2_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.89999_T_10.205
+modeltransformer_hidden_unit_num100_dropout_rate0.2_lr0.0006_batch_size64_val_split0.1_layers2_n_head4_d_inner_hid128_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.91200_T_2.189
+modelgahs_hidden_unit_num100_dropout_rate0.3_lr0.001_batch_size96_val_split0.1_layers4_n_head2_d_inner_hid256_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.31000_T_4.003
+modelcnn_hidden_unit_num200_dropout_rate0.3_lr0.01_batch_size96_val_split0.1_layers4_n_head4_d_inner_hid512_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.93800_T_0.747
+modelcnn_hidden_unit_num100_dropout_rate0.2_lr0.0006_batch_size96_val_split0.1_layers6_n_head4_d_inner_hid256_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.93000_T_0.639
+modelbilstm_hidden_unit_num200_dropout_rate0.2_lr0.0006_batch_size64_val_split0.1_layers2_n_head4_d_inner_hid512_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.89600_T_21.632
+modelcnn_hidden_unit_num100_dropout_rate0.3_lr0.0006_batch_size96_val_split0.1_layers6_n_head2_d_inner_hid128_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.93199_T_0.631
+modeltransformer_hidden_unit_num100_dropout_rate0.3_lr0.0006_batch_size64_val_split0.1_layers6_n_head4_d_inner_hid256_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.90600_T_5.5
+modelcnn_hidden_unit_num200_dropout_rate0.4_lr0.0006_batch_size64_val_split0.1_layers6_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.93599_T_0.901
+modelgahs_hidden_unit_num100_dropout_rate0.4_lr0.01_batch_size96_val_split0.1_layers6_n_head4_d_inner_hid256_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.27599_T_8.282
+modelcnn_hidden_unit_num200_dropout_rate0.2_lr0.0006_batch_size32_val_split0.1_layers6_n_head6_d_inner_hid128_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.92799_T_1.757
+modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.0006_batch_size32_val_split0.1_layers4_n_head4_d_inner_hid128_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.92000_T_12.926
+modelbilstm_hidden_unit_num200_dropout_rate0.2_lr0.001_batch_size64_val_split0.1_layers2_n_head4_d_inner_hid256_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.90399_T_21.879
+modelgahs_hidden_unit_num200_dropout_rate0.4_lr0.0006_batch_size64_val_split0.1_layers4_n_head4_d_inner_hid128_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.87999_T_7.473
+modelcnn_hidden_unit_num200_dropout_rate0.2_lr0.0006_batch_size32_val_split0.1_layers4_n_head4_d_inner_hid512_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.93000_T_1.637
+modelgahs_hidden_unit_num100_dropout_rate0.3_lr0.0006_batch_size96_val_split0.1_layers8_n_head4_d_inner_hid512_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.91399_T_9.63
+modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.0006_batch_size64_val_split0.1_layers8_n_head4_d_inner_hid512_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.89200_T_13.471
+modelgah_hidden_unit_num200_dropout_rate0.3_lr0.0006_batch_size96_val_split0.1_layers4_n_head4_d_inner_hid256_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.89800_T_11.523
+modelgah_hidden_unit_num200_dropout_rate0.2_lr0.0006_batch_size96_val_split0.1_layers2_n_head4_d_inner_hid512_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.91399_T_7.186
+modelcnn_hidden_unit_num100_dropout_rate0.3_lr0.0006_batch_size64_val_split0.1_layers2_n_head6_d_inner_hid512_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.93000_T_0.973
+modelcnn_hidden_unit_num200_dropout_rate0.4_lr0.001_batch_size96_val_split0.1_layers2_n_head4_d_inner_hid256_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.93199_T_0.656
+modelgah_hidden_unit_num100_dropout_rate0.4_lr0.001_batch_size32_val_split0.1_layers8_n_head8_d_inner_hid128_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.27599_T_33.989
+modeltransformer_hidden_unit_num100_dropout_rate0.2_lr0.001_batch_size32_val_split0.1_layers8_n_head2_d_inner_hid256_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.27599_T_13.084
+modelcnn_hidden_unit_num200_dropout_rate0.2_lr0.01_batch_size96_val_split0.1_layers8_n_head4_d_inner_hid512_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.90399_T_0.656
+modelbilstm_hidden_unit_num200_dropout_rate0.3_lr0.01_batch_size64_val_split0.1_layers8_n_head8_d_inner_hid256_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.92799_T_21.85
+modelcnn_hidden_unit_num100_dropout_rate0.4_lr0.001_batch_size32_val_split0.1_layers8_n_head6_d_inner_hid512_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.92599_T_1.639
+modelbilstm_hidden_unit_num100_dropout_rate0.4_lr0.0006_batch_size64_val_split0.1_layers4_n_head2_d_inner_hid256_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.91799_T_21.75
+modelbilstm_hidden_unit_num200_dropout_rate0.3_lr0.0006_batch_size96_val_split0.1_layers6_n_head8_d_inner_hid256_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.89800_T_13.624
+modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.01_batch_size96_val_split0.1_layers6_n_head4_d_inner_hid128_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.27599_T_6.718
+modelgah_hidden_unit_num200_dropout_rate0.2_lr0.001_batch_size96_val_split0.1_layers2_n_head8_d_inner_hid256_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.91000_T_8.014
+modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.001_batch_size32_val_split0.1_layers6_n_head2_d_inner_hid512_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.27599_T_12.708
+modelgah_hidden_unit_num100_dropout_rate0.4_lr0.01_batch_size64_val_split0.1_layers8_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.27599_T_24.944
+modelgah_hidden_unit_num100_dropout_rate0.2_lr0.0006_batch_size64_val_split0.1_layers2_n_head2_d_inner_hid256_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.91000_T_5.637
+TREC0.37799modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.001_batch_size96_val_split0.1_layers8_n_head8_d_inner_hid512_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_13.997
+modeltransformer_hidden_unit_num100_dropout_rate0.2_lr0.0006_batch_size96_val_split0.1_layers6_n_head6_d_inner_hid128_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.90600_T_4.887
+TREC0.90200modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.001_batch_size64_val_split0.1_layers6_n_head8_d_inner_hid512_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_12.837
+modelgah_hidden_unit_num200_dropout_rate0.4_lr0.001_batch_size96_val_split0.1_layers6_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels']_0.88200_T_18.055
+TREC0.27599modelgahs_hidden_unit_num200_dropout_rate0.4_lr0.0006_batch_size32_val_split0.1_layers6_n_head6_d_inner_hid512_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_20.109
+TREC0.27599modelgahs_hidden_unit_num100_dropout_rate0.4_lr0.01_batch_size64_val_split0.1_layers4_n_head4_d_inner_hid128_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_6.527
+TREC0.31600modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.0006_batch_size64_val_split0.1_layers8_n_head6_d_inner_hid512_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_14.575
+TREC0.27599modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.01_batch_size64_val_split0.1_layers4_n_head6_d_inner_hid512_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_8.196
+TREC0.27599modelgahs_hidden_unit_num100_dropout_rate0.3_lr0.01_batch_size96_val_split0.1_layers4_n_head4_d_inner_hid512_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_5.031
+TREC0.27599modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.01_batch_size32_val_split0.1_layers8_n_head8_d_inner_hid256_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_31.722
+TREC0.27599modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.01_batch_size64_val_split0.1_layers8_n_head8_d_inner_hid128_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_16.895
+TREC0.54600modelgahs_hidden_unit_num100_dropout_rate0.3_lr0.0006_batch_size64_val_split0.1_layers4_n_head6_d_inner_hid128_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_8.15
+TREC0.27599modelgahs_hidden_unit_num100_dropout_rate0.3_lr0.001_batch_size96_val_split0.1_layers8_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_10.875
+TREC0.40400modelgahs_hidden_unit_num100_dropout_rate0.3_lr0.001_batch_size96_val_split0.1_layers8_n_head8_d_inner_hid128_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_12.78
+TREC0.69599modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.0006_batch_size64_val_split0.1_layers8_n_head8_d_inner_hid512_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_17.653
+TREC0.27599modelgahs_hidden_unit_num100_dropout_rate0.3_lr0.01_batch_size64_val_split0.1_layers8_n_head8_d_inner_hid512_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_17.56
+TREC0.92199modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.0006_batch_size64_val_split0.1_layers4_n_head8_d_inner_hid128_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_9.471
+TREC0.5modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.0006_batch_size96_val_split0.1_layers8_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_10.497
+TREC0.50400modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.001_batch_size32_val_split0.1_layers8_n_head8_d_inner_hid128_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_31.68
+TREC0.82599modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.0006_batch_size64_val_split0.1_layers2_n_head6_d_inner_hid128_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_4.901
+TREC0.86599modelgahs_hidden_unit_num100_dropout_rate0.2_lr0.001_batch_size64_val_split0.1_layers2_n_head8_d_inner_hid128_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_5.466
+TREC0.39199modelgahs_hidden_unit_num100_dropout_rate0.3_lr0.0006_batch_size96_val_split0.1_layers6_n_head6_d_inner_hid512_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_9.008
+TREC0.91799modelgahs_hidden_unit_num200_dropout_rate0.4_lr0.0006_batch_size64_val_split0.1_layers4_n_head8_d_inner_hid128_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_9.191
+TREC0.61599modelgahs_hidden_unit_num100_dropout_rate0.4_lr0.001_batch_size32_val_split0.1_layers2_n_head4_d_inner_hid128_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_6.692
+TREC0.91600modelgahs_hidden_unit_num100_dropout_rate0.3_lr0.0006_batch_size64_val_split0.1_layers6_n_head8_d_inner_hid512_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_13.052
+TREC0.27599modelgahs_hidden_unit_num100_dropout_rate0.3_lr0.01_batch_size32_val_split0.1_layers8_n_head8_d_inner_hid256_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_32.326
+TREC0.27599modelgahs_hidden_unit_num100_dropout_rate0.4_lr0.01_batch_size32_val_split0.1_layers4_n_head4_d_inner_hid128_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_11.435
+TREC0.33799modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.0006_batch_size64_val_split0.1_layers8_n_head6_d_inner_hid512_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_15.009
+TREC0.18799modelgahs_hidden_unit_num200_dropout_rate0.4_lr0.01_batch_size32_val_split0.1_layers6_n_head8_d_inner_hid256_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_24.356
+TREC0.37400modelgahs_hidden_unit_num100_dropout_rate0.2_lr0.0006_batch_size32_val_split0.1_layers8_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_26.52
+TREC0.34599modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.001_batch_size32_val_split0.1_layers4_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_14.66
+TREC0.93800modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.0006_batch_size96_val_split0.1_layers4_n_head8_d_inner_hid512_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_7.819
+TREC0.55800modelgahs_hidden_unit_num100_dropout_rate0.3_lr0.001_batch_size64_val_split0.1_layers6_n_head8_d_inner_hid512_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_13.826
+TREC0.41200modelgahs_hidden_unit_num200_dropout_rate0.4_lr0.001_batch_size96_val_split0.1_layers4_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_6.218
+TREC0.34000modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.0006_batch_size96_val_split0.1_layers8_n_head4_d_inner_hid128_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_8.676
+TREC0.37599modelgahs_hidden_unit_num100_dropout_rate0.3_lr0.0006_batch_size96_val_split0.1_layers8_n_head6_d_inner_hid128_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_11.104
+TREC0.66200modelgahs_hidden_unit_num100_dropout_rate0.4_lr0.001_batch_size96_val_split0.1_layers2_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_3.857
+TREC0.27599modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.001_batch_size64_val_split0.1_layers6_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_11.635
+TREC0.27599modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.01_batch_size64_val_split0.1_layers4_n_head4_d_inner_hid512_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_6.433
+TREC0.27599modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.001_batch_size32_val_split0.1_layers8_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_27.411
+TREC0.35600modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.0006_batch_size96_val_split0.1_layers8_n_head4_d_inner_hid128_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_8.737
+TREC0.27599modelgahs_hidden_unit_num200_dropout_rate0.4_lr0.01_batch_size96_val_split0.1_layers8_n_head6_d_inner_hid128_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_11.003
+TREC0.27599modelgahs_hidden_unit_num100_dropout_rate0.2_lr0.001_batch_size64_val_split0.1_layers8_n_head6_d_inner_hid512_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_15.185
+TREC0.51599modelgahs_hidden_unit_num200_dropout_rate0.4_lr0.001_batch_size64_val_split0.1_layers6_n_head8_d_inner_hid512_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_13.466
+TREC0.88400modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.001_batch_size96_val_split0.1_layers8_n_head8_d_inner_hid128_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_12.263
+TREC0.27599modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.01_batch_size96_val_split0.1_layers4_n_head8_d_inner_hid512_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_7.278
+TREC0.35199modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.001_batch_size96_val_split0.1_layers8_n_head4_d_inner_hid256_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_9.018
+TREC0.72200modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.0006_batch_size96_val_split0.1_layers2_n_head6_d_inner_hid512_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_3.891
+TREC0.91799modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.001_batch_size96_val_split0.1_layers4_n_head8_d_inner_hid256_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_7.254
+TREC0.29199modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.0006_batch_size32_val_split0.1_layers6_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_20.889
+TREC0.91600modelgahs_hidden_unit_num100_dropout_rate0.4_lr0.0006_batch_size96_val_split0.1_layers2_n_head8_d_inner_hid256_roles['positional', 'both_direct', 'stop_word', 'POS', 'major_rels', 'separator']_4.429
+saved_model/_IMDB_best_model_BiLSTM.h590.015
+MR1.0modeltransformer_hidden_unit_num200_dropout_rate0.3_lr0.001_batch_size64_val_split0.1_layers6_n_head8_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_9.379
+MR1.0modelgah_hidden_unit_num100_dropout_rate0.2_lr0.01_batch_size96_val_split0.1_layers8_n_head8_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_39.496
+MR1.0modelgah_hidden_unit_num200_dropout_rate0.3_lr0.001_batch_size64_val_split0.1_layers6_n_head6_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_36.624
+MR0.79100modeltransformer_hidden_unit_num200_dropout_rate0.2_lr0.001_batch_size96_val_split0.1_layers2_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_2.647
+SST0.83315modelgahs_hidden_unit_num100_dropout_rate0.4_lr0.001_batch_size64_val_split0.1_layers2_n_head8_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_27.669
+SST0.50054modeltransformer_hidden_unit_num200_dropout_rate0.3_lr0.01_batch_size96_val_split0.1_layers2_n_head4_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_9.447
+SST0.79857modelcnn_hidden_unit_num200_dropout_rate0.2_lr0.01_batch_size64_val_split0.1_layers4_n_head8_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_2.512
+MR0.80318modelgah_hidden_unit_num200_dropout_rate0.2_lr0.0006_batch_size32_val_split0.1_layers8_n_head6_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_73.416
+SST0.80406modelbilstm_hidden_unit_num100_dropout_rate0.2_lr0.001_batch_size96_val_split0.1_layers4_n_head8_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_22.702
+MR1.0modelgahs_hidden_unit_num100_dropout_rate0.3_lr0.0006_batch_size64_val_split0.1_layers8_n_head4_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_20.043
+MR1.0modelgahs_hidden_unit_num200_dropout_rate0.4_lr0.001_batch_size64_val_split0.1_layers8_n_head8_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_29.061
+MR1.0modeltransformer_hidden_unit_num200_dropout_rate0.3_lr0.001_batch_size32_val_split0.1_layers6_n_head6_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_17.758
+MR0.81911modelgahs_hidden_unit_num100_dropout_rate0.3_lr0.0006_batch_size96_val_split0.1_layers2_n_head6_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_6.33
+MR1.0modeltransformer_hidden_unit_num100_dropout_rate0.3_lr0.001_batch_size96_val_split0.1_layers6_n_head8_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_7.381
+SST0.83809modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.0006_batch_size96_val_split0.1_layers6_n_head8_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_54.021
+MR0.1modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.01_batch_size64_val_split0.1_layers8_n_head8_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_29.185
+MR0.98219modelbilstm_hidden_unit_num200_dropout_rate0.2_lr0.01_batch_size64_val_split0.1_layers8_n_head8_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_20.699
+SST0.79582modelbilstm_hidden_unit_num200_dropout_rate0.2_lr0.01_batch_size32_val_split0.1_layers2_n_head4_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_72.236
+MR0.1modeltransformer_hidden_unit_num200_dropout_rate0.3_lr0.001_batch_size96_val_split0.1_layers8_n_head8_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_14.554
+MR0.75726modelcnn_hidden_unit_num100_dropout_rate0.2_lr0.001_batch_size96_val_split0.1_layers8_n_head4_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_1.039
+MR0.77507modelbilstm_hidden_unit_num100_dropout_rate0.4_lr0.0006_batch_size64_val_split0.1_layers6_n_head8_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_20.717
+MR0.82286modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.001_batch_size64_val_split0.1_layers2_n_head4_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_6.906
+MR1.0modeltransformer_hidden_unit_num100_dropout_rate0.4_lr0.0006_batch_size32_val_split0.1_layers8_n_head6_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_23.445
+MR0.79006modelcnn_hidden_unit_num100_dropout_rate0.2_lr0.01_batch_size64_val_split0.1_layers8_n_head4_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_1.585
+MR1.0modelgahs_hidden_unit_num200_dropout_rate0.4_lr0.001_batch_size32_val_split0.1_layers6_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_25.88
+MR0.80506modeltransformer_hidden_unit_num200_dropout_rate0.2_lr0.001_batch_size96_val_split0.1_layers4_n_head6_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_6.84
+MR1.0modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.0006_batch_size32_val_split0.1_layers8_n_head4_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_26.333
+MR1.0modelgahs_hidden_unit_num100_dropout_rate0.2_lr0.0006_batch_size32_val_split0.1_layers6_n_head8_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_44.165
+MR0.1modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.01_batch_size96_val_split0.1_layers6_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_16.435
+MR0.1modelgahs_hidden_unit_num100_dropout_rate0.3_lr0.01_batch_size96_val_split0.1_layers2_n_head8_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_7.201
+MR0.78725modeltransformer_hidden_unit_num100_dropout_rate0.4_lr0.0006_batch_size96_val_split0.1_layers2_n_head6_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_4.485
+ROTTENTOMATOES0.87550modelgah_hidden_unit_num100_dropout_rate0.4_lr0.0006_batch_size96_val_split0.1_layers2_n_head6_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_251.125
+MR1.0modelgah_hidden_unit_num200_dropout_rate0.3_lr0.001_batch_size64_val_split0.1_layers6_n_head6_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_56.016
+MR0.77881modelgahs_hidden_unit_num100_dropout_rate0.4_lr0.001_batch_size32_val_split0.1_layers2_n_head6_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_9.619
+SST0.50054modelgah_hidden_unit_num100_dropout_rate0.3_lr0.01_batch_size64_val_split0.1_layers4_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_139.752
+MR0.74414modelbilstm_hidden_unit_num200_dropout_rate0.2_lr0.0006_batch_size64_val_split0.1_layers4_n_head6_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_12.119
+MR0.75632modelgahs_hidden_unit_num100_dropout_rate0.2_lr0.0006_batch_size64_val_split0.1_layers4_n_head4_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_10.871
+MR0.82005modelgah_hidden_unit_num200_dropout_rate0.2_lr0.001_batch_size96_val_split0.1_layers2_n_head4_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_18.532
+MR0.79850modelbilstm_hidden_unit_num200_dropout_rate0.3_lr0.01_batch_size96_val_split0.1_layers6_n_head8_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_8.581
+SST0.50054modelgahs_hidden_unit_num100_dropout_rate0.2_lr0.001_batch_size96_val_split0.1_layers6_n_head6_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_48.054
+ROTTENTOMATOES0.50389modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.001_batch_size32_val_split0.1_layers4_n_head4_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_156.497
+ROTTENTOMATOES0.86330modelcnn_hidden_unit_num200_dropout_rate0.2_lr0.0006_batch_size64_val_split0.1_layers8_n_head8_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_5.285
+IMDB0.88349modeltransformer_hidden_unit_num200_dropout_rate0.4_lr0.001_batch_size96_val_split0.1_layers2_n_head4_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_29.268
+MR0.1modelgah_hidden_unit_num100_dropout_rate0.4_lr0.001_batch_size64_val_split0.1_layers6_n_head8_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_60.85
+MR0.79475modeltransformer_hidden_unit_num200_dropout_rate0.2_lr0.001_batch_size32_val_split0.1_layers2_n_head4_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_5.618
+SST0.83095modelgahs_hidden_unit_num100_dropout_rate0.2_lr0.0006_batch_size64_val_split0.1_layers6_n_head6_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_50.02
+MR1.0modeltransformer_hidden_unit_num100_dropout_rate0.3_lr0.0006_batch_size32_val_split0.1_layers8_n_head8_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_21.507
+IMDB0.87419modeltransformer_hidden_unit_num100_dropout_rate0.2_lr0.0006_batch_size64_val_split0.1_layers4_n_head4_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_64.676
+MR1.0modeltransformer_hidden_unit_num100_dropout_rate0.2_lr0.0006_batch_size96_val_split0.1_layers6_n_head4_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_10.555
+MR0.1modelgahs_hidden_unit_num200_dropout_rate0.4_lr0.0006_batch_size32_val_split0.1_layers8_n_head8_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_39.849
+SST0.50054modelgahs_hidden_unit_num100_dropout_rate0.3_lr0.01_batch_size32_val_split0.1_layers6_n_head6_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_50.219
+MR0.79568modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.0006_batch_size96_val_split0.1_layers2_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_6.371
+MR0.81255modelbilstm_hidden_unit_num200_dropout_rate0.2_lr0.0006_batch_size96_val_split0.1_layers6_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_8.572
+MR0.1modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.001_batch_size32_val_split0.1_layers8_n_head4_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_26.176
+MR0.78444modelbilstm_hidden_unit_num200_dropout_rate0.2_lr0.0006_batch_size64_val_split0.1_layers4_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_12.048
+MR0.84536modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.001_batch_size64_val_split0.1_layers2_n_head8_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_9.263
+IMDB0.88330modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.0006_batch_size64_val_split0.1_layers2_n_head6_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_151.51
+SST0.81064modelbilstm_hidden_unit_num100_dropout_rate0.3_lr0.001_batch_size32_val_split0.1_layers2_n_head8_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_67.693
+SST0.82601modelgahs_hidden_unit_num100_dropout_rate0.3_lr0.0006_batch_size96_val_split0.1_layers2_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_18.899
+ROTTENTOMATOES0.50389modelgahs_hidden_unit_num200_dropout_rate0.4_lr0.001_batch_size64_val_split0.1_layers6_n_head4_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_163.818
+SST0.81503modeltransformer_hidden_unit_num100_dropout_rate0.4_lr0.0006_batch_size64_val_split0.1_layers6_n_head4_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_28.298
+MR0.1modelgah_hidden_unit_num200_dropout_rate0.2_lr0.01_batch_size64_val_split0.1_layers8_n_head8_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_99.747
+MR0.82942modelcnn_hidden_unit_num200_dropout_rate0.3_lr0.0006_batch_size64_val_split0.1_layers2_n_head4_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_1.808
+IMDB0.87830modeltransformer_hidden_unit_num200_dropout_rate0.3_lr0.0006_batch_size32_val_split0.1_layers6_n_head4_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_98.368
+MR1.0modelgahs_hidden_unit_num100_dropout_rate0.2_lr0.001_batch_size32_val_split0.1_layers4_n_head6_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_17.35
+MR0.1modelcnn_hidden_unit_num100_dropout_rate0.4_lr0.01_batch_size64_val_split0.1_layers2_n_head6_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_1.26
+SST0.73051modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.0006_batch_size32_val_split0.1_layers4_n_head4_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_30.928
+MR0.83317modelcnn_hidden_unit_num100_dropout_rate0.3_lr0.0006_batch_size64_val_split0.1_layers6_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_1.264
+MR0.79475modeltransformer_hidden_unit_num100_dropout_rate0.2_lr0.0006_batch_size96_val_split0.1_layers2_n_head6_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_3.813
+MR1.0modelgahs_hidden_unit_num100_dropout_rate0.4_lr0.0006_batch_size32_val_split0.1_layers8_n_head4_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_26.779
+SST0.83918modelgahs_hidden_unit_num100_dropout_rate0.4_lr0.0006_batch_size32_val_split0.1_layers2_n_head8_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_27.048
+MR1.0modeltransformer_hidden_unit_num100_dropout_rate0.2_lr0.01_batch_size32_val_split0.1_layers2_n_head4_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_6.749
+MR0.1modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.01_batch_size96_val_split0.1_layers4_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_11.636
+ROTTENTOMATOES0.50389modelgahs_hidden_unit_num100_dropout_rate0.4_lr0.001_batch_size96_val_split0.1_layers4_n_head4_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_141.143
+ROTTENTOMATOES0.85970modelcnn_hidden_unit_num100_dropout_rate0.4_lr0.001_batch_size64_val_split0.1_layers2_n_head4_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_5.038
+MR1.0modelgahs_hidden_unit_num200_dropout_rate0.4_lr0.001_batch_size96_val_split0.1_layers6_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_16.882
+MR0.76194modeltransformer_hidden_unit_num100_dropout_rate0.4_lr0.0006_batch_size96_val_split0.1_layers4_n_head4_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_7.175
+MR1.0modelgahs_hidden_unit_num100_dropout_rate0.3_lr0.001_batch_size32_val_split0.1_layers4_n_head4_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_14.281
+MR0.79475modelcnn_hidden_unit_num100_dropout_rate0.3_lr0.001_batch_size96_val_split0.1_layers6_n_head4_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_0.937
+MR0.74226modeltransformer_hidden_unit_num100_dropout_rate0.3_lr0.001_batch_size64_val_split0.1_layers2_n_head8_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_5.655
+MR0.81349modelcnn_hidden_unit_num100_dropout_rate0.2_lr0.0006_batch_size96_val_split0.1_layers8_n_head4_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_0.939
+SST0.50054modelgahs_hidden_unit_num200_dropout_rate0.4_lr0.01_batch_size32_val_split0.1_layers8_n_head4_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_60.279
+MR1.0modelgahs_hidden_unit_num100_dropout_rate0.2_lr0.0006_batch_size96_val_split0.1_layers8_n_head8_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_26.776
+SST0.50054modelgahs_hidden_unit_num100_dropout_rate0.3_lr0.01_batch_size64_val_split0.1_layers6_n_head4_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_36.473
+MR0.86410modelgahs_hidden_unit_num200_dropout_rate0.4_lr0.001_batch_size64_val_split0.1_layers4_n_head8_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_17.92
+MR0.88753modeltransformer_hidden_unit_num200_dropout_rate0.3_lr0.001_batch_size64_val_split0.1_layers2_n_head6_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_5.335
+MR0.1modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.001_batch_size96_val_split0.1_layers8_n_head8_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_26.183
+MR0.75257modelbilstm_hidden_unit_num200_dropout_rate0.4_lr0.0006_batch_size96_val_split0.1_layers2_n_head8_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_8.635
+SST0.50054modelgahs_hidden_unit_num100_dropout_rate0.2_lr0.01_batch_size96_val_split0.1_layers6_n_head6_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_42.84
+MR1.0modelgahs_hidden_unit_num200_dropout_rate0.4_lr0.0006_batch_size96_val_split0.1_layers6_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_16.895
+MR1.0modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.0006_batch_size64_val_split0.1_layers8_n_head6_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_25.977
+SST0.80735modelbilstm_hidden_unit_num200_dropout_rate0.2_lr0.01_batch_size64_val_split0.1_layers4_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_34.99
+SST0.80625modelbilstm_hidden_unit_num100_dropout_rate0.4_lr0.01_batch_size32_val_split0.1_layers8_n_head6_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_69.212
+MR1.0modelgah_hidden_unit_num100_dropout_rate0.4_lr0.001_batch_size64_val_split0.1_layers8_n_head8_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_80.878
+MR0.78256modelcnn_hidden_unit_num100_dropout_rate0.2_lr0.0006_batch_size64_val_split0.1_layers6_n_head8_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_1.376
+ROTTENTOMATOES0.50389modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.001_batch_size32_val_split0.1_layers6_n_head8_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_232.456
+MR0.82661modelbilstm_hidden_unit_num200_dropout_rate0.2_lr0.0006_batch_size96_val_split0.1_layers8_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_8.585
+SST0.50054modeltransformer_hidden_unit_num100_dropout_rate0.2_lr0.001_batch_size64_val_split0.1_layers6_n_head6_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_38.25
+SST0.50054modelgahs_hidden_unit_num100_dropout_rate0.4_lr0.01_batch_size32_val_split0.1_layers8_n_head4_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_60.444
+SST0.80735modelcnn_hidden_unit_num100_dropout_rate0.4_lr0.01_batch_size32_val_split0.1_layers4_n_head6_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_2.214
+SST0.80296modelcnn_hidden_unit_num100_dropout_rate0.2_lr0.0006_batch_size96_val_split0.1_layers8_n_head4_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_1.5
+IMDB0.87800modelbilstm_hidden_unit_num100_dropout_rate0.2_lr0.001_batch_size64_val_split0.1_layers8_n_head4_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_360.482
+IMDB0.86879modelcnn_hidden_unit_num100_dropout_rate0.3_lr0.01_batch_size96_val_split0.1_layers4_n_head8_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_4.556
+ROTTENTOMATOES0.86769modelbilstm_hidden_unit_num100_dropout_rate0.4_lr0.0006_batch_size96_val_split0.1_layers8_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_118.328
+IMDB0.50389modeltransformer_hidden_unit_num200_dropout_rate0.4_lr0.001_batch_size64_val_split0.1_layers6_n_head6_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_114.466
+SST0.50054modelgah_hidden_unit_num200_dropout_rate0.3_lr0.01_batch_size64_val_split0.1_layers4_n_head4_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_135.786
+IMDB0.72990modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.01_batch_size96_val_split0.1_layers2_n_head4_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_132.248
+SST0.82327modelgahs_hidden_unit_num100_dropout_rate0.3_lr0.001_batch_size96_val_split0.1_layers6_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_43.801
+SST0.80954modelcnn_hidden_unit_num100_dropout_rate0.2_lr0.01_batch_size96_val_split0.1_layers8_n_head6_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_1.519
+SST0.50054modelgah_hidden_unit_num100_dropout_rate0.3_lr0.01_batch_size96_val_split0.1_layers2_n_head8_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_83.571
+IMDB0.50389modelgahs_hidden_unit_num100_dropout_rate0.2_lr0.01_batch_size64_val_split0.1_layers6_n_head8_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_249.867
+ROTTENTOMATOES0.50389modelgah_hidden_unit_num100_dropout_rate0.4_lr0.01_batch_size32_val_split0.1_layers8_n_head4_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_563.387
+ROTTENTOMATOES0.85930modelcnn_hidden_unit_num100_dropout_rate0.2_lr0.0006_batch_size32_val_split0.1_layers6_n_head8_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_6.941
+SST0.81394modelgah_hidden_unit_num100_dropout_rate0.2_lr0.0006_batch_size32_val_split0.1_layers4_n_head4_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_128.394
+SST0.80241modelcnn_hidden_unit_num200_dropout_rate0.4_lr0.01_batch_size96_val_split0.1_layers8_n_head6_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_2.369
+SST0.83150modelgahs_hidden_unit_num100_dropout_rate0.3_lr0.0006_batch_size96_val_split0.1_layers6_n_head8_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_54.081
+IMDB0.50389modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.0006_batch_size32_val_split0.1_layers4_n_head4_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_170.011
+SST0.81778modeltransformer_hidden_unit_num200_dropout_rate0.3_lr0.0006_batch_size64_val_split0.1_layers6_n_head6_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_32.971
+IMDB0.88150modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.0006_batch_size64_val_split0.1_layers2_n_head6_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_148.251
+IMDB0.88160modelgahs_hidden_unit_num100_dropout_rate0.2_lr0.001_batch_size96_val_split0.1_layers4_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_183.099
+IMDB0.87970modeltransformer_hidden_unit_num100_dropout_rate0.3_lr0.0006_batch_size32_val_split0.1_layers4_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_86.075
+IMDB0.50389modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.01_batch_size64_val_split0.1_layers6_n_head8_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_256.835
+IMDB0.85219modelgahs_hidden_unit_num100_dropout_rate0.4_lr0.0006_batch_size96_val_split0.1_layers6_n_head4_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_184.897
+IMDB0.50389modelgahs_hidden_unit_num100_dropout_rate0.4_lr0.001_batch_size96_val_split0.1_layers8_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_259.513
+MR0.85473modelcnn_hidden_unit_num200_dropout_rate0.3_lr0.0006_batch_size64_val_split0.1_layers2_n_head6_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_1.278
+MR0.77225modelgahs_hidden_unit_num100_dropout_rate0.3_lr0.0006_batch_size32_val_split0.1_layers2_n_head8_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_16.293
+MR0.80787modeltransformer_hidden_unit_num200_dropout_rate0.2_lr0.001_batch_size64_val_split0.1_layers4_n_head8_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_6.133
+MR0.75445modelbilstm_hidden_unit_num200_dropout_rate0.3_lr0.01_batch_size64_val_split0.1_layers8_n_head8_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_19.696
+MR0.78912modeltransformer_hidden_unit_num200_dropout_rate0.3_lr0.001_batch_size32_val_split0.1_layers4_n_head6_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_11.422
+MR0.79287modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.001_batch_size96_val_split0.1_layers4_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_9.06
+MR0.82849modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.0006_batch_size32_val_split0.1_layers4_n_head8_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_29.321
+MR0.1modelgahs_hidden_unit_num100_dropout_rate0.4_lr0.01_batch_size32_val_split0.1_layers6_n_head8_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_43.928
+MR0.79381modelbilstm_hidden_unit_num200_dropout_rate0.2_lr0.0006_batch_size32_val_split0.1_layers6_n_head6_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_39.378
+IMDB0.50410modelgahs_hidden_unit_num100_dropout_rate0.2_lr0.001_batch_size32_val_split0.1_layers4_n_head8_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_245.581
+IMDB0.86989modelcnn_hidden_unit_num100_dropout_rate0.4_lr0.001_batch_size32_val_split0.1_layers2_n_head6_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_10.926
+MR0.83036modelbilstm_hidden_unit_num200_dropout_rate0.4_lr0.001_batch_size96_val_split0.1_layers8_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_13.434
+MR0.80318modelcnn_hidden_unit_num200_dropout_rate0.3_lr0.0006_batch_size32_val_split0.1_layers2_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_2.689
+MR0.82567modelgahs_hidden_unit_num100_dropout_rate0.3_lr0.0006_batch_size96_val_split0.1_layers2_n_head8_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_6.677
+MR0.76382modelcnn_hidden_unit_num100_dropout_rate0.4_lr0.0006_batch_size32_val_split0.1_layers8_n_head8_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_2.678
+MR0.1modeltransformer_hidden_unit_num100_dropout_rate0.2_lr0.01_batch_size64_val_split0.1_layers4_n_head8_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_6.451
+MR0.82567modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.0006_batch_size96_val_split0.1_layers4_n_head6_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_9.363
+MR0.89596modelbilstm_hidden_unit_num200_dropout_rate0.3_lr0.001_batch_size96_val_split0.1_layers2_n_head8_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_12.965
+MR0.83786modelbilstm_hidden_unit_num200_dropout_rate0.3_lr0.01_batch_size32_val_split0.1_layers2_n_head8_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_38.336
+MR0.1modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.01_batch_size96_val_split0.1_layers8_n_head8_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_20.746
+MR0.81255modelgahs_hidden_unit_num200_dropout_rate0.4_lr0.0006_batch_size96_val_split0.1_layers2_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_5.92
+IMDB0.50389modelgahs_hidden_unit_num200_dropout_rate0.4_lr0.01_batch_size32_val_split0.1_layers4_n_head8_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_235.946
+MR0.1modelgahs_hidden_unit_num100_dropout_rate0.3_lr0.001_batch_size32_val_split0.1_layers8_n_head6_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_48.524
+MR0.79568modelgah_hidden_unit_num200_dropout_rate0.2_lr0.001_batch_size96_val_split0.1_layers2_n_head8_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_10.133
+MR0.1modelgahs_hidden_unit_num100_dropout_rate0.3_lr0.01_batch_size64_val_split0.1_layers2_n_head8_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_9.234
+MR1.0modelgahs_hidden_unit_num200_dropout_rate0.4_lr0.01_batch_size96_val_split0.1_layers6_n_head6_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_13.817
+MR1.0modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.01_batch_size64_val_split0.1_layers4_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_12.558
+MR1.0modeltransformer_hidden_unit_num100_dropout_rate0.4_lr0.01_batch_size64_val_split0.1_layers6_n_head6_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_8.523
+MR0.1modeltransformer_hidden_unit_num200_dropout_rate0.3_lr0.01_batch_size32_val_split0.1_layers4_n_head8_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_11.651
+MR0.1modelgahs_hidden_unit_num100_dropout_rate0.2_lr0.01_batch_size32_val_split0.1_layers2_n_head8_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_15.225
+MR0.1modelcnn_hidden_unit_num200_dropout_rate0.4_lr0.01_batch_size32_val_split0.1_layers4_n_head6_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_2.586
+MR1.0modelgah_hidden_unit_num200_dropout_rate0.4_lr0.001_batch_size64_val_split0.1_layers6_n_head6_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_29.267
+MR0.79475modelbilstm_hidden_unit_num200_dropout_rate0.4_lr0.0006_batch_size96_val_split0.1_layers6_n_head8_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_12.83
+MR1.0modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.01_batch_size32_val_split0.1_layers4_n_head8_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_29.216
+MR0.1modelgahs_hidden_unit_num200_dropout_rate0.4_lr0.0006_batch_size64_val_split0.1_layers8_n_head8_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_29.913
+MR0.1modelcnn_hidden_unit_num200_dropout_rate0.2_lr0.01_batch_size96_val_split0.1_layers2_n_head6_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_0.995
+MR0.90721modelgahs_hidden_unit_num100_dropout_rate0.2_lr0.001_batch_size32_val_split0.1_layers4_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_26.484
+MR0.81349modelcnn_hidden_unit_num200_dropout_rate0.2_lr0.0006_batch_size96_val_split0.1_layers4_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_0.852
+MR0.80131modelgahs_hidden_unit_num100_dropout_rate0.3_lr0.01_batch_size64_val_split0.1_layers2_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_7.702
+MR0.76194modelbilstm_hidden_unit_num200_dropout_rate0.4_lr0.01_batch_size64_val_split0.1_layers2_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_19.604
+MR1.0modelgahs_hidden_unit_num100_dropout_rate0.4_lr0.0006_batch_size96_val_split0.1_layers6_n_head8_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_15.849
+MR0.83411modelcnn_hidden_unit_num100_dropout_rate0.2_lr0.001_batch_size32_val_split0.1_layers4_n_head8_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_2.519
+MR0.1modelgah_hidden_unit_num100_dropout_rate0.3_lr0.001_batch_size32_val_split0.1_layers8_n_head8_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_74.069
+MR0.1modeltransformer_hidden_unit_num200_dropout_rate0.2_lr0.01_batch_size32_val_split0.1_layers4_n_head8_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_11.742
+MR0.78350modelcnn_hidden_unit_num200_dropout_rate0.2_lr0.01_batch_size64_val_split0.1_layers4_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_2.553
+MR0.76007modelbilstm_hidden_unit_num100_dropout_rate0.2_lr0.01_batch_size32_val_split0.1_layers4_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_38.464
+MR0.81537modelgahs_hidden_unit_num100_dropout_rate0.2_lr0.0006_batch_size32_val_split0.1_layers2_n_head6_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_12.981
+MR0.81068modelgahs_hidden_unit_num100_dropout_rate0.4_lr0.0006_batch_size96_val_split0.1_layers2_n_head8_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_6.215
+MR0.1modelgahs_hidden_unit_num100_dropout_rate0.3_lr0.01_batch_size96_val_split0.1_layers6_n_head8_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_18.321
+IMDB0.50389modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.0006_batch_size32_val_split0.1_layers8_n_head8_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_347.848
+MR0.82942modelgah_hidden_unit_num100_dropout_rate0.2_lr0.0006_batch_size32_val_split0.1_layers2_n_head6_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_20.467
+MR0.78444modelbilstm_hidden_unit_num100_dropout_rate0.3_lr0.001_batch_size64_val_split0.1_layers4_n_head6_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_20.439
+MR1.0modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.0006_batch_size96_val_split0.1_layers6_n_head8_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_15.607
+MR0.1modelgah_hidden_unit_num200_dropout_rate0.3_lr0.01_batch_size64_val_split0.1_layers4_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator', 'rare_word']_20.525
+IMDB0.50389modeltransformer_hidden_unit_num100_dropout_rate0.3_lr0.01_batch_size96_val_split0.1_layers8_n_head8_d_inner_hid128_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_159.418
+IMDB0.88429modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.0006_batch_size64_val_split0.1_layers4_n_head8_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_226.113
+IMDB0.81449modelgahs_hidden_unit_num100_dropout_rate0.2_lr0.0006_batch_size96_val_split0.1_layers4_n_head4_d_inner_hid512_roles['positional', 'both_direct', 'POS', 'major_rels', 'separator']_175.674

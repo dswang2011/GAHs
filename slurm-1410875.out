@@ -1,0 +1,119 @@
+2
+Fri Apr 24 16:28:17 2020       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 440.33.01    Driver Version: 440.33.01    CUDA Version: 10.2     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|===============================+======================+======================|
+|   0  GeForce GTX TIT...  Off  | 00000000:02:00.0 Off |                  N/A |
+| 58%   84C    P2   184W / 250W |   9199MiB / 12212MiB |    100%      Default |
++-------------------------------+----------------------+----------------------+
+|   1  GeForce GTX TIT...  Off  | 00000000:03:00.0 Off |                  N/A |
+| 65%   85C    P2   177W / 250W |   9203MiB / 12212MiB |     97%      Default |
++-------------------------------+----------------------+----------------------+
+|   2  GeForce GTX TIT...  Off  | 00000000:82:00.0 Off |                  N/A |
+| 18%   57C    P0    68W / 250W |      0MiB / 12212MiB |      2%      Default |
++-------------------------------+----------------------+----------------------+
+|   3  GeForce GTX TIT...  Off  | 00000000:83:00.0 Off |                  N/A |
+| 59%   84C    P2   137W / 250W |   9178MiB / 12212MiB |     70%      Default |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                       GPU Memory |
+|  GPU       PID   Type   Process name                             Usage      |
+|=============================================================================|
+|    0     29759      C   python                                      9187MiB |
+|    1     29949      C   python                                      9191MiB |
+|    3     30090      C   python                                      9167MiB |
++-----------------------------------------------------------------------------+
+/var/spool/slurmd/job1410875/slurm_script: line 9: activate: No such file or directory
+2020-04-24 16:28:20.959777: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libnvinfer.so.6'; dlerror: libnvinfer.so.6: cannot open shared object file: No such file or directory
+2020-04-24 16:28:20.960304: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libnvinfer_plugin.so.6'; dlerror: libnvinfer_plugin.so.6: cannot open shared object file: No such file or directory
+2020-04-24 16:28:20.960320: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:30] Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+2020-04-24 16:35:29.086509: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2020-04-24 16:35:29.637077: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 0 with properties: 
+pciBusID: 0000:82:00.0 name: GeForce GTX TITAN X computeCapability: 5.2
+coreClock: 1.076GHz coreCount: 24 deviceMemorySize: 11.93GiB deviceMemoryBandwidth: 313.37GiB/s
+2020-04-24 16:35:29.637405: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-04-24 16:35:29.639751: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2020-04-24 16:35:29.641985: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2020-04-24 16:35:29.642317: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2020-04-24 16:35:29.644599: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2020-04-24 16:35:29.645584: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2020-04-24 16:35:29.649688: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-04-24 16:35:29.651622: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1697] Adding visible gpu devices: 0
+2020-04-24 16:35:29.652126: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2020-04-24 16:35:29.660367: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2500045000 Hz
+2020-04-24 16:35:29.661012: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55b9329a5130 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2020-04-24 16:35:29.661035: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2020-04-24 16:35:29.725866: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55b737c0ef70 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2020-04-24 16:35:29.725902: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): GeForce GTX TITAN X, Compute Capability 5.2
+2020-04-24 16:35:29.726981: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 0 with properties: 
+pciBusID: 0000:82:00.0 name: GeForce GTX TITAN X computeCapability: 5.2
+coreClock: 1.076GHz coreCount: 24 deviceMemorySize: 11.93GiB deviceMemoryBandwidth: 313.37GiB/s
+2020-04-24 16:35:29.727031: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-04-24 16:35:29.727052: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2020-04-24 16:35:29.727068: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2020-04-24 16:35:29.727085: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2020-04-24 16:35:29.727101: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2020-04-24 16:35:29.727117: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2020-04-24 16:35:29.727134: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-04-24 16:35:29.728971: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1697] Adding visible gpu devices: 0
+2020-04-24 16:35:29.729013: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-04-24 16:35:29.730831: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1096] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-04-24 16:35:29.730849: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1102]      0 
+2020-04-24 16:35:29.730858: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] 0:   N 
+2020-04-24 16:35:29.732708: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1241] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11498 MB memory) -> physical GPU (device: 0, name: GeForce GTX TITAN X, pci bus id: 0000:82:00.0, compute capability: 5.2)
+2020-04-24 16:35:54.623414: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2020-04-24 16:35:54.879890: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-04-24 16:35:55.497084: E tensorflow/stream_executor/cuda/cuda_dnn.cc:319] Loaded runtime CuDNN library: 7.4.2 but source was compiled with: 7.6.4.  CuDNN library major and minor version needs to match or have higher minor version in case of CuDNN 7.0 or later version. If using a binary install, upgrade your CuDNN library.  If building from sources, make sure the library loaded at runtime is compatible with the version specified during compile configuration.
+2020-04-24 16:35:55.498353: E tensorflow/stream_executor/cuda/cuda_dnn.cc:319] Loaded runtime CuDNN library: 7.4.2 but source was compiled with: 7.6.4.  CuDNN library major and minor version needs to match or have higher minor version in case of CuDNN 7.0 or later version. If using a binary install, upgrade your CuDNN library.  If building from sources, make sure the library loaded at runtime is compatible with the version specified during compile configuration.
+2020-04-24 16:35:55.498868: W tensorflow/core/common_runtime/base_collective_executor.cc:217] BaseCollectiveExecutor::StartAbort Unknown: Failed to get convolution algorithm. This is probably because cuDNN failed to initialize, so try looking to see if a warning log message was printed above.
+	 [[{{node conv1d_1/convolution}}]]
+Using TensorFlow backend.
+/home/vbd667/anaconda3/envs/python36/lib/python3.6/site-packages/tensorflow_core/python/framework/indexed_slices.py:433: UserWarning: Converting sparse IndexedSlices to a dense Tensor of unknown shape. This may consume a large amount of memory.
+  "Converting sparse IndexedSlices to a dense Tensor of unknown shape. "
+== Currently train set is:== ROTTENTOMATOES
+[LABEL] 2  labels: {'0', '1'}
+word_index: 146594
+Total 400003 word vectors.
+[train] Shape of data tensor: (40000, 50)
+[train] Shape of label tensor: (40000, 2)
+[train] Shape of data tensor: (10000, 50)
+[train] Shape of label tensor: (10000, 2)
+[search time]: 0 / 60
+[paras]: modelgahs_hidden_unit_num100_dropout_rate0.3_lr0.0006_batch_size64_val_split0.1_layers4_n_head8_d_inner_hid256_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_
+== gah model == True gahs
+Train on 40000 samples, validate on 10000 samples
+Epoch 1/40
+Traceback (most recent call last):
+  File "train.py", line 137, in <module>
+    train_grid(args)
+  File "train.py", line 114, in train_grid
+    model.train(train,dev=test,dataset = opt.dataset)
+  File "/home/vbd667/code/GAHs/models/BasicModel.py", line 54, in train
+    history = self.model.fit(x_train,y_train,batch_size=self.opt.batch_size,epochs=self.opt.epoch_num,callbacks=callbacks,validation_data=(x_val, y_val),shuffle=True) 
+  File "/home/vbd667/anaconda3/envs/python36/lib/python3.6/site-packages/keras/engine/training.py", line 1239, in fit
+    validation_freq=validation_freq)
+  File "/home/vbd667/anaconda3/envs/python36/lib/python3.6/site-packages/keras/engine/training_arrays.py", line 196, in fit_loop
+    outs = fit_function(ins_batch)
+  File "/home/vbd667/anaconda3/envs/python36/lib/python3.6/site-packages/tensorflow_core/python/keras/backend.py", line 3727, in __call__
+    outputs = self._graph_fn(*converted_inputs)
+  File "/home/vbd667/anaconda3/envs/python36/lib/python3.6/site-packages/tensorflow_core/python/eager/function.py", line 1551, in __call__
+    return self._call_impl(args, kwargs)
+  File "/home/vbd667/anaconda3/envs/python36/lib/python3.6/site-packages/tensorflow_core/python/eager/function.py", line 1591, in _call_impl
+    return self._call_flat(args, self.captured_inputs, cancellation_manager)
+  File "/home/vbd667/anaconda3/envs/python36/lib/python3.6/site-packages/tensorflow_core/python/eager/function.py", line 1692, in _call_flat
+    ctx, args, cancellation_manager=cancellation_manager))
+  File "/home/vbd667/anaconda3/envs/python36/lib/python3.6/site-packages/tensorflow_core/python/eager/function.py", line 545, in call
+    ctx=ctx)
+  File "/home/vbd667/anaconda3/envs/python36/lib/python3.6/site-packages/tensorflow_core/python/eager/execute.py", line 67, in quick_execute
+    six.raise_from(core._status_to_exception(e.code, message), None)
+  File "<string>", line 3, in raise_from
+tensorflow.python.framework.errors_impl.UnknownError:  Failed to get convolution algorithm. This is probably because cuDNN failed to initialize, so try looking to see if a warning log message was printed above.
+	 [[node conv1d_1/convolution (defined at /home/vbd667/anaconda3/envs/python36/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:3009) ]] [Op:__inference_keras_scratch_graph_29668]
+
+Function call stack:
+keras_scratch_graph
+
