@@ -48,6 +48,11 @@ def parse_and_set(file_path, opt):
             new_array.append(value)
         setattr(opt,key, value)
 
+def write_record(paras,selects):
+    record = str(paras) + '_'+str(selects)
+    with open("selection.txt",'a',encoding='utf8') as fw:
+        fw.write(record+'\n')
+
 # get idf dict
 from sklearn.feature_extraction.text import TfidfVectorizer
 def get_idf_dict(text_list):

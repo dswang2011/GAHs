@@ -70,7 +70,7 @@ class Data_helper(object):
 		return texts,labels
 
 	# load the train, valid or test
-	def load_data(self,dataset,splits):
+	def load_train(self,dataset,splits):
 		texts_list_train_test = []
 		labels_train_test = []
 		for split in splits:
@@ -93,6 +93,8 @@ class Data_helper(object):
 		
 		# tokenize 
 		word_index = self.tokenizer(all_texts,MAX_NB_WORDS=self.opt.max_nb_words)
+		all_texts = []	# release
+		
 		# save word_index
 		self.opt.word_index = word_index
 		print('word_index:',len(word_index))

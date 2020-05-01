@@ -12,28 +12,28 @@ import random
 import tensorflow as tf
 
 dataset_pool = {
-	"TREC": ['train','test'],	# checked
+	"TREC": ['train','test'],	# 50
 	"MR": ['train'],		
 	"SST": ['train','test'],	# 19
 	"IMDB":['train','test'],	# 230
 	"YELP": ['train','test'],	# 136
-	"ROTTENTOMATOES": ['train','test']	# checked, avg. 21
-	# dbpedia 47, 
+	"ROTTENTOMATOES": ['train','test'], # 21
+	"DBPEDIA" : ['train','test'],	# 47
 	# AG news 8, 
 }
 grid_pool ={
 	# model
-	"model": ['gahs','gahs','gahs','transformer','bilstm','cnn','gah'],
+	"model": ['gahs','gahs','gahs','gah'],#'transformer','bilstm','cnn'],# 'transformer','bilstm','cnn'],
 	"hidden_unit_num":[100,200],	# for rnn or cnn
-	"dropout_rate" : [0.2,0.3,0.4],
+	"dropout_rate" : [0.2,0.3,0.4,0.5],
 	# hyper parameters
-	"lr":[0.01, 0.001, 0.0006],
+	"lr":[0.001, 0.0006,0.0001],	# 0.01 for CNN and LSTM
 	"batch_size":[32,64,96],
 	"val_split":[0.1],
 	"layers" : [2,4,6,8],
-	"n_head" : [4,6,8],
+	"n_head" : [6,8],
 	"d_inner_hid" : [128,256,512],
-	"roles": [['positional','both_direct','major_rels','separator','rare_word']]#['POS','major_rels','positional','separator','both_direct','stop_word']]
+	"roles": [['both_direct','major_rels','separator','rare_word']]	#'positional', 'POS',rare_word,'positional','stop_word'
 }
 
 # 
@@ -66,7 +66,7 @@ def train_single(opt):
 	# load input
 	if 'gah' in opt.model: opt.load_role = True
 	data = data_helper.Data_helper(opt)
-	train_test = data.load_data(opt.dataset, dataset_pool[opt.dataset])
+	train_test = data.load_train(opt.dataset, dataset_pool[opt.dataset])
 	# set model and train
 	model = models.setup(opt)
 	if len(dataset_pool[opt.dataset])>1:
@@ -86,7 +86,7 @@ def train_grid(opt):
 		opt.all_roles = all_roles
 	# load input
 	data = data_helper.Data_helper(opt)
-	train_test = data.load_data(opt.dataset,dataset_pool[opt.dataset])
+	train_test = data.load_train(opt.dataset,dataset_pool[opt.dataset])
 
 	# search N times:
 	memo = set()
@@ -99,7 +99,7 @@ def train_grid(opt):
 			para_str+= key
 			para_str+= str(value)+'_'
 		# memo skip
-		if para_str in memo: continue
+		# if para_str in memo: continue
 		memo.add(para_str)
 		# else run this paras
 		print('[paras]:',para_str)
@@ -120,14 +120,14 @@ if __name__ == '__main__':
 	parser.add_argument('-config', action = 'store', dest = 'config', help = 'please enter the config path.',default='config/config.ini')
 	parser.add_argument('-gpu_num', action = 'store', dest = 'gpu_num', help = 'please enter the gpu num.',default=1)
 	parser.add_argument('-gpu', action = 'store', dest = 'gpu', help = 'please enter the specific gpu no.',default=0)
-	parser.add_argument('--patience', type=int, default=8)
-	parser.add_argument('--epoch_num', type=int, default=40)
-	parser.add_argument('--search_times', type=int, default=60)
+	parser.add_argument('--patience', type=int, default=7)
+	parser.add_argument('--epoch_num', type=int, default=30)
+	parser.add_argument('--search_times', type=int, default=20)
 	parser.add_argument('--load_role',type=bool, default=False)
 	parser.add_argument('--dataset', default="MR")
 	parser.add_argument('--max_sequence_length', type=int,default=90)
-	parser.add_argument('--k_roles', type=int,default=5)
-
+	parser.add_argument('--k_roles', type=int,default=6)
+	parser.add_argument('--cus_pos',default='N')
 	args = parser.parse_args()
 	# set parameters from config files
 	util.parse_and_set(args.config,args)
