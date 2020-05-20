@@ -25,11 +25,11 @@ class TimeHistory(keras.callbacks.Callback):
 class BasicModel(object):
     def __init__(self,opt): 
         self.opt=opt
+        self.opt.sample_i = None
         self.model = self.get_model(opt)
         self.model.compile(optimizer=optimizers.Adam(lr=opt.lr), loss='categorical_crossentropy', metrics=['acc'])
-        self.sample_i = None
 
-    def get_model(self,opt):
+    def get_model(self,opt,embedding_type='word'):
         return None
 
     def train(self,train,dev=None,dirname="saved_model",dataset='dataset'):
@@ -39,18 +39,19 @@ class BasicModel(object):
             x_train = x_train[0]
             print(' lenth of the first x_Train: ',len(x_train))
         else:
-            print('== gah model ==',self.opt.load_role, self.opt.model)
+            print('== No GAH ==',self.opt.load_role, self.opt.model)
 
         time_callback = TimeHistory()
         # save path
-        filename = os.path.join(dirname, '_'+dataset+"_best_model_"+self.__class__.__name__+".h5")
-        callbacks = [EarlyStopping( monitor='val_loss',patience=8),
+        filename = os.path.join(dirname, '_'+dataset+"_best_model_"+self.__class__.__name__+'_'+self.opt.para_str+".h5")
+        callbacks = [EarlyStopping( monitor='val_loss',patience=self.opt.patience),
              ModelCheckpoint(filepath=filename, monitor='val_loss', save_best_only=True,save_weights_only=True), time_callback]
         if dev is None:
             history = self.model.fit(x_train,y_train,batch_size=self.opt.batch_size,epochs=self.opt.epoch_num,callbacks=callbacks,validation_split=self.opt.val_split,shuffle=True)
         else:
             x_val, y_val = dev 
             if self.opt.load_role and 'gah' not in self.opt.model: x_val = x_val[0]
+            print(' length of x_train: ',len(x_train))
             history = self.model.fit(x_train,y_train,batch_size=self.opt.batch_size,epochs=self.opt.epoch_num,callbacks=callbacks,validation_data=(x_val, y_val),shuffle=True) 
 
         print('Current Model:',self.__class__.__name__)
@@ -60,17 +61,43 @@ class BasicModel(object):
         max_his = str(max(history.history["val_acc"]))[:7] if max(history.history["val_acc"])>0.2 else '0.1'
         os.rename(filename,os.path.join( dirname,  dataset+ max_his+"_"+self.__class__.__name__+"_"+self.opt.para_str+".h5" ))
 
-        self.write_record(dataset+ max_his,self.opt.para_str+str(round(times[1],3)) )
+        self.write_record(dataset+'_'+max_his,self.opt.para_str+str(round(times[1],3)) )
+        return max_his, round(times[1],3), self.__class__.__name__
+
+    def train_large(self,train,dev=None,dirname="saved_model",dataset='dataset'):
+        if self.opt.load_role and 'gah' not in self.opt.model:
+            print('==not gah model ==',self.opt.load_role,self.opt.model)
+            x_train = x_train[0]
+            print(' lenth of the first x_Train: ',len(x_train))
+        else:
+            print('== No GAH ==',self.opt.load_role, self.opt.model)
+
+        time_callback = TimeHistory()
+        # save path
+        filename = os.path.join(dirname, '_'+dataset+"_best_model_"+self.__class__.__name__+"3l.h5")
+        callbacks = [EarlyStopping( monitor='val_loss',patience=self.opt.patience),
+             ModelCheckpoint(filepath=filename, monitor='val_loss', save_best_only=True,save_weights_only=True), time_callback]
+
+        history = self.model.fit_generator(generator=train, validation_data=dev, epochs=self.opt.epoch_num, use_multiprocessing=True, workers=6)
+
+        print('Current Model:',self.__class__.__name__)
+        # print('history:',str(max(history.history["val_acc"])))
+        times = time_callback.times
+        # print("times:", round(times[1],3), "s")
+        max_his = str(max(history.history["val_acc"]))[:7] if max(history.history["val_acc"])>0.2 else '0.1'
+        # os.rename(filename,os.path.join( dirname,  dataset+ max_his+"_"+self.__class__.__name__+"_"+self.opt.para_str+".h5" ))
+
+        self.write_record(dataset+'_'+max_his,self.opt.para_str+str(round(times[1],3)) )
         return max_his, round(times[1],3), self.__class__.__name__
 
 
     def write_record(self,paras,times):
-        if self.sample_i is not None:
-            record = str(paras) + times + str(self.sample_i)
+        if self.opt.sample_i is not None:
+            record = str(paras) + times + '_'+str(self.opt.sample_i)
         else:
             record = str(paras) + times
 
-        with open("temp_record.txt",'a',encoding='utf8') as fw:
+        with open("ablation_large.txt",'a',encoding='utf8') as fw:
             fw.write(record+'\n')
 
        
@@ -82,6 +109,30 @@ class BasicModel(object):
         # save model
         self.model.save(filename)
         return filename
+
+    def get_tag_model(self,opt):
+        # K.clear_session()
+        self.dep_model = self.get_model(opt,'dep')
+        # representation_model = self.model
+        representation_model = Model(inputs=self.model.inputs, output=self.model.layers[-2].output)
+        dep_rep_model = Model(inputs=self.dep_model.inputs, output=self.dep_model.layers[-2].output)
+
+
+        self.texts = Input(shape=(self.opt.max_sequence_length,), dtype='int32')
+        self.tags = Input(shape=(self.opt.max_sequence_length,), dtype='int32')
+
+        txt = representation_model(self.texts)
+        tgs = dep_rep_model(self.tags)
+
+        reps = Concatenate()([txt,tgs])
+        output = Dense(self.opt.nb_classes, activation="softmax")(reps)
+
+        model = Model([self.texts,self.tags],output)
+        model.summary()
+        # model.compile(loss = "categorical_hinge",  optimizer = getOptimizer(name=self.opt.optimizer,lr=self.opt.lr), metrics=["acc"])
+        model.compile(loss = "categorical_hinge",  optimizer = optimizers.Adam(lr=self.opt.lr), metrics=["acc"])
+        
+        return model
 
 
     def get_relation_model(self,opt):
@@ -162,7 +213,9 @@ class BasicModel(object):
         self.model =  self.get_relation_model(self.opt)
         return self.train(train,dev=dev,dirname=dirname,strategy=strategy,dataset=dataset)
 
-
+    def train_tag(self,train,dev=None,dirname="saved_model",dataset='dataset'):
+        self.model = self.get_tag_model(self.opt)
+        return self.train_large(train,dev=dev,dirname=dirname,dataset=dataset)
 
 
 

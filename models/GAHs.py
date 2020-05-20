@@ -13,6 +13,7 @@ from keras.initializers import *
 import tensorflow as tf
 from keras import backend as K
 import random
+import util
 
 add_layer = Lambda(lambda x:x[0]+x[1], output_shape=lambda x:x[0])
 
@@ -204,14 +205,12 @@ class GAHs(BasicModel):
 		
 		src_emb = self.emb_dropout(src_emb)
 
-		# NGA (global)
-		# randomly choose some mask combinations
-		# ...
 		# sample a combination
 		self.mask_comb = []
 		self.sample_i = random.sample(range(len(self.masks)),k=opt.k_roles)
 		for i in self.sample_i:
 			self.mask_comb.append(self.masks[i])
+		opt.sample_i = self.sample_i
 		# encoder
 		enc_output = self.multi_layer_encoder(src_emb, self.src_seq, active_layers=active_layers, masks = self.mask_comb)
 		# enc_output = Dense(200,activation='relu')(enc_output)

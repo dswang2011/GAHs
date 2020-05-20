@@ -45,13 +45,14 @@ class RawLoader(object):
 
 	def load_MR_data(self,split='train'):
 		texts,labels = [],[]
-		file_path = 'datasets/MR/rt-polarity.all'
-		with open(file_path,'r',encoding='utf8') as fr:
+		# file_path = 'datasets/MR/rt-polarity.all'
+		folder_path = 'datasets/MR/'
+		with open(folder_path+split+'.csv','r',encoding='utf8') as fr:
 			for line in fr:
-				line = self.processed_text(line)
-				strs = line.strip().split(' ',1)
-				texts.append(strs[1])
-				labels.append(strs[0])
+				# line = self.processed_text(line)
+				strs = line.strip().split('\t',1)
+				texts.append(strs[0].strip())
+				labels.append(strs[1].strip())
 		return texts,labels
 
 	def load_IMDB_data(self, split='train'):
@@ -108,6 +109,29 @@ class RawLoader(object):
 				texts.append(strs[1])
 				labels.append(strs[0])
 		return texts, labels
+
+	def load_AGNews_data(self, split='train'):
+		texts, labels = [], []
+		folder_path = 'datasets/AGNews/'
+		with open(folder_path+split+'.csv', 'r', encoding='utf8') as fr:
+			for line in fr:
+				# line = self.processed_text(line)
+				strs = line.strip().split(',', 1)
+				texts.append(strs[1])
+				labels.append(strs[0].replace('\"',''))
+		return texts, labels
+
+	def load_SUBJ_data(self,split='train'):
+		texts,labels = [],[]
+		folder_path = 'datasets/SUBJ/'
+		with open(folder_path+split+'.csv', 'r', encoding='utf8') as fr:
+			for line in fr:
+				# line = self.processed_text(line)
+				strs = line.strip().split('\t', 1)
+				texts.append(strs[0])
+				labels.append(strs[1].strip())
+		return texts, labels
+
 	# the only one
 	def load_data(self,dataset,split="train"):
 		root = 'datasets/'
@@ -128,6 +152,10 @@ class RawLoader(object):
 			texts,labels = self.load_MR_data(split=split)
 		elif dataset == 'TREC':
 			texts,labels = self.load_TREC_data(split=split)
+		elif dataset in ['AGNews']:
+			texts,labels = self.load_AGNews_data(split=split)
+		elif dataset == ['SUBJ']:
+			texts,labels = self.load_SUBJ_data(split=split)
 		return texts,labels
 
 	def processed_text(self,text):
@@ -139,7 +167,13 @@ class RawLoader(object):
 
 if __name__ == '__main__':
 	rawLoader = RawLoader(None)
-	texts,labels = rawLoader.load_data('TREC',split='train')
+	texts,labels = rawLoader.load_data('SUBJ',split='train')
+	sum_length,avg = 0,0
+	for text in texts:
+		strs = text.split(' ')
+		sum_length+=len(strs)
+	print('avg',sum_length/len(texts))
+
 	print(len(texts),len(labels))
 	print(set(labels))
 	print(texts[:5])

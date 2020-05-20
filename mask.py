@@ -77,6 +77,78 @@ class RoleMask(object):
 					mask[m][n]=1.
 		return masks
 
+	def POS_Noun_mask(self, tokens_lists, word_index, MAX_SEQUENCE_LENGTH):
+		masks = np.zeros((len(tokens_lists),MAX_SEQUENCE_LENGTH,MAX_SEQUENCE_LENGTH),dtype='float16')
+		include_tags = self.noun_list
+
+		for tid, text in enumerate(tokens_lists):
+			mask = masks[tid]
+			# Start
+			val_index = [0]
+			# Body
+			row=1
+			for semtok in text:
+				if semtok.tag_ in include_tags:
+					val_index.append(row)
+				row+=1
+				if row>=MAX_SEQUENCE_LENGTH: break
+			# END
+			if row<MAX_SEQUENCE_LENGTH:
+				val_index.append(row)
+			# assign val part
+			for m in val_index:
+				for n in val_index:
+					mask[m][n]=1.
+		return masks
+
+	def POS_Verb_mask(self, tokens_lists, word_index, MAX_SEQUENCE_LENGTH):
+		masks = np.zeros((len(tokens_lists),MAX_SEQUENCE_LENGTH,MAX_SEQUENCE_LENGTH),dtype='float16')
+		include_tags = self.verb_list
+
+		for tid, text in enumerate(tokens_lists):
+			mask = masks[tid]
+			# Start
+			val_index = [0]
+			# Body
+			row=1
+			for semtok in text:
+				if semtok.tag_ in include_tags:
+					val_index.append(row)
+				row+=1
+				if row>=MAX_SEQUENCE_LENGTH: break
+			# END
+			if row<MAX_SEQUENCE_LENGTH:
+				val_index.append(row)
+			# assign val part
+			for m in val_index:
+				for n in val_index:
+					mask[m][n]=1.
+		return masks
+
+	def POS_Adjective_mask(self, tokens_lists, word_index, MAX_SEQUENCE_LENGTH):
+		masks = np.zeros((len(tokens_lists),MAX_SEQUENCE_LENGTH,MAX_SEQUENCE_LENGTH),dtype='float16')
+		include_tags = self.adjective_list
+
+		for tid, text in enumerate(tokens_lists):
+			mask = masks[tid]
+			# Start
+			val_index = [0]
+			# Body
+			row=1
+			for semtok in text:
+				if semtok.tag_ in include_tags:
+					val_index.append(row)
+				row+=1
+				if row>=MAX_SEQUENCE_LENGTH: break
+			# END
+			if row<MAX_SEQUENCE_LENGTH:
+				val_index.append(row)
+			# assign val part
+			for m in val_index:
+				for n in val_index:
+					mask[m][n]=1.
+		return masks
+
 	def POS_masks_of_texts2(self, tokens_lists, word_index, MAX_SEQUENCE_LENGTH):
 		masks = np.zeros((len(tokens_lists),MAX_SEQUENCE_LENGTH,MAX_SEQUENCE_LENGTH),dtype='float16')
 		if self.opt.cus_pos in ['A','a']:
@@ -106,6 +178,36 @@ class RoleMask(object):
 				for n in val_index:
 					mask[m][n]=1.
 		return masks
+
+	# negation mask
+	def negation_mask(self,tokens_lists, word_index, MAX_SEQUENCE_LENGTH):
+		masks = np.zeros((len(tokens_lists),MAX_SEQUENCE_LENGTH,MAX_SEQUENCE_LENGTH),dtype='float16')
+		include_tags = ['neg']
+		test_count=0
+		for tid, text in enumerate(tokens_lists):
+			mask = masks[tid]
+			val_index = [0]	
+			row = 1
+			for semtok in text:
+				if semtok.dep_ in include_tags: 
+					val_index.append(row)
+					# related tokens
+					# val_index.append(semtok.head.i+1)
+					# for child in semtok.children: val_index.append(child.i+1)
+				row+=1
+				if row>=MAX_SEQUENCE_LENGTH: break
+			# END
+			if row<MAX_SEQUENCE_LENGTH:
+				val_index.append(row)
+			# assign
+			val_index = [val for val in val_index if val<MAX_SEQUENCE_LENGTH]
+			val_index = list(set(val_index))
+			lenth = min(len(text)+2,MAX_SEQUENCE_LENGTH)
+			for m in range(lenth):
+				for n in val_index:
+					mask[m][n]=1.
+		return masks
+
 
 	def major_rel_of_texts(self,tokens_lists, word_index, MAX_SEQUENCE_LENGTH):
 		masks = np.zeros((len(tokens_lists),MAX_SEQUENCE_LENGTH,MAX_SEQUENCE_LENGTH),dtype='float16')
@@ -206,11 +308,13 @@ class RoleMask(object):
 		return masks
 
  
+ 	# 1/10
 	def rare_word_mask(self,tokens_lists,word_index,MAX_SEQUENCE_LENGTH):
 		masks = np.zeros((len(tokens_lists),MAX_SEQUENCE_LENGTH,MAX_SEQUENCE_LENGTH),dtype='float16')
 		for text_id, text in enumerate(tokens_lists):
 			mask = masks[text_id]
-			keep_index = [(0.0,0),(0.0,0)]
+			rare_num = max(2,len(text)//10)
+			keep_index = [(0.0,0) for i in range(rare_num)]
 			row = 1
 			for semtok in text:
 				token = semtok.text.lower()
@@ -219,7 +323,8 @@ class RoleMask(object):
 					heapq.heappushpop(keep_index,(idf,row))
 				row+=1
 				if row>= MAX_SEQUENCE_LENGTH: break
-			rare_words = [keep_index[0][1], keep_index[1][1]]
+			
+			rare_words = [keep_index[i][1] for i in range(rare_num)]
 			# assign
 			# for m in keep_index:
 			for m in range(min(len(text)+2,MAX_SEQUENCE_LENGTH)):
@@ -265,4 +370,13 @@ class RoleMask(object):
 				res.append(self.stop_word_mask(tokens_lists,word_index,MAX_SEQUENCE_LENGTH))
 			elif mask == 'rare_word':
 				res.append(self.rare_word_mask(tokens_lists,word_index,MAX_SEQUENCE_LENGTH))
+			elif mask == 'noun':
+				res.append(self.POS_Noun_mask(tokens_lists,word_index,MAX_SEQUENCE_LENGTH))
+			elif mask == 'verb':
+				res.append(self.POS_Verb_mask(tokens_lists,word_index,MAX_SEQUENCE_LENGTH))
+			elif mask == 'adjective':
+				res.append(self.POS_Adjective_mask(tokens_lists,word_index,MAX_SEQUENCE_LENGTH))
+			elif mask == 'negation':
+				res.append(self.negation_mask(tokens_lists,word_index,MAX_SEQUENCE_LENGTH))
+
 		return res

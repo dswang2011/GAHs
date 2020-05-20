@@ -10,31 +10,40 @@ import data_helper
 import util
 import random
 import tensorflow as tf
+# from tensorflow.python.framework import ops
+# ops.reset_default_graph()
 
 dataset_pool = {
 	"TREC": ['train','test'],	# 50
-	"MR": ['train'],		
+	"MR": ['train','test'],	# 50	
 	"SST": ['train','test'],	# 19
 	"IMDB":['train','test'],	# 230
 	"YELP": ['train','test'],	# 136
 	"ROTTENTOMATOES": ['train','test'], # 21
 	"DBPEDIA" : ['train','test'],	# 47
+	"AGNews": ['train','test'],
+	"SUBJ":['train','test'],	# avg length
 	# AG news 8, 
 }
 grid_pool ={
 	# model
-	"model": ['gahs','gahs','gahs','gah'],#'transformer','bilstm','cnn'],# 'transformer','bilstm','cnn'],
-	"hidden_unit_num":[100,200],	# for rnn or cnn
-	"dropout_rate" : [0.2,0.3,0.4,0.5],
+	"model": ['transformer','gahs','gahs','gah'], #,],#,'gah' ,'cnn','bilstm',
+	"hidden_unit_num":[100,200,300],	# for rnn or cnn
+	"dropout_rate" : [0.2,0.3,0.4],
 	# hyper parameters
-	"lr":[0.001, 0.0006,0.0001],	# 0.01 for CNN and LSTM
-	"batch_size":[32,64,96],
+	"lr":[0.001, 0.0005,0.0001],	# 0.01 for CNN and LSTM
+	"batch_size":[32,64],
 	"val_split":[0.1],
 	"layers" : [2,4,6,8],
-	"n_head" : [6,8],
+	"n_head" : [4,6],
 	"d_inner_hid" : [128,256,512],
-	"roles": [['both_direct','major_rels','separator','rare_word']]	#'positional', 'POS',rare_word,'positional','stop_word'
+	"roles": [['noun','verb','adjective','negation']]#,'major_rels','positional','both_direct',,'separator','rare_word'
 }
+
+
+# config = tf.ConfigProto()
+# config.gpu_options.per_process_gpu_memory_fraction = 0.9
+# keras.backend.tensorflow_backend.set_session(tf.Session(config=config))
 
 # 
 gpus = tf.config.experimental.list_physical_devices('GPU')
@@ -111,7 +120,13 @@ def train_grid(opt):
 		else:
 			print('lenth of train_Test:',len(train_test))
 			[train],test = train_test, None 
-		model.train(train,dev=test,dataset = opt.dataset)
+
+		# sem encoding
+		if opt.tag_encoding==1:
+			opt.para_str += 'semEmbed'
+			model.train_tag(train,dev=test,dataset = opt.dataset)
+		else:
+			model.train(train,dev=test,dataset = opt.dataset)
 
 
 if __name__ == '__main__':
@@ -120,7 +135,7 @@ if __name__ == '__main__':
 	parser.add_argument('-config', action = 'store', dest = 'config', help = 'please enter the config path.',default='config/config.ini')
 	parser.add_argument('-gpu_num', action = 'store', dest = 'gpu_num', help = 'please enter the gpu num.',default=1)
 	parser.add_argument('-gpu', action = 'store', dest = 'gpu', help = 'please enter the specific gpu no.',default=0)
-	parser.add_argument('--patience', type=int, default=7)
+	parser.add_argument('--patience', type=int, default=5)
 	parser.add_argument('--epoch_num', type=int, default=30)
 	parser.add_argument('--search_times', type=int, default=20)
 	parser.add_argument('--load_role',type=bool, default=False)
@@ -128,10 +143,12 @@ if __name__ == '__main__':
 	parser.add_argument('--max_sequence_length', type=int,default=90)
 	parser.add_argument('--k_roles', type=int,default=6)
 	parser.add_argument('--cus_pos',default='N')
+	parser.add_argument('--tag_encoding',type=int,default=0)
 	args = parser.parse_args()
 	# set parameters from config files
 	util.parse_and_set(args.config,args)
 	# train
 	print('== Currently train set is:==', args.dataset)
+	print('=== tag encoding:', args.tag_encoding)
 	
 	train_grid(args)

@@ -64,6 +64,15 @@ class Data_helper(object):
 				embedding_matrix[i] = embedding_vector
 		return embedding_matrix
 
+	def build_tag_embedding_matrix(self,tag_onehot):
+		tag_embedding_matrix = np.random.random((len(tag_onehot)+1,self.opt.dep_dim))
+		for i,vect in enumerate(tag_onehot):
+			if vect is not None:
+				tag_embedding_matrix[i] = np.array(vect)
+		return tag_embedding_matrix
+
+
+
 	def load_sem_data(self,dataset,split):
 		root = 'datasets/'+dataset+'/'
 		texts,labels = pickle.load(open(os.path.join(root,split+'.pkl'),'rb'))
@@ -75,6 +84,8 @@ class Data_helper(object):
 		labels_train_test = []
 		for split in splits:
 			texts,labels = self.load_sem_data(dataset,split)
+			# half = len(texts)	# control the datasize;
+			# texts, labels = texts[:half], labels[:half]
 			texts_list_train_test.append(texts)
 			labels_train_test.append(labels)
 		self.opt.nb_classes = len(set(labels))
@@ -88,18 +99,25 @@ class Data_helper(object):
 		# compute idf
 		temp_txts = [doc.text for doc in all_texts]
 		self.opt.idf_dict = util.get_idf_dict(temp_txts)
-		del temp_txts
-		gc.collect()
+		del temp_txts[:]
 		
 		# tokenize 
 		word_index = self.tokenizer(all_texts,MAX_NB_WORDS=self.opt.max_nb_words)
-		all_texts = []	# release
-		
-		# save word_index
 		self.opt.word_index = word_index
 		print('word_index:',len(word_index))
 		# build word embedding
 		self.opt.embedding_matrix = self.build_word_embedding_matrix(word_index)
+
+		# tag embedding
+		# tag_index = self.tag_index(all_texts,MAX_NB_WORDS=self.opt.max_nb_words)
+		# tag_onehot = to_categorical( list(tag_index.values()) )
+		# self.opt.dep_dim = len(tag_onehot[0])
+		# self.opt.dep_embedding_matrix = self.build_tag_embedding_matrix(tag_onehot)
+		# print('embedding matrix',self.opt.dep_embedding_matrix)
+
+		# release a bit
+		del all_texts[:]
+		gc.collect()
 
 		le = preprocessing.LabelEncoder()
 		# labels = le.fit_transform(labels)
@@ -112,6 +130,11 @@ class Data_helper(object):
 				x = [x1,x2]
 			else:
 				x = self.tokens_list_to_sequences(tokens_list,word_index,self.opt.max_sequence_length)
+				# tag one hot encoding
+				if self.opt.tag_encoding==1:
+					x_tag = self.tokens_list_to_tag_sequences(tokens_list,tag_index,self.opt.max_sequence_length)
+					x = [x]+[x_tag]
+
 				# if load_role, then load masks as well
 				if self.opt.load_role:
 					masks = self.role_mask.get_masks(tokens_list,word_index,self.opt.max_sequence_length, self.opt.all_roles)
@@ -119,6 +142,7 @@ class Data_helper(object):
 			y = le.fit_transform(labels)
 			# print(y)
 			y = to_categorical(np.asarray(y)) # one-hot encoding y_train = labels # one-hot label encoding
+
 			train_test.append([x,y])
 			if dataset in self.opt.pair_set.split(","):
 				print('[train pair] Shape of data tensor:', x[0].shape,' and ', x[1].shape)
@@ -140,6 +164,25 @@ class Data_helper(object):
 						word_index[token] = index
 						index+=1
 		return word_index
+
+	def tag_index(self, texts, MAX_NB_WORDS):
+		tag_index = {'<PAD>': 0}
+		index = 1
+		count = 0
+		for text in texts:
+			for token in text:	# here the text is the doc
+				# add to word_index
+				if len(tag_index)<100:	# less than 100
+					tag=token.dep_
+					if tag not in tag_index.keys():
+						tag_index[tag] = index
+						index+=1
+				else:
+					break
+			count+=1
+			if count>2000: break
+		return tag_index
+
 
 	def clean_str(self, string):
 	    """
@@ -177,6 +220,27 @@ class Data_helper(object):
 		return np.asarray(sequences,dtype=int)
 		# return sequences
 
+	def tokens_list_to_tag_sequences(self, tokens_lists, tag_index, MAX_SEQUENCE_LENGTH):
+		sequences = []
+		for tokens in tokens_lists:
+			sequence = [0]	# start
+			for semtok in tokens:
+				tag = semtok.dep_
+				if tag in tag_index.keys():
+					index = tag_index[tag]
+					sequence.append(index)
+				else:
+					sequence.append(0)
+			sequence.append(0)	# end
+			if len(sequence)>MAX_SEQUENCE_LENGTH:
+				sequence = sequence[:MAX_SEQUENCE_LENGTH]
+			else:
+				sequence = sequence+np.zeros(MAX_SEQUENCE_LENGTH-len(sequence),dtype=int).tolist()
+			# print('seq:',sequence)
+			sequences.append(sequence)
+		return np.asarray(sequences,dtype=int)
+
+
 
 
 if __name__ == '__main__':
@@ -187,7 +251,7 @@ if __name__ == '__main__':
 	parser.add_argument('-gpu', action = 'store', dest = 'gpu', help = 'please enter the specific gpu no.',default=0)
 	parser.add_argument('--patience', type=int, default=6)
 	parser.add_argument('--load_role',type=bool, default=True)
-	parser.add_argument('--all_roles', default=['positional','both_direct','major_rels','stop_word'])
+	parser.add_argument('--all_roles', default=['positional','both_direct','major_rels','stop_word','rare_words'])
 	
 	args = parser.parse_args()
 	# set parameters from config files

@@ -3,9 +3,13 @@ from keras.layers import Conv1D, MaxPooling1D,Dense,  LSTM, GRU, Bidirectional,D
 from models.BasicModel import BasicModel
 from keras.models import Model
 class CNN(BasicModel):
-    def get_model(self,opt):
+    def get_model(self,opt,embedding_type='word'):
         sequence_input = Input(shape=(opt.max_sequence_length,), dtype='int32')
         embedding_layer = Embedding(len(opt.word_index) + 1,opt.embedding_dim,weights=[opt.embedding_matrix],input_length=opt.max_sequence_length,trainable=False)
+        if embedding_type=='dep':
+            embedding_layer = \
+            Embedding(opt.dep_dim+1 ,opt.dep_dim,weights=[opt.dep_embedding_matrix],input_length=opt.max_sequence_length,trainable=False)
+
         embedded_sequences = embedding_layer(sequence_input)
         representions=[]
         for i in [1,2,3,4]:

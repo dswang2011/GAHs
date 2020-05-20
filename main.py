@@ -6,6 +6,7 @@ import data_helper
 import util
 import random
 from preprocessor.semantic_token import SemToken
+from preprocessor.semtok_generator import SemtokGenerate
 import train
 
 if __name__ == '__main__':
@@ -21,6 +22,7 @@ if __name__ == '__main__':
 	parser.add_argument('--run_mode',default='preprocess')
 	parser.add_argument('--dataset', default="TREC")
 	parser.add_argument('--splits', default="train,test")
+	parser.add_argument('--max_sequence_length', type=int,default=90)
 	args = parser.parse_args()
 	# set parameters from config files
 	util.parse_and_set(args.config,args)
@@ -35,3 +37,8 @@ if __name__ == '__main__':
 	if args.run_mode == "train":
 		train.train_grid(args)
 
+	if args.run_mode == 'prepare_feed':
+		generate = SemtokGenerate(args)
+		dataset = args.dataset
+		splits = args.splits.split(',')
+		generate.prepare_train_data(dataset,splits)
