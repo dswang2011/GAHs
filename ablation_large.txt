@@ -43,3 +43,306 @@ YELP_0.5modelgah_hidden_unit_num200_dropout_rate0.2_lr0.001_batch_size32_val_spl
 YELP_0.92244modelgahs_hidden_unit_num300_dropout_rate0.4_lr0.001_batch_size96_val_split0.1_layers4_n_head8_d_inner_hid128_roles['major_rels']_528.163_[0]
 YELP_0.92407modelgahs_hidden_unit_num300_dropout_rate0.4_lr0.0005_batch_size96_val_split0.1_layers2_n_head6_d_inner_hid256_roles['major_rels']_283.676_[0]
 YELP_0.92455modelgahs_hidden_unit_num100_dropout_rate0.3_lr0.0005_batch_size64_val_split0.1_layers4_n_head8_d_inner_hid256_roles['major_rels']_605.407_[0]
+TREC_0.66600modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.0001_batch_size64_val_split0.1_layers2_n_head4_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_3.307_[1, 0, 3, 2]
+TREC_0.86400modeltransformer_hidden_unit_num100_dropout_rate0.3_lr0.0001_batch_size64_val_split0.1_layers4_n_head4_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_3.111
+TREC_0.85399modelgahs_hidden_unit_num300_dropout_rate0.3_lr0.0001_batch_size64_val_split0.1_layers4_n_head6_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_6.702_[0, 2, 1, 3]
+TREC_0.38999modelgahs_hidden_unit_num300_dropout_rate0.4_lr0.0005_batch_size32_val_split0.1_layers6_n_head4_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_14.047_[1, 0, 3, 2]
+TREC_0.83799modelgahs_hidden_unit_num100_dropout_rate0.4_lr0.0001_batch_size64_val_split0.1_layers2_n_head6_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_3.894_[2, 0, 3, 1]
+TREC_0.30599modelgahs_hidden_unit_num200_dropout_rate0.4_lr0.0005_batch_size32_val_split0.1_layers6_n_head4_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_14.369_[3, 2, 1, 0]
+TREC_0.88999modeltransformer_hidden_unit_num300_dropout_rate0.3_lr0.0005_batch_size64_val_split0.1_layers8_n_head6_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_5.833
+TREC_0.60799modelgahs_hidden_unit_num100_dropout_rate0.2_lr0.0001_batch_size32_val_split0.1_layers6_n_head4_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_14.035_[1, 3, 0, 2]
+TREC_0.32199modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.001_batch_size32_val_split0.1_layers6_n_head6_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_17.183_[3, 0, 1, 2]
+TREC_0.88800modelgahs_hidden_unit_num300_dropout_rate0.3_lr0.0005_batch_size64_val_split0.1_layers8_n_head6_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_12.282_[1, 2, 0, 3]
+TREC_0.91200modelgahs_hidden_unit_num100_dropout_rate0.2_lr0.0005_batch_size32_val_split0.1_layers6_n_head6_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_17.626_[1, 2, 0, 3]
+TREC_0.62400modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.0001_batch_size32_val_split0.1_layers8_n_head4_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_18.288_[2, 3, 0, 1]
+TREC_0.75599modeltransformer_hidden_unit_num300_dropout_rate0.4_lr0.0001_batch_size32_val_split0.1_layers8_n_head6_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_11.462
+TREC_0.90799modeltransformer_hidden_unit_num300_dropout_rate0.3_lr0.001_batch_size32_val_split0.1_layers2_n_head6_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_3.513
+TREC_0.82800modeltransformer_hidden_unit_num200_dropout_rate0.4_lr0.0001_batch_size32_val_split0.1_layers8_n_head4_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_11.229
+TREC_0.30000modelgahs_hidden_unit_num200_dropout_rate0.4_lr0.001_batch_size32_val_split0.1_layers4_n_head4_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_10.104_[1, 3, 2, 0]
+TREC_0.86599modeltransformer_hidden_unit_num100_dropout_rate0.4_lr0.0005_batch_size64_val_split0.1_layers6_n_head4_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_4.524
+TREC_0.89999modelgah_hidden_unit_num300_dropout_rate0.4_lr0.001_batch_size64_val_split0.1_layers2_n_head4_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_5.214_[3, 1, 0, 2]
+TREC_0.69400modelgahs_hidden_unit_num200_dropout_rate0.4_lr0.0005_batch_size64_val_split0.1_layers2_n_head4_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_3.444_[0, 2, 3, 1]
+TREC_0.91000modelgahs_hidden_unit_num100_dropout_rate0.3_lr0.001_batch_size64_val_split0.1_layers4_n_head6_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_6.738_[0, 2, 1, 3]
+SUBJ_0.89700modelgahs_hidden_unit_num100_dropout_rate0.3_lr0.0005_batch_size64_val_split0.1_layers2_n_head4_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_5.243_[2, 0, 3, 1]
+SUBJ_0.93000modelgahs_hidden_unit_num200_dropout_rate0.4_lr0.001_batch_size32_val_split0.1_layers2_n_head6_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_11.015_[0, 1, 2, 3]
+SUBJ_0.90899modeltransformer_hidden_unit_num300_dropout_rate0.2_lr0.0001_batch_size32_val_split0.1_layers4_n_head4_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_9.873
+SUBJ_0.93800modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.001_batch_size64_val_split0.1_layers2_n_head6_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_5.927_[2, 3, 1, 0]
+SUBJ_0.93500modelgah_hidden_unit_num300_dropout_rate0.2_lr0.001_batch_size32_val_split0.1_layers2_n_head6_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_14.63_[0, 1, 2, 3]
+SUBJ_0.90600modelgahs_hidden_unit_num300_dropout_rate0.4_lr0.0001_batch_size64_val_split0.1_layers2_n_head4_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_5.19_[0, 2, 3, 1]
+SUBJ_0.93300modelgah_hidden_unit_num300_dropout_rate0.2_lr0.0005_batch_size32_val_split0.1_layers4_n_head6_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_26.832_[3, 0, 2, 1]
+SUBJ_0.51599modelgah_hidden_unit_num100_dropout_rate0.4_lr0.001_batch_size32_val_split0.1_layers8_n_head4_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_50.541_[2, 3, 0, 1]
+SUBJ_0.93400modeltransformer_hidden_unit_num200_dropout_rate0.4_lr0.001_batch_size64_val_split0.1_layers2_n_head6_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_3.104
+SUBJ_0.65799modelgah_hidden_unit_num100_dropout_rate0.3_lr0.001_batch_size32_val_split0.1_layers8_n_head4_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_49.982_[0, 3, 1, 2]
+SUBJ_0.92699modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.0001_batch_size64_val_split0.1_layers8_n_head6_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_19.585_[3, 1, 2, 0]
+YELP_0.5modelgah_hidden_unit_num100_dropout_rate0.3_lr0.001_batch_size96_val_split0.1_layers6_n_head6_d_inner_hid512_roles['major_rels']_1013.316_[0]
+SUBJ_0.92199modelgah_hidden_unit_num100_dropout_rate0.4_lr0.0001_batch_size32_val_split0.1_layers6_n_head4_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_38.787_[0, 2, 3, 1]
+SUBJ_0.93500modelgahs_hidden_unit_num100_dropout_rate0.3_lr0.001_batch_size32_val_split0.1_layers4_n_head6_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_20.06_[0, 3, 1, 2]
+SUBJ_0.93000modelgah_hidden_unit_num100_dropout_rate0.4_lr0.0005_batch_size64_val_split0.1_layers8_n_head4_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_27.813_[3, 2, 1, 0]
+SUBJ_0.93699modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.0001_batch_size32_val_split0.1_layers6_n_head6_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_29.144_[1, 2, 0, 3]
+SUBJ_0.90899modelgah_hidden_unit_num300_dropout_rate0.4_lr0.0001_batch_size64_val_split0.1_layers8_n_head4_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_27.403_[3, 1, 2, 0]
+SUBJ_0.66900modeltransformer_hidden_unit_num200_dropout_rate0.3_lr0.0005_batch_size32_val_split0.1_layers8_n_head6_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_18.264
+SUBJ_0.93300modeltransformer_hidden_unit_num300_dropout_rate0.4_lr0.0005_batch_size32_val_split0.1_layers2_n_head4_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_5.684
+SUBJ_0.51599modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.001_batch_size64_val_split0.1_layers6_n_head6_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_14.72_[1, 2, 3, 0]
+YELP_0.92339modelgahs_hidden_unit_num300_dropout_rate0.4_lr0.001_batch_size96_val_split0.1_layers2_n_head8_d_inner_hid256_roles['major_rels']_325.796_[0]
+SUBJ_0.93800modelgah_hidden_unit_num200_dropout_rate0.3_lr0.0001_batch_size32_val_split0.1_layers4_n_head4_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_26.824_[3, 0, 1, 2]
+TREC_0.85600modeltransformer_hidden_unit_num200_dropout_rate0.3_lr0.0001_batch_size64_val_split0.1_layers8_n_head6_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_5.899
+TREC_0.88999modeltransformer_hidden_unit_num300_dropout_rate0.4_lr0.001_batch_size32_val_split0.1_layers4_n_head4_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_5.736
+TREC_0.88999modelgahs_hidden_unit_num300_dropout_rate0.3_lr0.0001_batch_size32_val_split0.1_layers6_n_head6_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_17.399_[2, 3, 0, 1]
+TREC_0.35400modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.0005_batch_size64_val_split0.1_layers6_n_head4_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_6.853_[1, 3, 2, 0]
+TREC_0.90799modeltransformer_hidden_unit_num100_dropout_rate0.2_lr0.001_batch_size32_val_split0.1_layers6_n_head6_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_8.551
+MR_0.73195modelgahs_hidden_unit_num100_dropout_rate0.3_lr0.0001_batch_size64_val_split0.1_layers2_n_head4_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_5.25_[3, 2, 1, 0]
+MR_0.55201modelgahs_hidden_unit_num100_dropout_rate0.4_lr0.0005_batch_size32_val_split0.1_layers6_n_head4_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_23.941_[0, 1, 2, 3]
+MR_0.73477modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.0001_batch_size32_val_split0.1_layers4_n_head4_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_17.105_[2, 0, 3, 1]
+MR_0.50702modeltransformer_hidden_unit_num300_dropout_rate0.4_lr0.001_batch_size32_val_split0.1_layers6_n_head6_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_15.114
+MR_0.74695modelgahs_hidden_unit_num100_dropout_rate0.4_lr0.0001_batch_size64_val_split0.1_layers6_n_head6_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_15.638_[1, 3, 2, 0]
+MR_0.78163modelgah_hidden_unit_num300_dropout_rate0.3_lr0.0005_batch_size64_val_split0.1_layers2_n_head4_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_8.591_[0, 2, 3, 1]
+MR_0.55857modelgahs_hidden_unit_num300_dropout_rate0.4_lr0.0005_batch_size32_val_split0.1_layers8_n_head4_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_31.537_[3, 0, 1, 2]
+MR_0.73664modelgah_hidden_unit_num300_dropout_rate0.4_lr0.001_batch_size32_val_split0.1_layers4_n_head6_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_28.319_[1, 0, 3, 2]
+MR_0.78350modelgahs_hidden_unit_num100_dropout_rate0.3_lr0.0001_batch_size32_val_split0.1_layers8_n_head6_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_39.823_[0, 1, 2, 3]
+MR_0.76382modelgahs_hidden_unit_num300_dropout_rate0.4_lr0.0001_batch_size32_val_split0.1_layers2_n_head6_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_11.666_[2, 3, 1, 0]
+MR_0.50702modelgahs_hidden_unit_num300_dropout_rate0.4_lr0.001_batch_size64_val_split0.1_layers6_n_head6_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_16.045_[3, 0, 1, 2]
+MR_0.73664modelgahs_hidden_unit_num300_dropout_rate0.4_lr0.0001_batch_size64_val_split0.1_layers8_n_head4_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_16.382_[1, 2, 3, 0]
+MR_0.50702modelgah_hidden_unit_num200_dropout_rate0.2_lr0.001_batch_size64_val_split0.1_layers8_n_head6_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_28.763_[3, 2, 0, 1]
+MR_0.72071modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.0005_batch_size64_val_split0.1_layers4_n_head4_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_9.287_[1, 2, 0, 3]
+MR_0.50702modelgah_hidden_unit_num300_dropout_rate0.4_lr0.001_batch_size32_val_split0.1_layers6_n_head4_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_41.265_[0, 2, 1, 3]
+MR_0.78444modeltransformer_hidden_unit_num300_dropout_rate0.2_lr0.0005_batch_size64_val_split0.1_layers8_n_head4_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_10.148
+MR_0.54920modelgahs_hidden_unit_num100_dropout_rate0.4_lr0.0005_batch_size64_val_split0.1_layers6_n_head4_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_13.34_[0, 3, 1, 2]
+MR_0.79475modeltransformer_hidden_unit_num300_dropout_rate0.2_lr0.0005_batch_size64_val_split0.1_layers2_n_head6_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_3.287
+MR_0.75820modelgah_hidden_unit_num100_dropout_rate0.3_lr0.0001_batch_size64_val_split0.1_layers6_n_head6_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_21.592_[2, 0, 1, 3]
+MR_0.78069modelgah_hidden_unit_num300_dropout_rate0.4_lr0.001_batch_size32_val_split0.1_layers4_n_head6_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_28.895_[3, 2, 0, 1]
+YELP_0.92747modelgahs_hidden_unit_num100_dropout_rate0.2_lr0.0001_batch_size32_val_split0.1_layers8_n_head6_d_inner_hid512_roles['major_rels']_1225.977_[0]
+SST_0.79253modelgah_hidden_unit_num300_dropout_rate0.2_lr0.0001_batch_size96_val_split0.1_layers6_n_head6_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_14.692_[2, 3, 1, 0]
+SST_0.82217modelgah_hidden_unit_num200_dropout_rate0.3_lr0.0005_batch_size32_val_split0.1_layers2_n_head6_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_11.98_[3, 2, 0, 1]
+SST_0.81339modeltransformer_hidden_unit_num100_dropout_rate0.3_lr0.0005_batch_size32_val_split0.1_layers2_n_head4_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_4.395
+SST_0.50054modelgahs_hidden_unit_num300_dropout_rate0.2_lr0.001_batch_size96_val_split0.1_layers8_n_head6_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_11.469_[1, 3, 2, 0]
+SST_0.80625modelgah_hidden_unit_num100_dropout_rate0.4_lr0.0005_batch_size64_val_split0.1_layers6_n_head6_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_16.339_[0, 2, 3, 1]
+SST_0.73435modelgahs_hidden_unit_num100_dropout_rate0.4_lr0.0005_batch_size32_val_split0.1_layers2_n_head4_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_7.357_[1, 3, 2, 0]
+SST_0.76234modelgahs_hidden_unit_num100_dropout_rate0.3_lr0.001_batch_size32_val_split0.1_layers2_n_head4_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_7.239_[2, 3, 1, 0]
+SST_0.81558modeltransformer_hidden_unit_num200_dropout_rate0.4_lr0.0005_batch_size32_val_split0.1_layers2_n_head6_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_4.639
+SST_0.79582modelgahs_hidden_unit_num100_dropout_rate0.2_lr0.0001_batch_size32_val_split0.1_layers2_n_head4_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_7.34_[1, 0, 2, 3]
+SST_0.82491modelgah_hidden_unit_num100_dropout_rate0.2_lr0.0005_batch_size64_val_split0.1_layers4_n_head6_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_11.647_[3, 1, 0, 2]
+SUBJ_0.92000modeltransformer_hidden_unit_num100_dropout_rate0.2_lr0.0001_batch_size96_val_split0.1_layers8_n_head4_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_3.718
+SST_0.81613modeltransformer_hidden_unit_num100_dropout_rate0.3_lr0.0005_batch_size32_val_split0.1_layers6_n_head6_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_11.485
+SUBJ_0.92599modelgah_hidden_unit_num100_dropout_rate0.4_lr0.0005_batch_size96_val_split0.1_layers4_n_head4_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_7.147_[3, 2, 1, 0]
+SUBJ_0.94300modelgahs_hidden_unit_num100_dropout_rate0.4_lr0.001_batch_size32_val_split0.1_layers2_n_head6_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_5.929_[3, 2, 1, 0]
+SUBJ_0.89399modelgahs_hidden_unit_num200_dropout_rate0.4_lr0.0005_batch_size32_val_split0.1_layers2_n_head4_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_5.138_[3, 0, 2, 1]
+SST_0.79143modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.0001_batch_size32_val_split0.1_layers8_n_head4_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_23.615_[3, 0, 2, 1]
+SUBJ_0.92500modeltransformer_hidden_unit_num100_dropout_rate0.3_lr0.0001_batch_size32_val_split0.1_layers8_n_head4_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_9.905
+SUBJ_0.90200modelgahs_hidden_unit_num300_dropout_rate0.3_lr0.0005_batch_size64_val_split0.1_layers8_n_head4_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_8.603_[1, 2, 0, 3]
+SUBJ_0.90899modelgahs_hidden_unit_num200_dropout_rate0.4_lr0.0001_batch_size96_val_split0.1_layers2_n_head6_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_2.572_[2, 1, 3, 0]
+SUBJ_0.89800modeltransformer_hidden_unit_num200_dropout_rate0.3_lr0.0001_batch_size96_val_split0.1_layers4_n_head4_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_2.086
+SST_0.80186modeltransformer_hidden_unit_num200_dropout_rate0.3_lr0.0001_batch_size32_val_split0.1_layers8_n_head4_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_14.668
+SUBJ_0.51599modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.001_batch_size64_val_split0.1_layers8_n_head4_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_8.585_[0, 2, 3, 1]
+SUBJ_0.92299modeltransformer_hidden_unit_num100_dropout_rate0.3_lr0.0001_batch_size64_val_split0.1_layers6_n_head4_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_4.11
+SUBJ_0.93099modeltransformer_hidden_unit_num300_dropout_rate0.4_lr0.0005_batch_size32_val_split0.1_layers4_n_head6_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_5.617
+SST_0.81229modelgahs_hidden_unit_num300_dropout_rate0.2_lr0.0001_batch_size96_val_split0.1_layers8_n_head6_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_10.759_[1, 0, 2, 3]
+SUBJ_0.93300modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.0005_batch_size96_val_split0.1_layers2_n_head6_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_2.567_[2, 3, 1, 0]
+SST_0.82491modelgahs_hidden_unit_num100_dropout_rate0.4_lr0.0005_batch_size64_val_split0.1_layers2_n_head6_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_5.022_[2, 3, 1, 0]
+SST_0.78485modelgahs_hidden_unit_num200_dropout_rate0.4_lr0.0001_batch_size96_val_split0.1_layers2_n_head6_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_3.533_[1, 3, 2, 0]
+SUBJ_0.91500modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.0001_batch_size64_val_split0.1_layers8_n_head4_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_8.595_[3, 0, 1, 2]
+SUBJ_0.89200modelgahs_hidden_unit_num300_dropout_rate0.4_lr0.0005_batch_size32_val_split0.1_layers8_n_head4_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_15.968_[2, 3, 1, 0]
+SST_0.50054modelgah_hidden_unit_num200_dropout_rate0.3_lr0.0005_batch_size96_val_split0.1_layers8_n_head4_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_17.847_[2, 0, 1, 3]
+SUBJ_0.91100modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.0001_batch_size32_val_split0.1_layers6_n_head4_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_12.333_[3, 2, 0, 1]
+SST_0.79363modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.0001_batch_size64_val_split0.1_layers4_n_head4_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_6.9_[2, 0, 1, 3]
+SUBJ_0.92400modeltransformer_hidden_unit_num300_dropout_rate0.2_lr0.001_batch_size96_val_split0.1_layers6_n_head6_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_2.912
+SST_0.80900modelgah_hidden_unit_num300_dropout_rate0.4_lr0.0005_batch_size64_val_split0.1_layers4_n_head4_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_11.6_[3, 2, 0, 1]
+SUBJ_0.51599modelgah_hidden_unit_num100_dropout_rate0.3_lr0.001_batch_size64_val_split0.1_layers8_n_head4_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_15.479_[3, 1, 2, 0]
+SUBJ_0.92599modelgahs_hidden_unit_num300_dropout_rate0.4_lr0.001_batch_size96_val_split0.1_layers4_n_head6_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_4.257_[0, 3, 1, 2]
+SST_0.81284modeltransformer_hidden_unit_num100_dropout_rate0.2_lr0.0001_batch_size32_val_split0.1_layers4_n_head6_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_7.995
+SST_0.80406modeltransformer_hidden_unit_num100_dropout_rate0.3_lr0.001_batch_size32_val_split0.1_layers2_n_head4_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_4.617
+SUBJ_0.91399modelgah_hidden_unit_num100_dropout_rate0.4_lr0.001_batch_size32_val_split0.1_layers6_n_head4_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_21.995_[0, 2, 3, 1]
+SUBJ_0.93500modeltransformer_hidden_unit_num200_dropout_rate0.4_lr0.001_batch_size64_val_split0.1_layers4_n_head6_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_2.959
+SST_0.80570modelgahs_hidden_unit_num300_dropout_rate0.3_lr0.0001_batch_size64_val_split0.1_layers4_n_head6_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_8.048_[1, 0, 3, 2]
+SUBJ_0.92900modelgahs_hidden_unit_num200_dropout_rate0.4_lr0.0005_batch_size96_val_split0.1_layers4_n_head6_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_4.229_[3, 0, 2, 1]
+SST_0.81339modeltransformer_hidden_unit_num100_dropout_rate0.4_lr0.0005_batch_size64_val_split0.1_layers4_n_head6_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_3.927
+SUBJ_0.93599modeltransformer_hidden_unit_num200_dropout_rate0.3_lr0.0005_batch_size32_val_split0.1_layers6_n_head6_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_7.674
+SUBJ_0.51599modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.001_batch_size64_val_split0.1_layers8_n_head6_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_10.412_[3, 2, 1, 0]
+SST_0.50054modelgahs_hidden_unit_num200_dropout_rate0.4_lr0.001_batch_size64_val_split0.1_layers8_n_head6_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_15.739_[2, 1, 0, 3]
+SUBJ_0.90600modelgahs_hidden_unit_num200_dropout_rate0.4_lr0.0001_batch_size64_val_split0.1_layers6_n_head4_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_6.445_[2, 1, 0, 3]
+SST_0.80515modelgah_hidden_unit_num300_dropout_rate0.4_lr0.0005_batch_size96_val_split0.1_layers2_n_head6_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_5.683_[1, 2, 0, 3]
+SUBJ_0.93099modelgahs_hidden_unit_num300_dropout_rate0.2_lr0.0005_batch_size64_val_split0.1_layers8_n_head6_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_10.222_[1, 0, 3, 2]
+TREC_0.87599modeltransformer_hidden_unit_num300_dropout_rate0.4_lr0.001_batch_size96_val_split0.1_layers4_n_head6_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_1.352
+SST_0.80845modelgah_hidden_unit_num200_dropout_rate0.2_lr0.001_batch_size96_val_split0.1_layers4_n_head6_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_9.426_[2, 3, 0, 1]
+TREC_0.91000modelgah_hidden_unit_num300_dropout_rate0.2_lr0.0001_batch_size32_val_split0.1_layers2_n_head6_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_5.031_[0, 3, 2, 1]
+TREC_0.44200modelgahs_hidden_unit_num100_dropout_rate0.4_lr0.0005_batch_size32_val_split0.1_layers2_n_head4_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_3.036_[3, 1, 0, 2]
+SST_0.82491modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.0001_batch_size32_val_split0.1_layers4_n_head6_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_15.873_[2, 1, 3, 0]
+TREC_0.89399modelgah_hidden_unit_num300_dropout_rate0.2_lr0.0001_batch_size64_val_split0.1_layers8_n_head4_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_9.889_[2, 0, 1, 3]
+SST_0.81174modelgahs_hidden_unit_num100_dropout_rate0.3_lr0.0001_batch_size96_val_split0.1_layers4_n_head6_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_5.927_[2, 0, 1, 3]
+TREC_0.88200modelgah_hidden_unit_num200_dropout_rate0.3_lr0.0001_batch_size32_val_split0.1_layers4_n_head4_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_8.867_[1, 2, 0, 3]
+SST_0.83644modelgahs_hidden_unit_num300_dropout_rate0.4_lr0.0005_batch_size64_val_split0.1_layers4_n_head6_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_8.55_[2, 0, 1, 3]
+TREC_0.86400modeltransformer_hidden_unit_num100_dropout_rate0.2_lr0.0001_batch_size96_val_split0.1_layers8_n_head4_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_2.161
+SST_0.81119modelgah_hidden_unit_num300_dropout_rate0.3_lr0.001_batch_size64_val_split0.1_layers4_n_head6_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_11.887_[2, 3, 0, 1]
+TREC_0.83600modelgah_hidden_unit_num100_dropout_rate0.4_lr0.0001_batch_size32_val_split0.1_layers8_n_head6_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_16.876_[1, 2, 0, 3]
+TREC_0.90399modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.0001_batch_size64_val_split0.1_layers6_n_head6_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_5.027_[2, 3, 1, 0]
+TREC_0.88200modelgah_hidden_unit_num100_dropout_rate0.2_lr0.0005_batch_size96_val_split0.1_layers8_n_head6_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_9.914_[2, 3, 0, 1]
+TREC_0.90200modeltransformer_hidden_unit_num100_dropout_rate0.4_lr0.001_batch_size64_val_split0.1_layers2_n_head6_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_1.034
+TREC_0.89999modeltransformer_hidden_unit_num200_dropout_rate0.3_lr0.0005_batch_size96_val_split0.1_layers6_n_head4_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_1.841
+TREC_0.35800modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.0005_batch_size32_val_split0.1_layers4_n_head4_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_4.92_[2, 3, 1, 0]
+TREC_0.90799modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.0005_batch_size96_val_split0.1_layers8_n_head6_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_4.582_[3, 2, 0, 1]
+TREC_0.63599modelgahs_hidden_unit_num100_dropout_rate0.4_lr0.001_batch_size96_val_split0.1_layers6_n_head6_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_3.525_[3, 0, 2, 1]
+TREC_0.89999modelgahs_hidden_unit_num300_dropout_rate0.3_lr0.0005_batch_size64_val_split0.1_layers2_n_head6_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_2.122_[2, 1, 0, 3]
+TREC_0.88599modeltransformer_hidden_unit_num100_dropout_rate0.3_lr0.0005_batch_size96_val_split0.1_layers2_n_head4_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_0.716
+TREC_0.27599modelgahs_hidden_unit_num100_dropout_rate0.4_lr0.001_batch_size32_val_split0.1_layers8_n_head6_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_11.012_[2, 1, 3, 0]
+TREC_0.87599modelgah_hidden_unit_num200_dropout_rate0.2_lr0.0005_batch_size64_val_split0.1_layers8_n_head6_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_10.762_[3, 0, 2, 1]
+TREC_0.89200modelgah_hidden_unit_num300_dropout_rate0.2_lr0.0005_batch_size64_val_split0.1_layers6_n_head6_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_8.06_[2, 1, 3, 0]
+TREC_0.31200modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.001_batch_size96_val_split0.1_layers8_n_head4_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_3.365_[0, 2, 3, 1]
+TREC_0.30799modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.001_batch_size64_val_split0.1_layers6_n_head4_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_3.984_[2, 0, 3, 1]
+TREC_0.86599modeltransformer_hidden_unit_num300_dropout_rate0.4_lr0.0001_batch_size32_val_split0.1_layers4_n_head6_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_3.178
+TREC_0.42599modelgahs_hidden_unit_num300_dropout_rate0.2_lr0.001_batch_size32_val_split0.1_layers2_n_head4_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_3.023_[3, 2, 1, 0]
+TREC_0.90399modelgah_hidden_unit_num200_dropout_rate0.3_lr0.001_batch_size96_val_split0.1_layers4_n_head4_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_5.128_[1, 3, 2, 0]
+TREC_0.61400modelgahs_hidden_unit_num100_dropout_rate0.3_lr0.0001_batch_size32_val_split0.1_layers8_n_head4_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_9.182_[1, 0, 3, 2]
+SST_0.77497modeltransformer_hidden_unit_num100_dropout_rate0.4_lr0.0001_batch_size64_val_split0.1_layers8_n_head4_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_4.19
+SST_0.82107modeltransformer_hidden_unit_num100_dropout_rate0.3_lr0.0005_batch_size64_val_split0.1_layers4_n_head6_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_2.298
+SST_0.77991modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.0001_batch_size96_val_split0.1_layers2_n_head4_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_1.603_[2, 0, 3, 1]
+SST_0.81723modeltransformer_hidden_unit_num300_dropout_rate0.4_lr0.0005_batch_size32_val_split0.1_layers4_n_head6_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_4.241
+SST_0.50054modelgahs_hidden_unit_num300_dropout_rate0.3_lr0.001_batch_size64_val_split0.1_layers8_n_head4_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_6.51_[0, 3, 1, 2]
+ROTTENTOMATOES_0.50389modelgahs_hidden_unit_num100_dropout_rate0.2_lr0.001_batch_size32_val_split0.1_layers8_n_head6_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_181.857_[1, 0, 2, 3]
+SST_0.76838modelgahs_hidden_unit_num300_dropout_rate0.4_lr0.0001_batch_size64_val_split0.1_layers6_n_head4_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_4.834_[1, 0, 2, 3]
+SST_0.77936modelgahs_hidden_unit_num300_dropout_rate0.3_lr0.0005_batch_size32_val_split0.1_layers2_n_head4_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_3.925_[0, 2, 3, 1]
+SST_0.79912modeltransformer_hidden_unit_num300_dropout_rate0.3_lr0.001_batch_size96_val_split0.1_layers6_n_head6_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_2.269
+SST_0.82491modelgahs_hidden_unit_num100_dropout_rate0.2_lr0.001_batch_size32_val_split0.1_layers2_n_head6_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_5.134_[0, 1, 2, 3]
+SST_0.50109modelgahs_hidden_unit_num200_dropout_rate0.4_lr0.001_batch_size96_val_split0.1_layers8_n_head6_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_5.351_[2, 0, 1, 3]
+SST_0.79582modeltransformer_hidden_unit_num100_dropout_rate0.3_lr0.0001_batch_size64_val_split0.1_layers2_n_head6_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_1.323
+SST_0.81064modeltransformer_hidden_unit_num100_dropout_rate0.3_lr0.0005_batch_size64_val_split0.1_layers4_n_head6_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_2.301
+SST_0.80515modelgah_hidden_unit_num300_dropout_rate0.2_lr0.0001_batch_size64_val_split0.1_layers4_n_head4_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_6.585_[0, 2, 1, 3]
+SST_0.67782modelgahs_hidden_unit_num200_dropout_rate0.4_lr0.001_batch_size96_val_split0.1_layers4_n_head4_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_2.701_[2, 1, 3, 0]
+SST_0.81448modelgahs_hidden_unit_num100_dropout_rate0.3_lr0.0001_batch_size96_val_split0.1_layers4_n_head6_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_3.343_[3, 0, 1, 2]
+SST_0.83260modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.0005_batch_size64_val_split0.1_layers2_n_head6_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_2.515_[0, 3, 1, 2]
+SST_0.50054modeltransformer_hidden_unit_num300_dropout_rate0.3_lr0.001_batch_size32_val_split0.1_layers6_n_head4_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_6.506
+SST_0.82491modelgahs_hidden_unit_num100_dropout_rate0.2_lr0.0005_batch_size96_val_split0.1_layers8_n_head6_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_5.84_[0, 2, 3, 1]
+ROTTENTOMATOES_0.83429modelgah_hidden_unit_num300_dropout_rate0.4_lr0.0005_batch_size64_val_split0.1_layers4_n_head4_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_128.25_[2, 1, 0, 3]
+SST_0.81613modelgah_hidden_unit_num300_dropout_rate0.4_lr0.0005_batch_size64_val_split0.1_layers8_n_head6_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_12.247_[3, 1, 0, 2]
+SST_0.73326modelgahs_hidden_unit_num300_dropout_rate0.2_lr0.0005_batch_size32_val_split0.1_layers6_n_head4_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_9.474_[2, 1, 3, 0]
+SST_0.81942modelgah_hidden_unit_num300_dropout_rate0.2_lr0.0005_batch_size96_val_split0.1_layers2_n_head6_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_3.22_[2, 0, 3, 1]
+ROTTENTOMATOES_0.82489modeltransformer_hidden_unit_num100_dropout_rate0.2_lr0.0005_batch_size96_val_split0.1_layers8_n_head4_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_43.802
+SST_0.80131modelgah_hidden_unit_num300_dropout_rate0.2_lr0.0001_batch_size32_val_split0.1_layers8_n_head4_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_22.441_[1, 3, 2, 0]
+SST_0.54281modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.0005_batch_size32_val_split0.1_layers8_n_head4_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_12.033_[2, 3, 0, 1]
+SST_0.81888modelgahs_hidden_unit_num300_dropout_rate0.4_lr0.001_batch_size32_val_split0.1_layers2_n_head6_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_4.798_[3, 0, 1, 2]
+SST_0.81009modeltransformer_hidden_unit_num300_dropout_rate0.4_lr0.001_batch_size96_val_split0.1_layers4_n_head4_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_1.428
+MR_0.76194modeltransformer_hidden_unit_num100_dropout_rate0.2_lr0.0001_batch_size96_val_split0.1_layers6_n_head6_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_2.789
+MR_0.78631modelgahs_hidden_unit_num100_dropout_rate0.2_lr0.001_batch_size32_val_split0.1_layers2_n_head6_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_5.947_[0, 1, 2, 3]
+MR_0.77600modelgah_hidden_unit_num300_dropout_rate0.4_lr0.001_batch_size96_val_split0.1_layers2_n_head4_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_4.369_[0, 2, 3, 1]
+MR_0.50702modelgah_hidden_unit_num100_dropout_rate0.4_lr0.0005_batch_size32_val_split0.1_layers8_n_head4_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_28.548_[2, 1, 3, 0]
+MR_0.50702modeltransformer_hidden_unit_num200_dropout_rate0.3_lr0.001_batch_size96_val_split0.1_layers8_n_head4_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_3.714
+MR_0.75820modelgahs_hidden_unit_num300_dropout_rate0.2_lr0.0001_batch_size32_val_split0.1_layers6_n_head6_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_14.919_[3, 0, 1, 2]
+MR_0.77788modelgahs_hidden_unit_num100_dropout_rate0.3_lr0.001_batch_size32_val_split0.1_layers2_n_head6_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_5.948_[1, 3, 2, 0]
+MR_0.51171modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.0005_batch_size96_val_split0.1_layers8_n_head6_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_7.152_[1, 3, 2, 0]
+MR_0.77881modelgahs_hidden_unit_num300_dropout_rate0.3_lr0.001_batch_size96_val_split0.1_layers4_n_head6_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_4.049_[0, 3, 2, 1]
+MR_0.75820modelgah_hidden_unit_num100_dropout_rate0.3_lr0.0001_batch_size64_val_split0.1_layers2_n_head4_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_4.655_[0, 3, 1, 2]
+MR_0.72258modelgahs_hidden_unit_num300_dropout_rate0.3_lr0.0001_batch_size32_val_split0.1_layers2_n_head4_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_5.047_[1, 0, 3, 2]
+MR_0.50702modelgahs_hidden_unit_num300_dropout_rate0.4_lr0.001_batch_size96_val_split0.1_layers4_n_head4_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_3.405_[0, 1, 3, 2]
+MR_0.74601modeltransformer_hidden_unit_num300_dropout_rate0.3_lr0.0001_batch_size64_val_split0.1_layers4_n_head4_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_2.885
+MR_0.73195modelgahs_hidden_unit_num200_dropout_rate0.4_lr0.0001_batch_size96_val_split0.1_layers4_n_head4_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_3.293_[2, 1, 0, 3]
+MR_0.73851modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.0005_batch_size96_val_split0.1_layers8_n_head4_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_5.626_[2, 1, 3, 0]
+MR_0.76850modelgahs_hidden_unit_num300_dropout_rate0.3_lr0.0001_batch_size96_val_split0.1_layers8_n_head6_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_6.941_[2, 0, 3, 1]
+MR_0.50702modelgahs_hidden_unit_num100_dropout_rate0.3_lr0.0005_batch_size32_val_split0.1_layers8_n_head6_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_19.971_[1, 0, 3, 2]
+MR_0.80037modelgahs_hidden_unit_num300_dropout_rate0.3_lr0.0005_batch_size64_val_split0.1_layers6_n_head6_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_8.045_[1, 2, 0, 3]
+MR_0.50702modelgah_hidden_unit_num300_dropout_rate0.2_lr0.0005_batch_size64_val_split0.1_layers8_n_head4_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_17.182_[0, 2, 3, 1]
+MR_0.50702modelgahs_hidden_unit_num300_dropout_rate0.4_lr0.001_batch_size96_val_split0.1_layers6_n_head6_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_6.436_[1, 3, 2, 0]
+MR_0.50702modelgahs_hidden_unit_num300_dropout_rate0.3_lr0.001_batch_size96_val_split0.1_layers8_n_head6_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_8.286_[1, 0, 2, 3]
+MR_0.70290modelgahs_hidden_unit_num200_dropout_rate0.4_lr0.0005_batch_size64_val_split0.1_layers6_n_head4_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_7.065_[1, 0, 3, 2]
+MR_0.74133modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.0001_batch_size64_val_split0.1_layers6_n_head4_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_7.441_[2, 1, 3, 0]
+MR_0.74789modeltransformer_hidden_unit_num100_dropout_rate0.4_lr0.0001_batch_size96_val_split0.1_layers8_n_head6_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_3.796
+MR_0.78631modelgahs_hidden_unit_num300_dropout_rate0.2_lr0.0001_batch_size64_val_split0.1_layers2_n_head6_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_3.62_[1, 3, 2, 0]
+ROTTENTOMATOES_0.82179modeltransformer_hidden_unit_num200_dropout_rate0.2_lr0.0001_batch_size32_val_split0.1_layers6_n_head4_d_inner_hid512_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_38.325
+ROTTENTOMATOES_0.83020modelgah_hidden_unit_num200_dropout_rate0.3_lr0.0001_batch_size32_val_split0.1_layers6_n_head6_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_228.784_[1, 3, 2, 0]
+ROTTENTOMATOES_0.80070modeltransformer_hidden_unit_num300_dropout_rate0.4_lr0.0001_batch_size64_val_split0.1_layers8_n_head4_d_inner_hid512_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_27.647
+ROTTENTOMATOES_0.82800modelgah_hidden_unit_num300_dropout_rate0.4_lr0.0005_batch_size96_val_split0.1_layers4_n_head4_d_inner_hid256_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_57.694_[4, 3, 0, 1]
+ROTTENTOMATOES_0.83160modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.0005_batch_size96_val_split0.1_layers6_n_head6_d_inner_hid512_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_39.966_[2, 0, 4, 3]
+ROTTENTOMATOES_0.81980modeltransformer_hidden_unit_num300_dropout_rate0.4_lr0.0001_batch_size32_val_split0.1_layers6_n_head6_d_inner_hid512_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_38.685
+ROTTENTOMATOES_0.82309modelgahs_hidden_unit_num100_dropout_rate0.2_lr0.0001_batch_size32_val_split0.1_layers6_n_head6_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_144.159_[1, 2, 0, 3]
+ROTTENTOMATOES_0.50389modelgah_hidden_unit_num300_dropout_rate0.4_lr0.001_batch_size32_val_split0.1_layers8_n_head4_d_inner_hid256_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_150.12_[0, 3, 1, 4]
+ROTTENTOMATOES_0.78649modeltransformer_hidden_unit_num300_dropout_rate0.4_lr0.0001_batch_size64_val_split0.1_layers6_n_head6_d_inner_hid512_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_23.941
+ROTTENTOMATOES_0.82700modelgahs_hidden_unit_num100_dropout_rate0.2_lr0.0005_batch_size32_val_split0.1_layers4_n_head6_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_105.125_[1, 0, 2, 3]
+ROTTENTOMATOES_0.81580modelgahs_hidden_unit_num300_dropout_rate0.3_lr0.001_batch_size32_val_split0.1_layers2_n_head4_d_inner_hid256_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_34.875_[4, 3, 2, 0]
+ROTTENTOMATOES_0.80309modelgahs_hidden_unit_num100_dropout_rate0.4_lr0.001_batch_size32_val_split0.1_layers2_n_head6_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_64.364_[2, 0, 1, 3]
+ROTTENTOMATOES_0.82139modeltransformer_hidden_unit_num200_dropout_rate0.2_lr0.0001_batch_size96_val_split0.1_layers6_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_19.375
+ROTTENTOMATOES_0.81099modeltransformer_hidden_unit_num100_dropout_rate0.4_lr0.0001_batch_size96_val_split0.1_layers6_n_head4_d_inner_hid256_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_17.631
+ROTTENTOMATOES_0.78890modelgahs_hidden_unit_num100_dropout_rate0.4_lr0.001_batch_size64_val_split0.1_layers6_n_head6_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_80.248_[3, 2, 0, 1]
+ROTTENTOMATOES_0.82849modelgahs_hidden_unit_num300_dropout_rate0.4_lr0.0005_batch_size64_val_split0.1_layers4_n_head4_d_inner_hid256_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_34.164_[3, 2, 1, 0]
+ROTTENTOMATOES_0.83480modeltransformer_hidden_unit_num100_dropout_rate0.4_lr0.0005_batch_size32_val_split0.1_layers2_n_head4_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_31.511
+ROTTENTOMATOES_0.79890modelgah_hidden_unit_num100_dropout_rate0.4_lr0.0001_batch_size96_val_split0.1_layers6_n_head6_d_inner_hid128_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_84.838_[3, 4, 0, 2]
+ROTTENTOMATOES_0.81999modelgahs_hidden_unit_num100_dropout_rate0.2_lr0.0001_batch_size64_val_split0.1_layers4_n_head6_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_60.96_[1, 2, 3, 0]
+ROTTENTOMATOES_0.50389modeltransformer_hidden_unit_num300_dropout_rate0.2_lr0.001_batch_size64_val_split0.1_layers6_n_head6_d_inner_hid512_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_24.664
+ROTTENTOMATOES_0.81499modelgah_hidden_unit_num100_dropout_rate0.2_lr0.001_batch_size64_val_split0.1_layers2_n_head6_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_75.506_[2, 3, 0, 1]
+ROTTENTOMATOES_0.80669modelgahs_hidden_unit_num100_dropout_rate0.3_lr0.0001_batch_size32_val_split0.1_layers6_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_88.468_[2, 4, 0, 1]
+ROTTENTOMATOES_0.79400modelgahs_hidden_unit_num200_dropout_rate0.4_lr0.0005_batch_size64_val_split0.1_layers8_n_head4_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_84.223_[2, 1, 3, 0]
+ROTTENTOMATOES_0.83160modeltransformer_hidden_unit_num300_dropout_rate0.2_lr0.0005_batch_size32_val_split0.1_layers4_n_head4_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_51.143
+ROTTENTOMATOES_0.82029modelgah_hidden_unit_num200_dropout_rate0.3_lr0.0001_batch_size32_val_split0.1_layers4_n_head6_d_inner_hid128_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_87.018_[4, 1, 2, 3]
+ROTTENTOMATOES_0.82230modeltransformer_hidden_unit_num200_dropout_rate0.2_lr0.0001_batch_size32_val_split0.1_layers2_n_head6_d_inner_hid128_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_17.181
+ROTTENTOMATOES_0.78689modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.001_batch_size32_val_split0.1_layers4_n_head4_d_inner_hid256_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_48.787_[4, 0, 2, 1]
+ROTTENTOMATOES_0.82429modelgahs_hidden_unit_num100_dropout_rate0.3_lr0.0001_batch_size96_val_split0.1_layers2_n_head4_d_inner_hid128_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_19.133_[2, 1, 4, 3]
+ROTTENTOMATOES_0.50389modeltransformer_hidden_unit_num300_dropout_rate0.3_lr0.001_batch_size64_val_split0.1_layers6_n_head4_d_inner_hid256_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_19.772
+ROTTENTOMATOES_0.82840modelgah_hidden_unit_num300_dropout_rate0.3_lr0.0001_batch_size64_val_split0.1_layers6_n_head4_d_inner_hid512_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_96.425_[4, 2, 0, 3]
+ROTTENTOMATOES_0.82859modelgah_hidden_unit_num200_dropout_rate0.2_lr0.0001_batch_size32_val_split0.1_layers6_n_head4_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_207.84_[3, 0, 2, 1]
+ROTTENTOMATOES_0.83469modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.0001_batch_size96_val_split0.1_layers4_n_head4_d_inner_hid512_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_28.312_[2, 3, 1, 0]
+ROTTENTOMATOES_0.82940modeltransformer_hidden_unit_num200_dropout_rate0.2_lr0.001_batch_size64_val_split0.1_layers2_n_head6_d_inner_hid512_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_10.884
+ROTTENTOMATOES_0.83179modeltransformer_hidden_unit_num300_dropout_rate0.4_lr0.0005_batch_size96_val_split0.1_layers6_n_head4_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_38.378
+ROTTENTOMATOES_0.82489modelgahs_hidden_unit_num300_dropout_rate0.2_lr0.0001_batch_size96_val_split0.1_layers2_n_head4_d_inner_hid256_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_20.525_[2, 0, 3, 4]
+ROTTENTOMATOES_0.82980modeltransformer_hidden_unit_num300_dropout_rate0.2_lr0.0005_batch_size96_val_split0.1_layers6_n_head6_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_39.031
+ROTTENTOMATOES_0.81889modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.0001_batch_size96_val_split0.1_layers8_n_head6_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_79.256_[3, 1, 0, 2]
+ROTTENTOMATOES_0.82660modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.0001_batch_size32_val_split0.1_layers8_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_110.003_[2, 1, 4, 3]
+ROTTENTOMATOES_0.50389modelgahs_hidden_unit_num100_dropout_rate0.3_lr0.001_batch_size96_val_split0.1_layers8_n_head6_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_78.027_[0, 1, 2, 3]
+ROTTENTOMATOES_0.80589modeltransformer_hidden_unit_num200_dropout_rate0.4_lr0.0001_batch_size32_val_split0.1_layers2_n_head6_d_inner_hid128_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_17.199
+ROTTENTOMATOES_0.77910modelgahs_hidden_unit_num300_dropout_rate0.4_lr0.0001_batch_size64_val_split0.1_layers6_n_head4_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_67.786_[3, 0, 1, 2]
+ROTTENTOMATOES_0.81749modeltransformer_hidden_unit_num100_dropout_rate0.2_lr0.0001_batch_size96_val_split0.1_layers8_n_head6_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_54.998
+IMDB_0.75190modelgahs_hidden_unit_num300_dropout_rate0.3_lr0.001_batch_size96_val_split0.1_layers4_n_head4_d_inner_hid128_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_140.693_[2, 3, 1, 0]
+ROTTENTOMATOES_0.71770modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.001_batch_size64_val_split0.1_layers4_n_head4_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_51.682_[2, 3, 1, 0]
+ROTTENTOMATOES_0.75459modelgahs_hidden_unit_num100_dropout_rate0.2_lr0.001_batch_size96_val_split0.1_layers4_n_head4_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_39.821_[1, 3, 0, 2]
+ROTTENTOMATOES_0.79070modelgahs_hidden_unit_num300_dropout_rate0.2_lr0.0005_batch_size96_val_split0.1_layers6_n_head4_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_51.581_[0, 3, 2, 1]
+ROTTENTOMATOES_0.74919modelgahs_hidden_unit_num100_dropout_rate0.3_lr0.001_batch_size64_val_split0.1_layers4_n_head4_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_51.914_[2, 3, 1, 0]
+ROTTENTOMATOES_0.78649modelgahs_hidden_unit_num300_dropout_rate0.3_lr0.0001_batch_size32_val_split0.1_layers6_n_head4_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_118.751_[2, 0, 3, 1]
+ROTTENTOMATOES_0.83050modeltransformer_hidden_unit_num100_dropout_rate0.4_lr0.0005_batch_size96_val_split0.1_layers2_n_head6_d_inner_hid256_roles['noun', 'verb', 'adjective', 'negation']_16.238
+ROTTENTOMATOES_0.82289modelgah_hidden_unit_num300_dropout_rate0.2_lr0.001_batch_size96_val_split0.1_layers4_n_head4_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_121.066_[3, 2, 0, 1]
+ROTTENTOMATOES_0.82550modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.0005_batch_size96_val_split0.1_layers4_n_head6_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_48.6_[0, 2, 3, 1]
+ROTTENTOMATOES_0.78280modelgahs_hidden_unit_num300_dropout_rate0.3_lr0.0001_batch_size64_val_split0.1_layers2_n_head4_d_inner_hid512_roles['noun', 'verb', 'adjective', 'negation']_36.413_[0, 2, 3, 1]
+IMDB_0.50389modelgah_hidden_unit_num200_dropout_rate0.2_lr0.001_batch_size32_val_split0.1_layers8_n_head4_d_inner_hid256_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_536.66_[2, 4, 3, 1]
+ROTTENTOMATOES_0.82230modelgahs_hidden_unit_num100_dropout_rate0.3_lr0.001_batch_size64_val_split0.1_layers4_n_head6_d_inner_hid128_roles['noun', 'verb', 'adjective', 'negation']_62.145_[1, 2, 0, 3]
+IMDB_0.87290modelgah_hidden_unit_num200_dropout_rate0.2_lr0.001_batch_size32_val_split0.1_layers2_n_head6_d_inner_hid512_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_265.103_[1, 0, 2, 4]
+IMDB_0.88489modelgahs_hidden_unit_num300_dropout_rate0.3_lr0.0001_batch_size32_val_split0.1_layers2_n_head6_d_inner_hid128_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_148.481_[0, 3, 2, 4]
+IMDB_0.83649modelgahs_hidden_unit_num300_dropout_rate0.3_lr0.0001_batch_size32_val_split0.1_layers2_n_head4_d_inner_hid512_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_141.925_[1, 0, 3, 4]
+IMDB_0.88270modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.0001_batch_size32_val_split0.1_layers8_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_257.997_[0, 3, 2, 1]
+DBPEDIA_0.1modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.001_batch_size96_val_split0.1_layers8_n_head4_d_inner_hid512_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_381.507_[0, 2, 4, 3]
+DBPEDIA_0.98444modeltransformer_hidden_unit_num200_dropout_rate0.2_lr0.0001_batch_size64_val_split0.1_layers4_n_head6_d_inner_hid128_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_185.324
+DBPEDIA_0.98445modelgahs_hidden_unit_num300_dropout_rate0.3_lr0.0005_batch_size96_val_split0.1_layers6_n_head6_d_inner_hid128_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_368.812_[0, 2, 1, 4]
+DBPEDIA_0.98491modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.0005_batch_size64_val_split0.1_layers4_n_head6_d_inner_hid128_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_376.354_[0, 3, 1, 4]
+DBPEDIA_0.1modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.001_batch_size32_val_split0.1_layers6_n_head4_d_inner_hid512_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_791.283_[3, 0, 4, 1]
+DBPEDIA_0.96992modelgahs_hidden_unit_num300_dropout_rate0.3_lr0.0005_batch_size32_val_split0.1_layers2_n_head4_d_inner_hid256_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_376.448_[1, 3, 0, 2]
+YELP_0.87631modelgahs_hidden_unit_num200_dropout_rate0.4_lr0.001_batch_size32_val_split0.1_layers2_n_head4_d_inner_hid256_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_40.959_[0, 4, 3, 2]
+YELP_0.87736modeltransformer_hidden_unit_num100_dropout_rate0.4_lr0.0001_batch_size96_val_split0.1_layers4_n_head6_d_inner_hid128_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_21.599
+YELP_0.89210modeltransformer_hidden_unit_num100_dropout_rate0.3_lr0.001_batch_size96_val_split0.1_layers4_n_head4_d_inner_hid512_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_22.471
+YELP_0.47421modelgahs_hidden_unit_num100_dropout_rate0.4_lr0.001_batch_size64_val_split0.1_layers6_n_head4_d_inner_hid256_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_55.518_[3, 4, 2, 0]
+DBPEDIA_0.98015modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.0001_batch_size32_val_split0.1_layers2_n_head4_d_inner_hid512_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_367.406_[0, 3, 4, 1]
+YELP_0.89052modelgahs_hidden_unit_num300_dropout_rate0.4_lr0.0005_batch_size32_val_split0.1_layers8_n_head6_d_inner_hid128_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_126.82_[1, 2, 0, 4]
+YELP_0.88473modeltransformer_hidden_unit_num200_dropout_rate0.3_lr0.001_batch_size64_val_split0.1_layers2_n_head6_d_inner_hid128_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_12.891
+YELP_0.85736modeltransformer_hidden_unit_num300_dropout_rate0.2_lr0.001_batch_size64_val_split0.1_layers6_n_head4_d_inner_hid256_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_31.616
+YELP_0.52578modelgahs_hidden_unit_num300_dropout_rate0.3_lr0.001_batch_size64_val_split0.1_layers6_n_head4_d_inner_hid256_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_56.641_[1, 2, 0, 4]
+DBPEDIA_0.96082modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.0001_batch_size96_val_split0.1_layers6_n_head4_d_inner_hid128_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_325.182_[0, 2, 4, 3]
+YELP_0.88842modelgahs_hidden_unit_num300_dropout_rate0.3_lr0.0001_batch_size64_val_split0.1_layers6_n_head6_d_inner_hid512_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_68.427_[2, 4, 0, 3]
+YELP_0.90473modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.0005_batch_size32_val_split0.1_layers2_n_head6_d_inner_hid512_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_47.68_[2, 3, 1, 0]
+YELP_0.57210modelgahs_hidden_unit_num200_dropout_rate0.4_lr0.0005_batch_size96_val_split0.1_layers8_n_head4_d_inner_hid512_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_65.391_[4, 0, 1, 2]
+YELP_0.52578modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.0005_batch_size64_val_split0.1_layers8_n_head4_d_inner_hid512_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_71.482_[0, 1, 2, 3]
+YELP_0.83315modelgah_hidden_unit_num300_dropout_rate0.3_lr0.0005_batch_size64_val_split0.1_layers8_n_head4_d_inner_hid128_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_183.345_[1, 2, 3, 4]
+YELP_0.89105modeltransformer_hidden_unit_num200_dropout_rate0.4_lr0.0005_batch_size32_val_split0.1_layers2_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_18.457
+YELP_0.88842modeltransformer_hidden_unit_num100_dropout_rate0.4_lr0.001_batch_size96_val_split0.1_layers4_n_head4_d_inner_hid128_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_18.656
+YELP_0.86421modelgahs_hidden_unit_num200_dropout_rate0.3_lr0.0001_batch_size64_val_split0.1_layers6_n_head4_d_inner_hid256_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_57.356_[3, 0, 4, 1]
+YELP_0.87999modeltransformer_hidden_unit_num100_dropout_rate0.3_lr0.001_batch_size64_val_split0.1_layers6_n_head4_d_inner_hid128_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_30.197
+DBPEDIA_0.97289modelgah_hidden_unit_num100_dropout_rate0.3_lr0.0005_batch_size96_val_split0.1_layers8_n_head6_d_inner_hid128_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_775.751_[1, 4, 3, 2]
+YELP_0.84052modelgahs_hidden_unit_num200_dropout_rate0.4_lr0.0005_batch_size64_val_split0.1_layers8_n_head6_d_inner_hid512_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_84.071_[0, 4, 2, 1]
+YELP_0.87105modelgahs_hidden_unit_num300_dropout_rate0.4_lr0.0001_batch_size96_val_split0.1_layers4_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_49.656_[1, 4, 0, 3]
+YELP_0.85736modelgahs_hidden_unit_num100_dropout_rate0.3_lr0.001_batch_size64_val_split0.1_layers2_n_head4_d_inner_hid512_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_36.024_[1, 0, 2, 4]
+YELP_0.89105modeltransformer_hidden_unit_num300_dropout_rate0.4_lr0.001_batch_size32_val_split0.1_layers2_n_head6_d_inner_hid128_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_16.874
+YELP_0.88578modeltransformer_hidden_unit_num200_dropout_rate0.3_lr0.0005_batch_size64_val_split0.1_layers6_n_head6_d_inner_hid128_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_33.01
+YELP_0.90578modelgahs_hidden_unit_num100_dropout_rate0.3_lr0.0001_batch_size64_val_split0.1_layers4_n_head6_d_inner_hid512_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_78.159_[0, 3, 1, 4]
+YELP_0.89368modelgah_hidden_unit_num100_dropout_rate0.3_lr0.001_batch_size64_val_split0.1_layers2_n_head4_d_inner_hid512_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_72.39_[3, 4, 2, 0]
+YELP_0.52578modelgahs_hidden_unit_num300_dropout_rate0.2_lr0.0005_batch_size64_val_split0.1_layers6_n_head4_d_inner_hid128_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_55.672_[2, 3, 0, 4]
+YELP_0.88894modeltransformer_hidden_unit_num300_dropout_rate0.2_lr0.0001_batch_size96_val_split0.1_layers2_n_head6_d_inner_hid512_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_13.282
+YELP_0.88263modeltransformer_hidden_unit_num300_dropout_rate0.2_lr0.0005_batch_size64_val_split0.1_layers2_n_head4_d_inner_hid512_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_12.817
+YELP_0.52578modelgahs_hidden_unit_num300_dropout_rate0.2_lr0.001_batch_size96_val_split0.1_layers8_n_head6_d_inner_hid128_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_70.741_[2, 4, 0, 3]
+DBPEDIA_0.98292modelgah_hidden_unit_num200_dropout_rate0.4_lr0.0001_batch_size96_val_split0.1_layers6_n_head6_d_inner_hid512_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_711.761_[0, 1, 3, 4]
+YELP_0.85526modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.0001_batch_size96_val_split0.1_layers2_n_head4_d_inner_hid512_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_35.335_[0, 3, 1, 2, 4]
+YELP_0.89894modelgahs_hidden_unit_num200_dropout_rate0.2_lr0.0001_batch_size64_val_split0.1_layers4_n_head6_d_inner_hid256_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_54.552_[3, 2, 1, 4, 0]
+YELP_0.75631modelgahs_hidden_unit_num100_dropout_rate0.4_lr0.0005_batch_size96_val_split0.1_layers4_n_head4_d_inner_hid512_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_42.051_[2, 3, 0, 1, 4]
+YELP_0.52578modelgahs_hidden_unit_num200_dropout_rate0.4_lr0.001_batch_size32_val_split0.1_layers4_n_head4_d_inner_hid256_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_51.416_[1, 0, 3, 2, 4]
+YELP_0.52578modelgahs_hidden_unit_num300_dropout_rate0.2_lr0.001_batch_size32_val_split0.1_layers8_n_head6_d_inner_hid512_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_94.652_[3, 4, 1, 2, 0]
+YELP_0.78210modelgahs_hidden_unit_num100_dropout_rate0.4_lr0.001_batch_size96_val_split0.1_layers6_n_head6_d_inner_hid512_roles['positional', 'both_direct', 'major_rels', 'separator', 'rare_word']_61.837_[4, 3, 0, 2, 1]

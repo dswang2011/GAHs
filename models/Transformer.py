@@ -12,6 +12,7 @@ from keras.callbacks import *
 from keras.initializers import *
 import tensorflow as tf
 from nltk.translate.bleu_score import sentence_bleu
+import nltk
 from keras import backend as K
 K.clear_session()
 
@@ -266,7 +267,7 @@ class ReadoutDecoderCell(Layer):
 		enc_output, enc_mask = constants
 
 		time = K.max(tgt_pos_input)
-		col_mask = K.cast(K.equal(K.cumsum(K.ones_like(dec_mask), axis=1), time), dtype='int32')
+		col_mask = K.cast(K.equal(K.cumsum(K.ones_like(dec_mask), axis=1), time), dtype='float32')
 		dec_mask = dec_mask + col_mask
 
 		tgt_emb = self.o_word_emb(tgt_curr_input)
@@ -482,13 +483,19 @@ class Transformer_trans:
 			corr = K.cast(K.equal(K.cast(y_true, 'int32'), K.cast(K.argmax(y_pred, axis=-1), 'int32')), 'float32')
 			corr = K.sum(corr * mask, -1) / K.sum(mask, -1)
 			return K.mean(corr)
-				
+		
+		# def bleu(target, pred):
+		# 	smoothing = nltk.translate.bleu_score.SmoothingFunction()
+		# 	score = nltk.translate.bleu_score.corpus_bleu(target, pred, smoothing_function=smoothing.method0)
+		# 	#score = nltk.translate.bleu_score.corpus_bleu(target, pred, smoothing_function=smoothing.method4)
+		# 	return score
+
 		loss = get_loss(final_output, tgt_true)
 		
 
 		self.ppl = K.exp(loss)
 		self.accu = get_accu(final_output, tgt_true)
-		# self.bleu = sentence_bleu(tgt_true, final_output)
+		# self.bleu = bleu(tgt_true, final_output)
 		# calculate BLEU score
 		# print('BLEU-1: %f' % corpus_bleu(tgt_true, final_output, weights=(1.0, 0, 0, 0)))
 		# print('BLEU-2: %f' % corpus_bleu(tgt_true, final_output, weights=(0.5, 0.5, 0, 0)))

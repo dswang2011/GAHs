@@ -27,17 +27,17 @@ dataset_pool = {
 }
 grid_pool ={
 	# model
-	"model": ['transformer','gahs','gahs','gah'], #,],#,'gah' ,'cnn','bilstm',
+	"model": ['gahs','gahs','gahs','gah'], #,],#,'gah' ,'cnn','bilstm',
 	"hidden_unit_num":[100,200,300],	# for rnn or cnn
 	"dropout_rate" : [0.2,0.3,0.4],
 	# hyper parameters
 	"lr":[0.001, 0.0005,0.0001],	# 0.01 for CNN and LSTM
-	"batch_size":[32,64],
+	"batch_size":[32,64,96],
 	"val_split":[0.1],
 	"layers" : [2,4,6,8],
 	"n_head" : [4,6],
 	"d_inner_hid" : [128,256,512],
-	"roles": [['noun','verb','adjective','negation']]#,'major_rels','positional','both_direct',,'separator','rare_word'
+	"roles": [['positional','both_direct','major_rels','separator','rare_word']]#,,,'noun','verb','adjective','negation'
 }
 
 

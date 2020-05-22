@@ -6,3 +6,5 @@ models/__pycache__/*
 datasets/*
 saved_model/*
 config/*
+ablation_large.txt
+ablation_record2.txt

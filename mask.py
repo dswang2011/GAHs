@@ -192,8 +192,8 @@ class RoleMask(object):
 				if semtok.dep_ in include_tags: 
 					val_index.append(row)
 					# related tokens
-					# val_index.append(semtok.head.i+1)
-					# for child in semtok.children: val_index.append(child.i+1)
+					val_index.append(semtok.head.i+1)
+					for child in semtok.children: val_index.append(child.i+1)
 				row+=1
 				if row>=MAX_SEQUENCE_LENGTH: break
 			# END

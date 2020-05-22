@@ -84,10 +84,10 @@ class Data_helper(object):
 		labels_train_test = []
 		for split in splits:
 			texts,labels = self.load_sem_data(dataset,split)
-			# half = len(texts)	# control the datasize;
+			half = len(texts)//20	# control the datasize;
 			# texts, labels = texts[:half], labels[:half]
-			texts_list_train_test.append(texts)
-			labels_train_test.append(labels)
+			texts_list_train_test.append(texts[:half])
+			labels_train_test.append(labels[:half])
 		self.opt.nb_classes = len(set(labels))
 		print('[LABEL]',self.opt.nb_classes, ' labels:',set(labels))
 		# max_num_words = self.opt.max_num_words
